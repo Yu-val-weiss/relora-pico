@@ -69,6 +69,9 @@ class CheckpointingConfig:
     # Name of the run
     run_name: Optional[str] = None
 
+    # add date/time qualifier to run name
+    qualify_run_name: bool = False
+
     runs_dir: str = RUNS_DIR
     checkpoints_dir: str = CHECKPOINTS_DIR
     logs_dir: str = LOGS_DIR
