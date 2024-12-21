@@ -141,8 +141,12 @@ def initialize_run_dir(checkpointing_config: CheckpointingConfig) -> str:
         str: The path to the run directory.
     """
     run_name = checkpointing_config.run_name
+    dt_format = "%Y-%m-%d_%H-%M-%S"
     if run_name is None:
-        run_name = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        run_name = datetime.now().strftime(dt_format)
+        checkpointing_config.run_name = run_name
+    elif checkpointing_config.qualify_run_name:
+        run_name += f"@{datetime.now().strftime(dt_format)}"
         checkpointing_config.run_name = run_name
 
     run_dir = os.path.join(checkpointing_config.runs_dir, run_name)
