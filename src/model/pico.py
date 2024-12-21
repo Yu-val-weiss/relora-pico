@@ -604,7 +604,7 @@ This also lets you do cool things like:
 class PicoHFConfig(PretrainedConfig):
     """HuggingFace config for Pico model."""
 
-    model_type = "pico"
+    model_type = "relora-pico"
 
     @classmethod
     def from_dict(cls, config_dict: Dict[str, Any], **kwargs) -> "PicoHFConfig":
