@@ -25,25 +25,24 @@ Adapted from:
 """
 
 import math
+from dataclasses import asdict
+
+# typing imports
+from typing import TYPE_CHECKING, Any, Dict, Optional, Tuple, Union
 
 import torch
 import torch.backends.cuda
 import torch.nn as nn
 import torch.nn.functional as F
-
-from dataclasses import asdict
-
 from transformers import PretrainedConfig, PreTrainedModel
-from transformers.modeling_outputs import CausalLMOutputWithPast, CausalLMOutput
-
-# typing imports
-from typing import Union, Tuple, Optional, TYPE_CHECKING, Dict, Any
+from transformers.modeling_outputs import CausalLMOutput, CausalLMOutputWithPast
 
 try:
     if TYPE_CHECKING:
         # We need to do this to avoid importing these when creating the HF-compatible models
-        from src.config import ModelConfig
         import lightning as L
+
+        from src.config import ModelConfig
 except ImportError:
     pass
 
@@ -70,6 +69,13 @@ class RMSNorm(torch.nn.Module):
     """
 
     def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+        """Initalise Root Mean Square Layer Normalization module.
+
+        Args:
+            config (Union[ModelConfig,PicoHFConfig]): Config object containing normalization parameters
+            - config.norm_eps: Small constant for numerical stability
+            - config.d_model: Model dimension for the weight parameter
+        """
         super().__init__()
         self.eps = config.norm_eps
         self.weight = nn.Parameter(torch.ones(config.d_model))
@@ -116,9 +122,17 @@ class RoPE(nn.Module):
 
     _freqs_cis: torch.Tensor = None
 
-    def __init__(
-        self, config: Union["ModelConfig", "PicoHFConfig"], fabric: "L.Fabric" = None
-    ):
+    def __init__(self, config: Union["ModelConfig", "PicoHFConfig"], fabric: "L.Fabric" = None):
+        """Initialise Rotary Positional Embeddings (RoPE) module.
+
+        Args:
+            config (Union[ModelConfig, PicoHFConfig]): Model configuration containing:
+                - config.position_emb_theta: Base for frequency computation
+                - config.d_model: Model dimension
+                - config.attention_n_heads: Number of attention heads
+                - config.max_seq_len: Maximum sequence length
+            fabric (L.Fabric): Lightning Fabric instance for device management
+        """
         super().__init__()
 
         self.fabric = fabric
@@ -150,9 +164,7 @@ class RoPE(nn.Module):
         freqs = torch.outer(positions, _freqs)
         return torch.polar(torch.ones_like(freqs), freqs)  # complex64
 
-    def get_freqs_cis(
-        self, input_shape: torch.Size, start_pos: int, end_pos: int
-    ) -> torch.Tensor:
+    def get_freqs_cis(self, input_shape: torch.Size, start_pos: int, end_pos: int) -> torch.Tensor:
         """Reshape Frequency Tensor for RoPE Embeddings
 
         Makes the frequency tensor broadcastable with the input tensor.
@@ -178,14 +190,10 @@ class RoPE(nn.Module):
 
         NOTE: The start_pos is used if we want to use the kv_cache in the attention mechanism.
         """
-        queries_ = torch.view_as_complex(
-            queries.float().reshape(*queries.shape[:-1], -1, 2)
-        )
+        queries_ = torch.view_as_complex(queries.float().reshape(*queries.shape[:-1], -1, 2))
         keys_ = torch.view_as_complex(keys.float().reshape(*keys.shape[:-1], -1, 2))
 
-        input_shape = (
-            queries_.shape
-        )  # same as keys: (batch_size, seq_len, n_heads, head_dim/2)
+        input_shape = queries_.shape  # same as keys: (batch_size, seq_len, n_heads, head_dim/2)
         freqs_start_pos = start_pos
         freqs_end_pos = freqs_start_pos + queries_.shape[1]
 
@@ -236,6 +244,17 @@ class Attention(nn.Module):
         config: Union["ModelConfig", "PicoHFConfig"],
         fabric: Optional["L.Fabric"] = None,
     ):
+        """Initialise Multi-head Attention module.
+
+        Args:
+            config (Union[ModelConfig, PretrainedConfig]): Configuration containing:
+                - config.attention_n_heads: Number of attention heads
+                - config.attention_n_kv_heads: Number of key/value heads
+                - config.d_model: Model dimension
+                - config.batch_size: Maximum batch size
+                - config.max_seq_len: Maximum sequence length
+            fabric (L.Fabric): Lightning Fabric instance
+        """
         super().__init__()
 
         self.fabric = fabric
@@ -355,6 +374,13 @@ class SwiGLU(nn.Module):
     """
 
     def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+        """Intialise SwiGLU Activation Function module.
+
+        Args:
+        config (Union[ModelConfig, PicoHFConfig]): Configuration containing:
+            - config.d_model: Model dimension
+            - config.activation_hidden_dim: Hidden dimension (typically 4 * d_model)
+        """
         super().__init__()
 
         model_dim = config.d_model
@@ -365,6 +391,7 @@ class SwiGLU(nn.Module):
         self.w_2 = nn.Linear(act_hidden_dim, model_dim, bias=False)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """Forward pass for SwiGLU module."""
         return self.w_2(F.silu(self.w_0(x)) * self.w_1(x))
 
 
@@ -393,6 +420,15 @@ class PicoBlock(nn.Module):
         config: Union["ModelConfig", "PicoHFConfig"],
         fabric: Optional["L.Fabric"] = None,
     ):
+        """Initialise a PicoBlock, a standard Transformer block with:
+            - Multi-head attention with normalization and residual connection
+            - SwiGLU feed-forward network with normalization and residual connection
+
+        Args:
+            config (Union[ModelConfig, PicoHFConfig]): Model configuration; either a dataclass or
+                a HuggingFace PicoHFConfig
+            fabric (L.Fabric): Lightning Fabric instance
+        """
         super().__init__()
 
         self.attention = Attention(config, fabric)
@@ -407,6 +443,18 @@ class PicoBlock(nn.Module):
         past_key_values: Optional[Tuple[torch.Tensor]] = None,
         use_cache: bool = False,
     ) -> Tuple[torch.Tensor, Optional[Tuple[torch.Tensor, torch.Tensor]]]:
+        """Compute forward pass for PicoBlock.
+
+        Args:
+            input (torch.Tensor): input tensor
+            mask (torch.Tensor, optional): input mask. Defaults to None.
+            past_key_values (Tuple[torch.Tensor], optional): Cached key values to use. Defaults to None.
+            use_cache (bool, optional): Set whether to use cached key values. Defaults to False.
+
+        Returns:
+            Tuple[torch.Tensor, Optional[Tuple[torch.Tensor, torch.Tensor]]]: First element is output tensor.
+            Optional second element is the cached key values.
+        """
         attention_output, cached_key_values = self.attention(
             self.attention_norm(input),
             mask=mask,
@@ -439,18 +487,20 @@ class Pico(nn.Module):
         config: Union["ModelConfig", "PicoHFConfig"],
         fabric: Optional["L.Fabric"] = None,
     ):
+        """Initialise the Pico model.
+
+        Args:
+            config (Union[ModelConfig, PicoHFConfig]): Model config.
+            fabric (L.Fabric, optional): Fabric instance to use. Defaults to None.
+        """
         super().__init__()
         self.config = config
         self.fabric = fabric
 
         self.embedding_proj = nn.Embedding(config.vocab_size, config.d_model)
-        self.layers = nn.ModuleList(
-            [PicoBlock(config, fabric) for _ in range(config.n_layers)]
-        )
+        self.layers = nn.ModuleList([PicoBlock(config, fabric) for _ in range(config.n_layers)])
         self.output_norm = RMSNorm(config)
-        self.de_embedding_proj = nn.Linear(
-            config.d_model, config.vocab_size, bias=False
-        )
+        self.de_embedding_proj = nn.Linear(config.d_model, config.vocab_size, bias=False)
 
     def convert_to_hf_model(self) -> "PicoHF":
         """Convert the Lightning model to a HuggingFace model."""
@@ -498,9 +548,7 @@ class Pico(nn.Module):
         mask = None
         if seq_len > 1:
             if self.fabric is not None:
-                mask = self.fabric.to_device(
-                    torch.full((seq_len, seq_len), float("-inf"))
-                )
+                mask = self.fabric.to_device(torch.full((seq_len, seq_len), float("-inf")))
             else:
                 mask = torch.full((seq_len, seq_len), float("-inf"), device=h.device)
             mask = torch.triu(mask, diagonal=1)
@@ -508,9 +556,7 @@ class Pico(nn.Module):
             # If using KV cache, extend mask to cover cached sequence length
             if past_key_values is not None:
                 # Add zeros for cached tokens (we can attend to all of them)
-                mask = torch.hstack([torch.zeros((seq_len, start_pos)), mask]).type_as(
-                    h
-                )
+                mask = torch.hstack([torch.zeros((seq_len, start_pos)), mask]).type_as(h)
 
         # NOTE: If we are using the cache, we need to store the cached KV pairs for each layer
         #       in a tuple. Each layer will have its own cached KV pair which we aggregate in a tuple.
@@ -518,9 +564,7 @@ class Pico(nn.Module):
 
         # Process through transformer blocks
         for idx, layer in enumerate(self.layers):
-            layer_past_key_values = (
-                past_key_values[idx] if past_key_values is not None else None
-            )
+            layer_past_key_values = past_key_values[idx] if past_key_values is not None else None
 
             h, layer_cached_key_values = layer(
                 h, mask=mask, past_key_values=layer_past_key_values, use_cache=True
@@ -551,7 +595,7 @@ Many evaluation frameworks require a model be setup as a HuggingFace model, so w
 wrapper that does just that. When we save checkpoints of the Pico model, we save both the normal
 Pico model as well as the model wrapped in this HuggingFace class.
 
-This also lets you do cool things like: 
+This also lets you do cool things like:
 
 `model = AutoModelForCausalLM.from_pretrained("path/to/checkpoint")`
 """
@@ -564,6 +608,19 @@ class PicoHFConfig(PretrainedConfig):
 
     @classmethod
     def from_dict(cls, config_dict: Dict[str, Any], **kwargs) -> "PicoHFConfig":
+        """Create a PicoHFConfig from a dict.
+
+        Args:
+            config_dict (Dict[str, Any]): Config dict to use.
+            **kwargs: Keyword arguments, see below.
+
+        Keyword arguments:
+            return_unused_kwargs (bool, optional): If set to True, returns all unused kwargs as a dictionary
+            in second element of tuple. Defaults to False.
+
+        Returns:
+            PicoHFConfig: Config for HuggingFace-compatible version of Pico.
+        """
         # NOTE The typical from_dict method doesn't actually set the attributes unless they are
         # defined in the constructor.
 
@@ -575,16 +632,22 @@ class PicoHFConfig(PretrainedConfig):
             setattr(pico_config, key, value)
 
         return_unused_kwargs = kwargs.pop("return_unused_kwargs", False)
-        unused_kwargs = {
-            key: value for key, value in kwargs.items() if not hasattr(pico_config, key)
-        }
+        unused_kwargs = {key: value for key, value in kwargs.items() if not hasattr(pico_config, key)}
 
         if return_unused_kwargs:
             return pico_config, unused_kwargs
         return pico_config
 
     @classmethod
-    def from_dataclass(cls, model_config: "ModelConfig"):
+    def from_dataclass(cls, model_config: "ModelConfig") -> "PicoHFConfig":
+        """Initialise from a ModelConfig dataclass.
+
+        Args:
+            model_config (ModelConfig): Dataclass to initialise from
+
+        Returns:
+            PicoHFConfig: the new PicoHFConfig dataclass
+        """
         return cls.from_dict(asdict(model_config))
 
 
@@ -595,6 +658,11 @@ class PicoHF(PreTrainedModel):
     _no_split_modules = ["PicoBlock", "Attention", "SwiGLU", "RMSNorm"]
 
     def __init__(self, config: PicoHFConfig):
+        """Initialise HuggingFace wrapper for Pico model.
+
+        Args:
+            config (PicoHFConfig): Config to initialise from.
+        """
         super().__init__(config)
         self.pico = Pico(config)
 

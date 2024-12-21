@@ -10,6 +10,8 @@ from typing import Optional
 
 @dataclass
 class LoggingConfig:
+    """Config dataclass for Logging."""
+
     experiment_tracker: Optional[str] = "wandb"
     wandb_project: Optional[str] = "pico"
     wandb_entity: Optional[str] = "pico-lm"

@@ -29,3 +29,9 @@ jupyter = "^1.1.1"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 109
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "B", "I", "D1", "D417", "D417", "D419"]

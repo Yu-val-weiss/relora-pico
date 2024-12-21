@@ -4,8 +4,10 @@ A minimal script to train the Pico language model. In practice, you should just 
 `poetry run train` command to run the training pipeline. Doing so will call on this script.
 """
 
-import click
 from pathlib import Path
+
+import click
+
 from src.training.trainer import Trainer
 
 

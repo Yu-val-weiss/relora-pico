@@ -4,14 +4,16 @@ Utilities for checkpointing evaluation-related states (i.e. evaluation results, 
 We save the evaluation results in a JSON file at the step-specific evaluation results directory.
 """
 
-import os
 import json
-from huggingface_hub import upload_folder
+import os
 
 # typing imports
-from typing import Dict, Any
-from src.config import CheckpointingConfig
+from typing import Any, Dict
+
+from huggingface_hub import upload_folder
 from lightning.fabric import Fabric
+
+from src.config import CheckpointingConfig
 
 
 def save_evaluation_results(
@@ -41,16 +43,12 @@ def save_evaluation_results(
         return
 
     run_dir = os.path.join(checkpointing_config.runs_dir, checkpointing_config.run_name)
-    eval_results_dir = os.path.join(
-        run_dir, checkpointing_config.evaluation.eval_results_dir
-    )
+    eval_results_dir = os.path.join(run_dir, checkpointing_config.evaluation.eval_results_dir)
 
     if fabric.global_rank == 0:
         os.makedirs(eval_results_dir, exist_ok=True)
 
-        curr_eval_results_path = os.path.join(
-            eval_results_dir, f"step_{gradient_step}.json"
-        )
+        curr_eval_results_path = os.path.join(eval_results_dir, f"step_{gradient_step}.json")
 
         # save out as json
         with open(curr_eval_results_path, "w") as f:
