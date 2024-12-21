@@ -9,32 +9,31 @@ As always, this code is meant to be basic. We hard-code the obvious defaults, an
 more experimental stuff to you.
 """
 
-import lightning as L
-import torch
-import os
 import logging
-import yaml
+import os
+import warnings
 from dataclasses import fields, is_dataclass
 from datetime import datetime
+from typing import Dict, Optional, Union
+
+import lightning as L
+import torch
 import wandb
-from wandb.integration.lightning.fabric import WandbLogger
-from datasets import load_dataset, Dataset
+import yaml
+from datasets import Dataset, load_dataset
+from lightning.fabric.loggers import Logger as FabricLogger
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
-from typing import Optional, Dict, Union
-import warnings
+from wandb.integration.lightning.fabric import WandbLogger
 
 from src.config import (
-    TrainingConfig,
+    CheckpointingConfig,
     DataConfig,
-    ModelConfig,
     EvaluationConfig,
     LoggingConfig,
-    CheckpointingConfig,
+    ModelConfig,
+    TrainingConfig,
 )
-
-from lightning.fabric.loggers import Logger as FabricLogger
-
 
 warnings.filterwarnings(
     "ignore",
@@ -108,15 +107,9 @@ def initialize_configuration(
         overrides = yaml.safe_load(open(config_path, "r"))
         data_config = _apply_config_overrides(data_config, overrides.get("data", {}))
         model_config = _apply_config_overrides(model_config, overrides.get("model", {}))
-        training_config = _apply_config_overrides(
-            training_config, overrides.get("training", {})
-        )
-        evaluation_config = _apply_config_overrides(
-            evaluation_config, overrides.get("evaluation", {})
-        )
-        logging_config = _apply_config_overrides(
-            logging_config, overrides.get("logging", {})
-        )
+        training_config = _apply_config_overrides(training_config, overrides.get("training", {}))
+        evaluation_config = _apply_config_overrides(evaluation_config, overrides.get("evaluation", {}))
+        logging_config = _apply_config_overrides(logging_config, overrides.get("logging", {}))
         checkpointing_config = _apply_config_overrides(
             checkpointing_config, overrides.get("checkpointing", {})
         )
@@ -158,9 +151,7 @@ def initialize_run_dir(checkpointing_config: CheckpointingConfig) -> str:
     return run_dir
 
 
-def initialize_fabric(
-    training_config: TrainingConfig, experiment_tracker: Optional[FabricLogger] = None
-):
+def initialize_fabric(training_config: TrainingConfig, experiment_tracker: Optional[FabricLogger] = None):
     """Initialize Lightning Fabric for distributed training.
 
     Sets up a Lightning Fabric instance with the specified configuration for
@@ -291,18 +282,14 @@ def initialize_optimizer(training_config: TrainingConfig, model: torch.nn.Module
     """
 
     if training_config.optimization.optimizer == "adamw":
-        optimizer = torch.optim.AdamW(
-            model.parameters(), lr=training_config.optimization.lr
-        )
+        optimizer = torch.optim.AdamW(model.parameters(), lr=training_config.optimization.lr)
     else:
         raise ValueError(f"Invalid optimizer: {training_config.optimization.optimizer}")
 
     return optimizer
 
 
-def initialize_lr_scheduler(
-    training_config: TrainingConfig, optimizer: torch.optim.Optimizer
-):
+def initialize_lr_scheduler(training_config: TrainingConfig, optimizer: torch.optim.Optimizer):
     """Initialize a learning rate scheduler with warmup and decay.
 
     The default is a learning rate scheduler that implements a linear warmup followed by
@@ -328,8 +315,7 @@ def initialize_lr_scheduler(
             else:
                 return max(
                     0.0,
-                    float(max_steps - curr_step)
-                    / float(max(1, max_steps - num_warmup_steps)),
+                    float(max_steps - curr_step) / float(max(1, max_steps - num_warmup_steps)),
                 )
 
         lr_lambda = lambda step: _lr_lambda(  # noqa: E731
@@ -342,9 +328,7 @@ def initialize_lr_scheduler(
             lr_lambda,
         )
     else:
-        raise ValueError(
-            f"Invalid learning rate scheduler: {training_config.optimization.lr_scheduler}"
-        )
+        raise ValueError(f"Invalid learning rate scheduler: {training_config.optimization.lr_scheduler}")
 
     return lr_scheduler
 
@@ -390,9 +374,7 @@ def _initialize_log_file(checkpointing_config: CheckpointingConfig) -> str:
     return log_file_path
 
 
-def initialize_logging(
-    logging_config: LoggingConfig, checkpointing_config: CheckpointingConfig
-):
+def initialize_logging(logging_config: LoggingConfig, checkpointing_config: CheckpointingConfig):
     """Initialize logging system with file, console, and optional experiment tracking.
 
     Sets up a comprehensive logging system that includes:
@@ -469,13 +451,8 @@ def initialize_logging(
             id=_run_id,
             name=checkpointing_config.run_name,
         )
-    elif (
-        logging_config.experiment_tracker is not None
-        and logging_config.experiment_tracker != ""
-    ):
-        raise ValueError(
-            f"Invalid experiment tracker: {logging_config.experiment_tracker}"
-        )
+    elif logging_config.experiment_tracker is not None and logging_config.experiment_tracker != "":
+        raise ValueError(f"Invalid experiment tracker: {logging_config.experiment_tracker}")
 
     return logger, experiment_tracker
 
@@ -518,8 +495,9 @@ def initialize_checkpointing(checkpointing_config: CheckpointingConfig):
         return
 
     import time
-    from huggingface_hub.hf_api import create_repo, create_branch
+
     from huggingface_hub.errors import HfHubHTTPError
+    from huggingface_hub.hf_api import create_branch, create_repo
     from huggingface_hub.repository import Repository
 
     run_dir = os.path.join(checkpointing_config.runs_dir, checkpointing_config.run_name)
@@ -539,14 +517,12 @@ def initialize_checkpointing(checkpointing_config: CheckpointingConfig):
             if _repo_sleep_time > 64:
                 raise RuntimeError(
                     f"Could not create huggingface repo {huggingface_repo_id} after {64} seconds."
-                )
+                ) from HfHubHTTPError
             time.sleep(_repo_sleep_time)
             _repo_sleep_time *= 2
 
     # create branch
-    create_branch(
-        repo_id=huggingface_repo_id, branch=checkpointing_config.run_name, exist_ok=True
-    )
+    create_branch(repo_id=huggingface_repo_id, branch=checkpointing_config.run_name, exist_ok=True)
 
     _ = Repository(
         checkpoint_dir,

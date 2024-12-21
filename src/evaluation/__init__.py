@@ -15,11 +15,13 @@ libraries/frameworks.
 """
 
 import os
-from .tasks.paloma import run_paloma_evaluation
+
+from lightning.fabric import Fabric
 
 # typing imports
-from src.config import EvaluationConfig, CheckpointingConfig
-from lightning.fabric import Fabric
+from src.config import CheckpointingConfig, EvaluationConfig
+
+from .tasks.paloma import run_paloma_evaluation
 
 
 def run_evaluation(
@@ -76,7 +78,8 @@ def run_evaluation(
         model_path = checkpointing_config.evaluation.load_checkpoint_path
     else:
         run_name = checkpointing_config.run_name
-        model_path = f"{os.getcwd()}/{checkpointing_config.runs_dir}/{run_name}/{checkpointing_config.checkpoints_dir}/latest"
+        model_path = f"{os.getcwd()}/{checkpointing_config.runs_dir}/"
+        f"{run_name}/{checkpointing_config.checkpoints_dir}/latest"
     os.makedirs(model_path, exist_ok=True)
 
     evaluation_results = {}

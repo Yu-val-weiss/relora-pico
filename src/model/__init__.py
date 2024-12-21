@@ -5,6 +5,6 @@ This Package contains the Pico model. If you have other models you'd like to imp
 recommend you add modules to this package.
 """
 
-# ruff: noqa: F401
-
 from .pico import Pico
+
+__all__ = ["Pico"]

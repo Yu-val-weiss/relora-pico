@@ -5,11 +5,14 @@ Specifies the hyperparameters for the training process, i.e. the optimizer, lear
 """
 
 from dataclasses import dataclass, field
+
 from ._constants import GRADIENT_ACCUMULATION_STEPS
 
 
 @dataclass
 class FabricConfig:
+    """Config dataclass for Fabric."""
+
     num_nodes: int = 1
     num_devices: int = 1
     precision: str = "16-mixed"
@@ -18,6 +21,8 @@ class FabricConfig:
 
 @dataclass
 class OptimizationConfig:
+    """Config dataclass for Optimization."""
+
     # Optimizer
     optimizer: str = "adamw"
     lr: float = 1e-5
@@ -35,6 +40,8 @@ class OptimizationConfig:
 
 @dataclass
 class TrainingConfig:
+    """Config dataclass for Training."""
+
     fabric: FabricConfig = field(default_factory=FabricConfig)
     optimization: OptimizationConfig = field(default_factory=OptimizationConfig)
     strategy: str = "deepspeed"

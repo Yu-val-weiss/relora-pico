@@ -14,41 +14,49 @@ pipeline with the features:
 """
 
 import logging
+import os
+from typing import Any, Dict
+
 import lightning as L
 import torch
 import torch.nn.functional as F
-import os
+from datasets import Dataset, load_dataset
 from lightning.fabric.utilities.rank_zero import rank_zero_only
 
-from datasets import Dataset, load_dataset
-from typing import Dict, Any
-
-from src.model import Pico
-
-from src.training.utils import (
-    initialize_run_dir,
-    initialize_fabric,
-    initialize_configuration,
-    initialize_dataset,
-    initialize_tokenizer,
-    initialize_dataloader,
-    initialize_lr_scheduler,
-    initialize_checkpointing,
-    initialize_logging,
-    initialize_optimizer,
-)
 from src.checkpointing import (
+    compute_learning_dynamics_states,
     load_checkpoint,
     save_checkpoint,
     save_evaluation_results,
-    compute_learning_dynamics_states,
     save_learning_dynamics_states,
 )
-
 from src.evaluation import run_evaluation
+from src.model import Pico
+from src.training.utils import (
+    initialize_checkpointing,
+    initialize_configuration,
+    initialize_dataloader,
+    initialize_dataset,
+    initialize_fabric,
+    initialize_logging,
+    initialize_lr_scheduler,
+    initialize_optimizer,
+    initialize_run_dir,
+    initialize_tokenizer,
+)
 
 
 class Trainer:
+    """This Trainer class implements a `train` method, which is the
+    main entry point for training the Pico model. Before calling `train`, the Trainer class
+    initializes the following:
+
+        - Configuration loading and validation
+        - Model, optimizer, and dataset setup
+        - Logging and experiment tracking setup
+        - Checkpoint management
+    """
+
     def __init__(self, config_path: str):
         """
         Initializes the Trainer class. This Trainer class implements a `train` method, which is the
@@ -82,23 +90,17 @@ class Trainer:
         )
 
         # Setup Fabric
-        self.fabric = initialize_fabric(
-            self.configs["training"], self.experiment_tracker
-        )
+        self.fabric = initialize_fabric(self.configs["training"], self.experiment_tracker)
 
         # Setup Dataset, Tokenizer, and Dataloader
         self.train_dataset = initialize_dataset(self.configs["data"])
-        self.train_dataloader = initialize_dataloader(
-            self.configs["data"], self.train_dataset
-        )
+        self.train_dataloader = initialize_dataloader(self.configs["data"], self.train_dataset)
         self.tokenizer = initialize_tokenizer(self.configs["data"])
 
         # Setup Model, Optimizer, and Dataloaders
         self.model = Pico(self.configs["model"], self.fabric)
         self.optimizer = initialize_optimizer(self.configs["training"], self.model)
-        self.lr_scheduler = initialize_lr_scheduler(
-            self.configs["training"], self.optimizer
-        )
+        self.lr_scheduler = initialize_lr_scheduler(self.configs["training"], self.optimizer)
 
         # Wrap with Fabric
         self.model, self.optimizer = self.fabric.setup(self.model, self.optimizer)
@@ -183,10 +185,7 @@ class Trainer:
         )
 
         if self.should_compute_learning_dynamics:
-            if (
-                self.configs["checkpointing"].learning_dynamics.eval_data_batch
-                is not None
-            ):
+            if self.configs["checkpointing"].learning_dynamics.eval_data_batch is not None:
                 self.learning_dynamics_eval_dataset = load_dataset(
                     self.configs["checkpointing"].learning_dynamics.eval_data_batch,
                     split="val",
@@ -236,9 +235,7 @@ class Trainer:
                     self.configs["checkpointing"],
                     self.fabric,
                 )
-                self._log_evaluation_results(
-                    evaluation_results, self.train_start_gradient_step
-                )
+                self._log_evaluation_results(evaluation_results, self.train_start_gradient_step)
                 save_evaluation_results(
                     self.configs["checkpointing"],
                     self.fabric,
@@ -257,9 +254,7 @@ class Trainer:
                         self.configs["checkpointing"],
                         self.fabric,
                     )
-                    self._log_evaluation_results(
-                        evaluation_results, self.train_start_gradient_step
-                    )
+                    self._log_evaluation_results(evaluation_results, self.train_start_gradient_step)
                     save_evaluation_results(
                         self.configs["checkpointing"],
                         self.fabric,
@@ -373,13 +368,10 @@ class Trainer:
         # gradient accumulation step, the gradient_step and train_start_sub_batch_step will be
         # different.
         train_start_sub_batch_step = (
-            gradient_step
-            * self.configs["training"].optimization.gradient_accumulation_steps
+            gradient_step * self.configs["training"].optimization.gradient_accumulation_steps
         )
 
-        for sub_batch_idx, sub_batch in enumerate(
-            self.train_iterator, start=train_start_sub_batch_step
-        ):
+        for sub_batch_idx, sub_batch in enumerate(self.train_iterator, start=train_start_sub_batch_step):
             ########################################################
             #
             # Forward Pass
@@ -407,13 +399,10 @@ class Trainer:
                 "training"
             ].optimization.gradient_accumulation_steps != 0
 
-            with self.fabric.no_backward_sync(
-                self.model, enabled=should_accumulate_gradients
-            ):
+            with self.fabric.no_backward_sync(self.model, enabled=should_accumulate_gradients):
                 loss = F.cross_entropy(model_output, labels)
                 self.fabric.backward(
-                    loss
-                    / self.configs["training"].optimization.gradient_accumulation_steps
+                    loss / self.configs["training"].optimization.gradient_accumulation_steps
                 )
 
                 if torch.isnan(loss) or torch.isinf(loss):
@@ -557,20 +546,14 @@ class Trainer:
         Gathers together the training metrics computed across all processes in distributed training
         and logs them in a tree-style format.
         """
-        gathered_interval_loss = self.fabric.all_reduce(
-            interval_loss, reduce_op="sum"
-        ).item()
+        gathered_interval_loss = self.fabric.all_reduce(interval_loss, reduce_op="sum").item()
         gathered_interval_inf_or_nan_count = self.fabric.all_reduce(
             interval_inf_or_nan_count, reduce_op="sum"
         ).item()
-        gathered_interval_steps = self.fabric.all_reduce(
-            interval_steps, reduce_op="sum"
-        ).item()
+        gathered_interval_steps = self.fabric.all_reduce(interval_steps, reduce_op="sum").item()
 
         avg_loss = (
-            gathered_interval_loss / gathered_interval_steps
-            if gathered_interval_steps > 0
-            else float("inf")
+            gathered_interval_loss / gathered_interval_steps if gathered_interval_steps > 0 else float("inf")
         )
 
         self.fabric.log("train/loss", avg_loss, step=gradient_step)
@@ -591,9 +574,7 @@ class Trainer:
         self.log(f"├── Learning Rate: {self.lr_scheduler.get_last_lr()[0]:.2e}")
         self.log(f"└── Inf/NaN count: {gathered_interval_inf_or_nan_count}")
 
-    def _log_evaluation_results(
-        self, evaluation_results: Dict[str, Any], gradient_step: int
-    ):
+    def _log_evaluation_results(self, evaluation_results: Dict[str, Any], gradient_step: int):
         """Log model evaluation metrics to experiment tracking system and console."""
         self.log(f"Step {gradient_step} -- 📊 Evaluation Results")
         for i, (metric, result) in enumerate(evaluation_results.items()):

@@ -8,18 +8,20 @@ in a subdirectory. This is done to facilitate easier versioning of the HuggingFa
 """
 
 import os
+from typing import Any, Dict
+
 import yaml
 from huggingface_hub import upload_folder
+from lightning.fabric import Fabric
 from lightning.fabric.utilities.seed import _collect_rng_states, _set_rng_states
+from torch import nn
 
 # typing imports
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
-from torch import nn
 from transformers import PreTrainedTokenizerBase
-from lightning.fabric import Fabric
+
 from src.config import CheckpointingConfig
-from typing import Dict, Any
 
 
 def load_checkpoint(
@@ -63,9 +65,7 @@ def load_checkpoint(
         return None
 
     # Load from specified fabric checkpoint subdirectory
-    fabric_checkpoint_path = os.path.join(
-        checkpoint_path, checkpointing_config.fabric_checkpoint_dir
-    )
+    fabric_checkpoint_path = os.path.join(checkpoint_path, checkpointing_config.fabric_checkpoint_dir)
 
     # Load fabric-specific states
     model_state_path = os.path.join(fabric_checkpoint_path, "model.pt")

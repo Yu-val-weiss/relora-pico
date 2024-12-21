@@ -69,8 +69,7 @@ def run_paloma_evaluation(
         perplexity_counts[sub_config] = len(dataset)
 
     final_perplexity = sum(
-        perplexity_results[sub_config] * perplexity_counts[sub_config]
-        for sub_config in PALOMA_SUB_CONFIGS
+        perplexity_results[sub_config] * perplexity_counts[sub_config] for sub_config in PALOMA_SUB_CONFIGS
     ) / sum(perplexity_counts.values())
 
     enable_progress_bar()
