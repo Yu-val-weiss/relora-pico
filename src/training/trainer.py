@@ -268,6 +268,8 @@ class Trainer:
         #
         ########################################################
 
+        self.log(f"⚡️ Using {self.fabric.accelerator.__class__.__name__} as accelerator")
+
         if self.train_start_gradient_step < self.configs["training"].max_steps:
             self.log(f"✨ Starting training from step {self.train_start_gradient_step}")
             final_step = self._training_loop()
