@@ -104,7 +104,8 @@ def initialize_configuration(
     checkpointing_config = CheckpointingConfig()
 
     if config_path:
-        overrides = yaml.safe_load(open(config_path, "r"))
+        with open(config_path) as f:
+            overrides = yaml.safe_load(f)
         data_config = _apply_config_overrides(data_config, overrides.get("data", {}))
         model_config = _apply_config_overrides(model_config, overrides.get("model", {}))
         training_config = _apply_config_overrides(training_config, overrides.get("training", {}))
