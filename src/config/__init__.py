@@ -18,7 +18,7 @@ from .checkpointing_config import CheckpointingConfig
 from .data_config import DataConfig
 from .evaluation_config import EvaluationConfig
 from .logging_config import LoggingConfig
-from .model_config import ModelConfig
+from .model_config import ModelConfig, ReLoRAConfig
 from .training_config import TrainingConfig
 
 __all__ = [
@@ -27,5 +27,6 @@ __all__ = [
     "EvaluationConfig",
     "LoggingConfig",
     "ModelConfig",
+    "ReLoRAConfig",
     "TrainingConfig",
 ]

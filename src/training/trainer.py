@@ -268,7 +268,11 @@ class Trainer:
         #
         ########################################################
 
-        self.log(f"⚡️ Using {self.fabric.accelerator.__class__.__name__} as accelerator")
+        relora = self.configs["model"].relora
+        if relora is not None:
+            self.log("🪜 Using ReLoRA!")
+            self.log(f"└── Targeting modules: {', '.join(relora.target_modules)}.")
+            self.log(f"└── {relora}")
 
         if self.train_start_gradient_step < self.configs["training"].max_steps:
             self.log(f"✨ Starting training from step {self.train_start_gradient_step}")

@@ -32,6 +32,7 @@ from src.config import (
     EvaluationConfig,
     LoggingConfig,
     ModelConfig,
+    ReLoRAConfig,
     TrainingConfig,
 )
 
@@ -108,6 +109,10 @@ def initialize_configuration(
             overrides = yaml.safe_load(f)
         data_config = _apply_config_overrides(data_config, overrides.get("data", {}))
         model_config = _apply_config_overrides(model_config, overrides.get("model", {}))
+        relora_dict = model_config.relora
+        if relora_dict is not None:
+            relora_config = ReLoRAConfig(**relora_dict)
+            model_config.relora = relora_config
         training_config = _apply_config_overrides(training_config, overrides.get("training", {}))
         evaluation_config = _apply_config_overrides(evaluation_config, overrides.get("evaluation", {}))
         logging_config = _apply_config_overrides(logging_config, overrides.get("logging", {}))
