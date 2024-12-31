@@ -305,6 +305,8 @@ class Trainer:
             if relora is not None:
                 self.log("🪜 Using ReLoRA!")
                 self.log(f"└─ Targeting modules: {', '.join(relora.target_modules)}.")
+                if relora.lora_only:
+                    self.log("└─ Using only LoRA modules, will not perform merge-and-reinit.")
             self.log("Distributed Setup:")
             self.log(f"└─ Number of Devices: {self.fabric.world_size}")
             self.log(f"└─ Device Type: {device_type}")
