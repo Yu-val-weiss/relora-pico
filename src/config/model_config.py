@@ -27,6 +27,11 @@ class ReLoRAConfig:
     lora_only: bool = False
     trainable_scaling: bool = False
 
+    def __post_init__(self):
+        """Validate post initialisation."""
+        if self.r <= 0:
+            raise ValueError("ReLoRA r must be positive!")
+
 
 @dataclass
 class ModelConfig:
