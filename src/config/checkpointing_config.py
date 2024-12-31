@@ -9,11 +9,10 @@ from dataclasses import dataclass, field
 from typing import List, Optional
 
 from ._constants import (
-    BATCH_SIZE,
     CHECKPOINTS_DIR,
     EVAL_RESULTS_DIR,
     FABRIC_CHECKPOINT_DIR,
-    GRADIENT_ACCUMULATION_STEPS,
+    FABRIC_CHECKPOINT_FILENAME,
     LEARNING_DYNAMICS_DIR,
     LOGS_DIR,
     MAX_SEQ_LEN,
@@ -25,8 +24,7 @@ from ._constants import (
 class TrainingCheckpointingConfig:
     """Config dataclass for Training Checkpointing."""
 
-    load_checkpoint_path: Optional[str] = None
-    load_latest_checkpoint: bool = False
+    auto_resume: bool = True
 
 
 @dataclass
@@ -55,11 +53,12 @@ class LearningDynamicsCheckpointingConfig:
     sequence_idx: int = MAX_SEQ_LEN - 1
 
     # size of the sub-batch used for extracting learning dynamics states
-    sub_batch_size: int = BATCH_SIZE // GRADIENT_ACCUMULATION_STEPS
+    batch_size: int = 8
 
-    # Path to the evaluation data batch - used across learning dynamics checkpointing for consistency
+    # Path to evaluation dataset - used across learning dynamics checkpointing for consistency
     # NOTE: set to None to disable extracting learning dynamics states for an eval_batch
-    eval_data_batch: Optional[str] = "pico-lm/pretokenized-paloma-tinsy"
+    # NOTE: this dataset should be small, ideally just a batch of additional data
+    eval_data: Optional[str] = "pico-lm/pretokenized-paloma-tinsy"
 
 
 @dataclass
@@ -76,7 +75,9 @@ class CheckpointingConfig:
     checkpoints_dir: str = CHECKPOINTS_DIR
     logs_dir: str = LOGS_DIR
     fabric_checkpoint_dir: str = FABRIC_CHECKPOINT_DIR
+    fabric_checkpoint_filename: str = FABRIC_CHECKPOINT_FILENAME
     learning_dynamics_dir: str = LEARNING_DYNAMICS_DIR
+
     # How often to save checkpoints
     save_every_n_steps: int = 5000
 
