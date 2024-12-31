@@ -1,13 +1,11 @@
 checkpointing:
   run_name: local
-  qualify_run_name: false
-
   save_every_n_steps: 10
 
-  save_checkpoint_repo_id: null
+  save_checkpoint_repo_id: null # set to null to disable uploading checkpoints to HuggingFace Hub
 
   training:
-    load_latest_checkpoint: false
+    auto_resume: true
   
   learning_dynamics:
     layer_suffixes: []
@@ -18,18 +16,20 @@ model:
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy
   dataloader:
-    full_batch_size: 1
-    sub_batch_size: 1
+    batch_size: 1
+    mini_batch_size: 1
     max_seq_len: 10
   
-logging:
-  experiment_tracker: null # set to null to disable experiment tracking
-
-  log_every_n_steps: 10
+monitoring:
+  logging:
+    log_every_n_steps: 10
+  experiment_tracker:
+    framework: null
 
 training:
   fabric: 
     accelerator: mps
+    strategy: auto
 
   learning_rate: 0.001
   max_steps: 10
@@ -41,4 +41,4 @@ training:
     gradient_accumulation_steps: 1
 
 evaluation:
-  evaluation_metrics: null
+  metrics: null
