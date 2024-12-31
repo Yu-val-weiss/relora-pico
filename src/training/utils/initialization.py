@@ -72,6 +72,16 @@ def _apply_config_overrides(config, overrides: dict):
     return config
 
 
+def _init_relora_from_dict(model_config: ModelConfig):
+    relora_dict = model_config.relora
+    if relora_dict is not None:
+        if "target_modules" not in relora_dict:
+            raise ValueError("List of ReLoRA target modules required!")
+        if "reset_frequency" not in relora_dict:
+            raise ValueError("ReLoRA reset frequency required!")
+        model_config.relora = ReLoRAConfig(**relora_dict)
+
+
 def initialize_configuration(
     config_path: Optional[str] = None,
 ) -> Dict[
@@ -109,10 +119,7 @@ def initialize_configuration(
             overrides = yaml.safe_load(f)
         data_config = _apply_config_overrides(data_config, overrides.get("data", {}))
         model_config = _apply_config_overrides(model_config, overrides.get("model", {}))
-        relora_dict = model_config.relora
-        if relora_dict is not None:
-            relora_config = ReLoRAConfig(**relora_dict)
-            model_config.relora = relora_config
+        _init_relora_from_dict(model_config)
         training_config = _apply_config_overrides(training_config, overrides.get("training", {}))
         evaluation_config = _apply_config_overrides(evaluation_config, overrides.get("evaluation", {}))
         monitoring_config = _apply_config_overrides(monitoring_config, overrides.get("monitoring", {}))
