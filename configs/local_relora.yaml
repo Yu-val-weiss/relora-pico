@@ -1,5 +1,5 @@
 checkpointing:
-  run_name: local
+  run_name: local_relora
   save_every_n_steps: 10
 
   save_checkpoint_repo_id: null # set to null to disable uploading checkpoints to HuggingFace Hub
