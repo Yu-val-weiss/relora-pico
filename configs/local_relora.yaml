@@ -5,7 +5,7 @@ checkpointing:
   save_checkpoint_repo_id: null # set to null to disable uploading checkpoints to HuggingFace Hub
 
   training:
-    auto_resume: true
+    auto_resume: false
   
   learning_dynamics:
     layer_suffixes: []
