@@ -15,7 +15,7 @@ from ._constants import BATCH_SIZE, MAX_SEQ_LEN, VOCAB_SIZE
 class ReLoRAConfig:
     """Config dataclass for ReLoRA.
 
-    Hyperparameters taken from the [source implementation](https://github.com/Guitaricet/relora/blob/main/peft_pretraining/relora.py).
+    Hyperparameters taken from ReLoRA's [source implementation](https://github.com/Guitaricet/relora/blob/main/peft_pretraining/relora.py).
     """
 
     target_modules: list[str]
