@@ -20,8 +20,7 @@ import lightning as L
 import torch
 import wandb
 import yaml
-from datasets import Dataset, load_dataset
-from lightning.fabric.loggers import IterableDataset
+from datasets import Dataset, IterableDataset, load_dataset
 from lightning.fabric.loggers import Logger as FabricLogger
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
