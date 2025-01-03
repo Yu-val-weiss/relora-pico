@@ -311,8 +311,8 @@ class Trainer:
             self.log(f"└─ Trainable Parameters: {trainable_params:,}")
             if relora is not None:
                 self.log("Using ReLoRA!")
-                self.log(f"└─ Targeting modules: {', '.join(relora.target_modules)}.")
-                self.log(f"└─ Reset frequency: {', '.join(relora.reset_frequency)}.")
+                self.log(f"└─ Targeting modules: {', '.join(relora.target_modules)}")
+                self.log(f"└─ Reset frequency: {relora.reset_frequency}")
                 if relora.lora_only:
                     self.log("└─ Using only LoRA modules, will not perform merge-and-reinit.")
             self.log("Distributed Setup:")
@@ -581,6 +581,19 @@ class Trainer:
                         )
 
                 self.fabric.barrier()  # Final sync before continuing training
+
+            # relora reset if necessary
+            can_reset_relora = self.configs["model"].relora is not None and not should_accumulate_gradients
+
+            if (
+                can_reset_relora
+                and batch_step > self.configs["training"].optimization.lr_warmup_steps
+                and batch_step % self.configs["model"].relora.reset_frequency == 1
+            ):
+                self.log(f"Resetting ReLoRA at step {batch_step}")
+                # TODO: implement reset
+
+            # TODO: implement optimizer reset
 
             # Break if we've reached training steps
             if batch_step >= self.configs["training"].max_steps:
