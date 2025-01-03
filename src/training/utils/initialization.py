@@ -10,6 +10,7 @@ more experimental stuff to you.
 """
 
 import logging
+import math
 import os
 import warnings
 from dataclasses import fields, is_dataclass
@@ -72,14 +73,13 @@ def _apply_config_overrides(config, overrides: dict):
     return config
 
 
-def _init_relora_from_dict(model_config: ModelConfig):
+def _init_relora_config(model_config: ModelConfig):
     relora_dict = model_config.relora
-    if relora_dict is not None:
-        if "target_modules" not in relora_dict:
-            raise ValueError("List of ReLoRA target modules required!")
-        if "reset_frequency" not in relora_dict:
-            raise ValueError("ReLoRA reset frequency required!")
-        model_config.relora = ReLoRAConfig(**relora_dict)
+    if "target_modules" not in relora_dict:
+        raise ValueError("List of ReLoRA target modules required!")
+    if "reset_frequency" not in relora_dict:
+        raise ValueError("ReLoRA reset frequency required!")
+    model_config.relora = ReLoRAConfig(**relora_dict)
 
 
 def initialize_configuration(
@@ -119,13 +119,17 @@ def initialize_configuration(
             overrides = yaml.safe_load(f)
         data_config = _apply_config_overrides(data_config, overrides.get("data", {}))
         model_config = _apply_config_overrides(model_config, overrides.get("model", {}))
-        _init_relora_from_dict(model_config)
         training_config = _apply_config_overrides(training_config, overrides.get("training", {}))
         evaluation_config = _apply_config_overrides(evaluation_config, overrides.get("evaluation", {}))
         monitoring_config = _apply_config_overrides(monitoring_config, overrides.get("monitoring", {}))
         checkpointing_config = _apply_config_overrides(
             checkpointing_config, overrides.get("checkpointing", {})
         )
+
+        # ReLoRA config initialisation
+        if model_config.relora is not None:
+            _init_relora_config(model_config)
+            training_config.relora_reset_freq = model_config.relora.reset_frequency
 
     configs = {
         "data": data_config,
@@ -385,6 +389,58 @@ def initialize_lr_scheduler(training_config: TrainingConfig, optimizer: torch.op
             optimizer,
             lr_lambda,
         )
+
+    elif training_config.optimization.lr_scheduler == "relora_jagged_cosine":
+
+        def _lr_lambda(
+            curr_step, first_warmup_steps, max_steps, restart_warmup_steps, restart_frequency, min_lr_ratio
+        ):
+            if not (0 < min_lr_ratio <= 1.0):
+                raise ValueError("If using relora_jagged_cosine scheduler, min_lr_ratio must be in (0,1]")
+            if restart_warmup_steps <= 0:
+                raise ValueError("If using relora_jagged_cosine scheduler, restart_warmup_steps must be > 0")
+            if restart_frequency % first_warmup_steps != 0:
+                raise ValueError("If using relora_jagged_cosine scheduler, restart_warmup_steps must be > 0")
+
+            def _get_cosine_decay(progress: float) -> float:
+                return 0.5 * (1.0 + math.cos(math.pi * progress))
+
+            # Initial (linear warmup phase)
+            if curr_step < first_warmup_steps:
+                return float(curr_step) / float(max(1, max_steps))
+
+            # Calculate restart step and number
+            restart_step = curr_step % restart_frequency
+            restart_number = curr_step // restart_frequency
+
+            # ReLoRA restart warmup phase
+            if restart_step < restart_warmup_steps and curr_step >= restart_frequency:
+                end_of_warmup_progress = float(
+                    restart_number * restart_frequency + restart_warmup_steps - first_warmup_steps
+                ) / float(max(1, max_steps - first_warmup_steps))
+
+                decay = _get_cosine_decay(end_of_warmup_progress)
+                warmup_lr = min_lr_ratio + (1.0 - min_lr_ratio) * decay
+
+                return float(restart_step) / float(max(1, restart_warmup_steps)) * warmup_lr
+
+            # Standard cosine decay phase
+            progress = float(curr_step - first_warmup_steps) / float(max(1, max_steps - first_warmup_steps))
+            decay = _get_cosine_decay(progress)
+            return min_lr_ratio + (1.0 - min_lr_ratio) * decay
+
+        lr_scheduler = torch.optim.lr_scheduler.LambdaLR(
+            optimizer,
+            lambda step: _lr_lambda(
+                step,
+                training_config.optimization.lr_warmup_steps,
+                training_config.max_steps,
+                training_config.optimization.restart_warmup_steps,
+                training_config.relora_reset_freq,
+                training_config.optimization.min_lr_ratio,
+            ),
+        )
+
     else:
         raise ValueError(f"Invalid learning rate scheduler: {training_config.optimization.lr_scheduler}")
 
