@@ -14,17 +14,16 @@ model:
   n_layers: 2
   relora:
     target_modules: 
-      - test
-      - test2
-      - test3
-    reset_frequency: 1000
+      - SwiGLU
+      - Attention
+    reset_frequency: 10
     r: 256
 
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy
   dataloader:
-    batch_size: 1
-    mini_batch_size: 1
+    batch_size: 2
+    mini_batch_size: 2
     max_seq_len: 10
   
 monitoring:
@@ -38,14 +37,16 @@ training:
     accelerator: mps
     strategy: auto
 
-  learning_rate: 0.001
-  max_steps: 10
+  max_steps: 50
 
   optimization:
+    lr_scheduler: relora_jagged_cosine
     lr: 0.001
-    lr_warmup_steps: 10
+    lr_warmup_steps: 5
+    min_lr_ratio: 0.1
+    restart_warmup_steps: 5
 
-    gradient_accumulation_steps: 1
+    gradient_accumulation_steps: 2
 
 evaluation:
   metrics: null
