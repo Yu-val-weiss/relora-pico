@@ -166,7 +166,9 @@ class ReLoRAPico(Pico):
             if not isinstance(module, nn.Linear):
                 continue
 
-            if not any(target_key in module_name for target_key in relora_conf.target_modules):
+            if not any(
+                target_key.lower() in module_name.lower() for target_key in relora_conf.target_modules
+            ):
                 continue
 
             weight_data = module.weight.data if relora_conf.keep_original_weights else None
@@ -196,7 +198,7 @@ class ReLoRAPico(Pico):
             del module
 
             parent = self.get_parent(module_name)
-            child_suffix = module_name.split[-1]
+            child_suffix = module_name.split(".")[-1]
             setattr(parent, child_suffix, relora_module)
 
     def get_parent(self, module_name: str) -> nn.Module:
