@@ -310,8 +310,9 @@ class Trainer:
             self.log(f"└─ Total Parameters: {total_params:,}")
             self.log(f"└─ Trainable Parameters: {trainable_params:,}")
             if relora is not None:
-                self.log("🪜 Using ReLoRA!")
+                self.log("Using ReLoRA!")
                 self.log(f"└─ Targeting modules: {', '.join(relora.target_modules)}.")
+                self.log(f"└─ Reset frequency: {', '.join(relora.reset_frequency)}.")
                 if relora.lora_only:
                     self.log("└─ Using only LoRA modules, will not perform merge-and-reinit.")
             self.log("Distributed Setup:")
