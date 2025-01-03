@@ -19,6 +19,27 @@ from config.model_config import ModelConfig
 from model.pico import PicoHFConfig
 
 
+def functional_merge_and_reinit(module: nn.Module) -> None:
+    """Functionally merge and reinit a ReLoRALinear module. If module is a different type to ReLoRALinear,
+    this function is a no-op.
+
+    Args:
+        module (nn.Module): module to merge and reinit.
+    """
+    if not isinstance(module, ReLoRALinear):
+        return
+
+    # merge
+    delta = (module.B.weight @ module.A.weight) * module._scale()
+    module.weight.data += delta
+
+    # reinit
+    nn.init.kaiming_uniform_(module.A.weight, a=math.sqrt(5))
+    nn.init.zeros_(module.B.weight)
+    if module.trainable_scaling:
+        nn.init.zeros_(module.s)
+
+
 class ReLoRALinear(nn.Module):
     """Linear ReLoRA layer. δW = s * W_A * W_B."""
 
