@@ -5,6 +5,7 @@ Specifies the hyperparameters for the training process, i.e. the optimizer, lear
 """
 
 from dataclasses import dataclass, field
+from typing import Literal
 
 from ._constants import GRADIENT_ACCUMULATION_STEPS
 
@@ -29,8 +30,12 @@ class OptimizationConfig:
     lr: float = 1e-5
 
     # Learning Rate Scheduler
-    lr_scheduler: str = "linear_with_warmup"
+    lr_scheduler: Literal["linear_with_warmup", "relora_jagged_cosine"] = "linear_with_warmup"
     lr_warmup_steps: int = 50_000
+
+    # Extra LR Config for relora_jagged_cosine
+    restart_warmup_steps: int = 0
+    min_lr_ratio: float = 0.0
 
     # Gradient Accumulation
     gradient_accumulation_steps: int = GRADIENT_ACCUMULATION_STEPS
