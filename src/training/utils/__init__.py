@@ -16,6 +16,7 @@ from .initialization import (
     initialize_run_dir,
     initialize_tokenizer,
 )
+from .relora_training import reset_optimizer_for_relora
 
 __all__ = [
     "initialize_checkpointing",
@@ -29,4 +30,5 @@ __all__ = [
     "initialize_optimizer",
     "initialize_run_dir",
     "initialize_tokenizer",
+    "reset_optimizer_for_relora",
 ]
