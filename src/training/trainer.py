@@ -31,7 +31,7 @@ from src.checkpointing import (
     save_learning_dynamics_states,
 )
 from src.evaluation import run_evaluation
-from src.model import Pico
+from src.model import Pico, ReLoRAPico
 from src.training.utils import (
     initialize_checkpointing,
     initialize_configuration,
@@ -116,7 +116,14 @@ class Trainer:
         self.tokenizer = initialize_tokenizer(data_config=self.configs["data"])
 
         # Setup Model, Optimizer, and Dataloaders
-        self.model = Pico(model_config=self.configs["model"], fabric=self.fabric)
+        relora_conf = self.configs["model"].relora
+        use_relora = relora_conf is not None
+        self.model = (
+            ReLoRAPico(model_config=self.configs["model"], fabric=self.fabric)
+            if use_relora
+            else Pico(model_config=self.configs["model"], fabric=self.fabric)
+        )
+
         self.optimizer = initialize_optimizer(training_config=self.configs["training"], model=self.model)
         self.lr_scheduler = initialize_lr_scheduler(
             training_config=self.configs["training"], optimizer=self.optimizer

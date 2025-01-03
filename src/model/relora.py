@@ -8,15 +8,16 @@ Adapted from:
 """
 
 import math
-from typing import Optional, Union
+from dataclasses import asdict
+from typing import Any, Optional, Union
 
 import lightning as L
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from config.model_config import ModelConfig
-from model.pico import PicoHFConfig
+from src.config.model_config import ModelConfig, ReLoRAConfig
+from src.model.pico import Pico, PicoHF, PicoHFConfig
 
 
 def functional_merge_and_reinit(module: nn.Module) -> None:
@@ -45,8 +46,8 @@ class ReLoRALinear(nn.Module):
 
     def __init__(
         self,
-        in_feats: int,
-        out_feats: int,
+        in_features: int,
+        out_features: int,
         model_config: Union["ModelConfig", "PicoHFConfig"],
         fabric: Optional["L.Fabric"] = None,
         *,
@@ -73,7 +74,7 @@ class ReLoRALinear(nn.Module):
             if bias_data is None:
                 if bias:
                     bias_data = torch.zeros(
-                        out_feats,
+                        out_features,
                         device=device,
                         requires_grad=True,
                     )
@@ -81,13 +82,13 @@ class ReLoRALinear(nn.Module):
 
         if weight_data is None:
             # NOTE trainable weights are W_a and W_b
-            weight_data = torch.zeros(out_feats, in_feats, device=device)
+            weight_data = torch.zeros(out_features, in_features, device=device)
 
         self.weight = nn.Parameter(weight_data, requires_grad=False)
 
         # initialise other parameters
-        self.in_feats = in_feats
-        self.out_feats = out_feats
+        self.in_feats = in_features
+        self.out_feats = out_features
         self.r = relora_config.r
         self.lora_alpha = relora_config.lora_alpha
         self.dropout = nn.Dropout(p=relora_config.lora_dropout)
@@ -138,3 +139,160 @@ class ReLoRALinear(nn.Module):
         nn.init.zeros_(self.B.weight)
         if self.trainable_scaling:
             nn.init.zeros_(self.s)
+
+
+class ReLoRAPico(Pico):
+    """ReLoRA wrapper for the Pico model."""
+
+    def __init__(
+        self,
+        model_config: Union["ModelConfig", "ReLoRAPicoHFConfig"],
+        fabric: Optional["L.Fabric"] = None,
+    ):
+        """Initialise the Pico model.
+
+        Args:
+            model_config (Union[ModelConfig, PicoHFConfig]): Model config.
+            fabric (L.Fabric, optional): Fabric instance to use. Defaults to None.
+        """
+        super().__init__(model_config, fabric)
+
+        relora_conf = self.config.relora
+
+        if relora_conf is None:
+            raise ValueError("Cannot init ReLoRAPico model with None ReLoRA config.")
+
+        for module_name, module in self.named_modules():
+            if not isinstance(module, nn.Linear):
+                continue
+
+            if not any(target_key in module_name for target_key in relora_conf.target_modules):
+                continue
+
+            weight_data = module.weight.data if relora_conf.keep_original_weights else None
+            bias_data = None
+            if module.bias is not None:
+                bias_data = module.bias.data if relora_conf.keep_original_weights else None
+
+            relora_module = ReLoRALinear(
+                module.in_features,
+                module.out_features,
+                self.config,
+                self.fabric,
+                bias=module.bias is not None,
+                bias_data=bias_data,
+                weight_data=weight_data,
+            )
+
+            if relora_conf.keep_original_weights:
+                nn.init.zeros_(relora_module.A.weight)  # no need to do B, since already init at 0
+
+            if relora_conf.lora_only:
+                assert (
+                    not relora_conf.keep_original_weights
+                ), "Only one of lora_only and keep_original_weights can be true"
+                module.weight = None
+
+            del module
+
+            parent = self.get_parent(module_name)
+            child_suffix = module_name.split[-1]
+            setattr(parent, child_suffix, relora_module)
+
+    def get_parent(self, module_name: str) -> nn.Module:
+        """Gets the module's parent.
+
+        Args:
+            module_name (str): Child's fully qualified name.
+
+        Returns:
+            nn.Module: Parent module.
+        """
+        module_names_list = module_name.split(".")
+        parent_name = ".".join(module_names_list[:-1])
+        return self.get_submodule(parent_name)
+
+    def merge_and_reinit(self) -> None:
+        """Merge and reinit all ReLoRALinear layers."""
+
+        for module in self.modules():
+            if isinstance(module, ReLoRALinear):
+                module.merge_and_reinit()
+
+    def convert_to_hf_model(self) -> "ReLoRAPicoHF":
+        """Convert the Lightning model to a HuggingFace model."""
+        # Create HF config without fabric-specific settings
+        hf_config = ReLoRAPicoHFConfig.from_dataclass(self.config)
+
+        # Create new HF model
+        hf_model = ReLoRAPicoHF(hf_config)
+
+        # Copy state dict, excluding fabric-specific keys
+        hf_model.load_state_dict(self.state_dict(prefix="pico."))
+
+        return hf_model
+
+
+class ReLoRAPicoHFConfig(PicoHFConfig):
+    """ReLoRA wrapper for HFConfig."""
+
+    model_type = "relora-pico"
+
+    def to_dict(self) -> dict:
+        """Convert config to dictionary for JSON serialization."""
+        config_dict = super().to_dict()
+        if config_dict.get("relora") is not None:
+            config_dict["relora"] = asdict(self.relora)
+        return config_dict
+
+    @classmethod
+    def from_dict(cls, config_dict: dict[str, Any], **kwargs) -> "ReLoRAPicoHFConfig":
+        """Create a PicoHFConfig from a dict.
+
+        Args:
+            config_dict (Dict[str, Any]): Config dict to use.
+            **kwargs: Keyword arguments, see below.
+
+        Keyword arguments:
+            return_unused_kwargs (bool, optional): If set to True, returns all unused kwargs as a dictionary
+            in second element of tuple. Defaults to False.
+
+        Returns:
+            ReLoRAPicoHFConfig: Config for HuggingFace-compatible version of ReLoRAPico.
+        """
+        # NOTE The typical from_dict method doesn't actually set the attributes unless they are
+        # defined in the constructor.
+
+        return_unused_kwargs = kwargs.get("return_unused_kwargs", False)
+
+        pico_config = super().from_dict(config_dict)
+        if return_unused_kwargs:
+            pico_config, unused_kwargs = pico_config
+
+        if "relora" in config_dict:
+            pico_config.relora = ReLoRAConfig(**config_dict["relora"])
+
+        if return_unused_kwargs:
+            return pico_config, unused_kwargs
+        return pico_config
+
+
+class ReLoRAPicoHF(PicoHF):
+    """ReLoRA wrapper for HuggingFace wrapper for Pico model."""
+
+    config_class = ReLoRAPicoHFConfig
+    _no_split_modules = ["PicoBlock", "Attention", "SwiGLU", "RMSNorm", "ReLoRALinear"]
+
+    def __init__(self, config: ReLoRAPicoHFConfig):
+        """Initialise HuggingFace wrapper for Pico model.
+
+        Args:
+            config (ReLoRaPicoHFConfig): Config to initialise from.
+        """
+        super().__init__(config)
+        self.pico = ReLoRAPico(config)
+
+
+ReLoRAPicoHFConfig.register_for_auto_class()
+ReLoRAPicoHF.register_for_auto_class("AutoModel")
+ReLoRAPicoHF.register_for_auto_class("AutoModelForCausalLM")
