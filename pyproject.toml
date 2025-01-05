@@ -26,6 +26,7 @@ deepspeed = "^0.16.2"
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
 jupyter = "^1.1.1"
+matplotlib = "^3.10.0"
 
 [build-system]
 requires = ["poetry-core"]
