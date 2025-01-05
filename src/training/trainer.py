@@ -44,6 +44,7 @@ from src.training.utils import (
     initialize_optimizer,
     initialize_run_dir,
     initialize_tokenizer,
+    reset_optimizer_for_relora,
 )
 
 
@@ -124,7 +125,9 @@ class Trainer:
             else Pico(model_config=self.configs["model"], fabric=self.fabric)
         )
 
-        self.optimizer = initialize_optimizer(training_config=self.configs["training"], model=self.model)
+        self.optimizer, self.optimizer_state_keys = initialize_optimizer(
+            training_config=self.configs["training"], model=self.model
+        )
         self.lr_scheduler = initialize_lr_scheduler(
             training_config=self.configs["training"], optimizer=self.optimizer
         )
@@ -428,6 +431,14 @@ class Trainer:
             batch_step * self.configs["training"].optimization.gradient_accumulation_steps
         )
 
+        relora_active = self.configs["model"].relora is not None
+
+        relora_params = (
+            [p for n, p in self.model.named_parameters() if p.requires_grad and "_lora" in n]
+            if relora_active
+            else []
+        )
+
         for sub_batch_step, sub_batch in enumerate(self.train_iterator, start=initial_sub_batch_step):
             ########################################################
             #
@@ -583,17 +594,27 @@ class Trainer:
                 self.fabric.barrier()  # Final sync before continuing training
 
             # relora reset if necessary
-            can_reset_relora = self.configs["model"].relora is not None and not should_accumulate_gradients
+            can_reset_relora = relora_active and not should_accumulate_gradients
 
             if (
                 can_reset_relora
                 and batch_step > self.configs["training"].optimization.lr_warmup_steps
                 and batch_step % self.configs["model"].relora.reset_frequency == 1
             ):
-                self.log(f"Resetting ReLoRA at step {batch_step}")
-                # TODO: implement reset
+                self.log(f"Resetting ReLoRA and optimizer at step {batch_step}")
+                self.log(f"├── Current learning rate is {self.lr_scheduler.get_last_lr()[0]:.2e}")
 
-            # TODO: implement optimizer reset
+                self.log("├── Performing ReLoRA reset...")
+                self.model.merge_and_reinit()
+                self.log("├── ReLoRA reset successfully!")
+
+                self.log("├── Performing optimizer reset...")
+                reset_optimizer_for_relora(
+                    self.optimizer,
+                    reset_params=relora_params,
+                    optimizer_state_keys=self.optimizer_state_keys,
+                )
+                self.log("└── Optimizer reset successfully!")
 
             # Break if we've reached training steps
             if batch_step >= self.configs["training"].max_steps:
