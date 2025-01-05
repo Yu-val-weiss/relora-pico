@@ -31,12 +31,12 @@ def functional_merge_and_reinit(module: nn.Module) -> None:
         return
 
     # merge
-    delta = (module.B.weight @ module.A.weight) * module._scale()
+    delta = (module.B_lora.weight @ module.A_lora.weight) * module._scale()
     module.weight.data += delta
 
     # reinit
-    nn.init.kaiming_uniform_(module.A.weight, a=math.sqrt(5))
-    nn.init.zeros_(module.B.weight)
+    nn.init.kaiming_uniform_(module.A_lora.weight, a=math.sqrt(5))
+    nn.init.zeros_(module.B_lora.weight)
     if module.trainable_scaling:
         nn.init.zeros_(module.s)
 
@@ -96,12 +96,12 @@ class ReLoRALinear(nn.Module):
         self.trainable_scaling = relora_config.trainable_scaling
 
         # δW = s * W_A * W_B
-        self.A = nn.Linear(self.in_feats, self.r, bias=False)
-        self.B = nn.Linear(self.r, self.out_feats, bias=False)
+        self.A_lora = nn.Linear(self.in_feats, self.r, bias=False)
+        self.B_lora = nn.Linear(self.r, self.out_feats, bias=False)
 
         # init A and B
-        nn.init.kaiming_uniform_(self.A.weight, a=math.sqrt(5))
-        nn.init.zeros_(self.B.weight)
+        nn.init.kaiming_uniform_(self.A_lora.weight, a=math.sqrt(5))
+        nn.init.zeros_(self.B_lora.weight)
 
         # init s, the scaling factor
         if self.trainable_scaling:
@@ -120,7 +120,7 @@ class ReLoRALinear(nn.Module):
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         """Computes the forward pass."""
-        lora_result = self.B(self.A(self.dropout(x))) * self._scale()
+        lora_result = self.B_lora(self.A_lora(self.dropout(x))) * self._scale()
         if self.lora_only:
             return lora_result
         return F.linear(x, self.weight, self.bias) + lora_result
@@ -132,11 +132,11 @@ class ReLoRALinear(nn.Module):
             return
 
         # merge into weight (NOTE B @ A to preserve correct dimensions)
-        self.weight.data += self.B.weight @ self.A.weight
+        self.weight.data += self.B_lora.weight @ self.A_lora.weight
 
         # reinitialise A and B
-        nn.init.kaiming_uniform_(self.A.weight, a=math.sqrt(5))
-        nn.init.zeros_(self.B.weight)
+        nn.init.kaiming_uniform_(self.A_lora.weight, a=math.sqrt(5))
+        nn.init.zeros_(self.B_lora.weight)
         if self.trainable_scaling:
             nn.init.zeros_(self.s)
 
@@ -187,7 +187,7 @@ class ReLoRAPico(Pico):
             )
 
             if relora_conf.keep_original_weights:
-                nn.init.zeros_(relora_module.A.weight)  # no need to do B, since already init at 0
+                nn.init.zeros_(relora_module.A_lora.weight)  # no need to do B, since already init at 0
 
             if relora_conf.lora_only:
                 assert (
