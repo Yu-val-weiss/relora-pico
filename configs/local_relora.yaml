@@ -28,7 +28,7 @@ data:
   
 monitoring:
   logging:
-    log_every_n_steps: 10
+    log_every_n_steps: 1
   experiment_tracker:
     framework: null
 
@@ -46,7 +46,7 @@ training:
     min_lr_ratio: 0.1
     restart_warmup_steps: 5
 
-    gradient_accumulation_steps: 2
+    gradient_accumulation_steps: 1
 
 evaluation:
   metrics: null
