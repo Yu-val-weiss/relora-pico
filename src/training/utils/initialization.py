@@ -324,7 +324,9 @@ def initialize_dataloader(
 ########################################################
 
 
-def initialize_optimizer(training_config: TrainingConfig, model: torch.nn.Module):
+def initialize_optimizer(
+    training_config: TrainingConfig, model: torch.nn.Module
+) -> tuple[torch.optim.Optimizer, list[str]]:
     """Initialize the optimizer for model training.
 
     Creates an optimizer instance based on the configuration settings.
@@ -338,17 +340,20 @@ def initialize_optimizer(training_config: TrainingConfig, model: torch.nn.Module
             - optimization.lr (float): Learning rate for the optimizer
         model: PyTorch model whose parameters will be optimized.
 
-    Returns:
+    Returns: tuple of
         torch.optim.Optimizer: Configured optimizer instance.
 
+        list[str]: optimizer state keys for reset
     """
 
+    optimizer_state_keys = None
     if training_config.optimization.optimizer == "adamw":
         optimizer = torch.optim.AdamW(model.parameters(), lr=training_config.optimization.lr)
+        optimizer_state_keys = ["exp_avg", "exp_avg_sq"]
     else:
         raise ValueError(f"Invalid optimizer: {training_config.optimization.optimizer}")
 
-    return optimizer
+    return optimizer, optimizer_state_keys
 
 
 def initialize_lr_scheduler(training_config: TrainingConfig, optimizer: torch.optim.Optimizer):
@@ -407,7 +412,7 @@ def initialize_lr_scheduler(training_config: TrainingConfig, optimizer: torch.op
 
             # Initial (linear warmup phase)
             if curr_step < first_warmup_steps:
-                return float(curr_step) / float(max(1, max_steps))
+                return float(curr_step) / float(max(1, first_warmup_steps))
 
             # Calculate restart step and number
             restart_step = curr_step % restart_frequency
