@@ -37,6 +37,3 @@ line-length = 109
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "B", "I", "D1", "D417", "D417", "D419"]
-
-[tool.poe.tasks.get_intr]
-shell = "sintr -A CAINES-SL3-GPU -p ampere -N1 -t 1:0:0 --qos=INTR --mail-type=ALL --gres=gpu:1"
