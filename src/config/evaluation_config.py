@@ -14,6 +14,8 @@ from src.config._constants import MAX_SEQ_LEN
 class PalomaEvaluationConfig:
     """Config dataclass for Paloma Evaluation."""
 
+    dataset_name: str = "pico-lm/pretokenized-paloma-tinsy"
+    dataset_split: str = "val"
     max_length: int = MAX_SEQ_LEN
     batch_size: int = 16
 

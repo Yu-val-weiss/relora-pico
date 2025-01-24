@@ -24,16 +24,13 @@ Adapted from:
     - LLAMA: https://github.com/meta/llama
 """
 
-import math
 from dataclasses import asdict
-
-# typing imports
 from typing import TYPE_CHECKING, Any, Dict, Optional, Tuple, Union
 
 import torch
-import torch.backends.cuda
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.nn.attention import SDPBackend, sdpa_kernel
 from transformers import PretrainedConfig, PreTrainedModel
 from transformers.modeling_outputs import CausalLMOutput, CausalLMOutputWithPast
 
@@ -330,23 +327,27 @@ class Attention(nn.Module):
             cached_keys = None
             cached_values = None
 
-        if self.n_rep > 1:
-            keys = torch.repeat_interleave(keys, self.n_rep, dim=2)
-            values = torch.repeat_interleave(values, self.n_rep, dim=2)
-
-        # Dimension of queries: (bs, n_heads, seq_len, head_dim)
-        # Dimension of keys/values: (bs, n_kv_heads, (cache_len) + seq_len, head_dim)j
         queries = queries.transpose(1, 2)
         keys = keys.transpose(1, 2)
         values = values.transpose(1, 2)
 
-        scores = torch.matmul(queries, keys.transpose(2, 3)) / math.sqrt(self.head_dim)
-        if mask is not None:
-            scores = scores + mask  # (bs, n_heads, seq_len, (cache_len) + seq_len)
-        scores = F.softmax(scores.float(), dim=-1).type_as(queries)
-        output = torch.matmul(scores, values)  # (bs, n_heads, seq_len, head_dim)
-        output = output.transpose(1, 2).contiguous().view(bsz, seq_len, -1)
-        output = self.o_proj(output)
+        # see if cuda available
+        if self.fabric and self.fabric.device.type == "cuda":
+            backend = SDPBackend.CUDNN_ATTENTION
+        else:
+            backend = SDPBackend.MATH
+
+        with sdpa_kernel(backends=[backend]):
+            attn_output = F.scaled_dot_product_attention(
+                queries,
+                keys,
+                values,
+                attn_mask=mask,
+                enable_gqa=True if self.n_rep > 1 else False,
+            )
+
+        attn_output = attn_output.transpose(1, 2).contiguous().view(bsz, seq_len, -1)
+        output = self.o_proj(attn_output)
 
         return output, (cached_keys, cached_values)
 

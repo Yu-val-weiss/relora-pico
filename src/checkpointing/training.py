@@ -14,8 +14,8 @@ import torch.nn as nn
 import yaml
 from huggingface_hub import upload_folder
 from lightning import Fabric
-
-# from lightning.fabric.utilities.seed import _collect_rng_states, _set_rng_states
+from lightning.fabric.strategies import DeepSpeedStrategy
+from lightning.fabric.utilities.seed import _collect_rng_states, _set_rng_states
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
 from transformers import PreTrainedTokenizerBase
@@ -68,7 +68,7 @@ def load_checkpoint(
         "_lr_scheduler": lr_scheduler,
     }
 
-    if "deepspeed" not in str(fabric.strategy):
+    if not isinstance(fabric.strategy, DeepSpeedStrategy):
         fabric_load_file = os.path.join(
             fabric_checkpoint_path, checkpointing_config.fabric_checkpoint_filename
         )
@@ -80,6 +80,10 @@ def load_checkpoint(
 
     # NOTE: extra_state will contain any additional states that were saved in the checkpoint
     checkpoint_step = extra_state["_checkpoint_step"]
+
+    if "_rng_states" in extra_state:
+        _rng_states = extra_state["_rng_states"]
+        _set_rng_states(_rng_states)
 
     return model, optimizer, lr_scheduler, checkpoint_step
 
@@ -184,7 +188,8 @@ def save_checkpoint(
         "_checkpoint_step": checkpoint_step,
     }
 
-    if "deepspeed" not in str(fabric.strategy):
+    if not isinstance(fabric.strategy, DeepSpeedStrategy):
+        checkpoint_state["_rng_states"] = _collect_rng_states()
         fabric_save_file = os.path.join(
             fabric_checkpoint_path, checkpointing_config.fabric_checkpoint_filename
         )

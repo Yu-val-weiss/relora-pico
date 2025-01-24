@@ -37,7 +37,7 @@ class ReLoRAConfig:
 class ModelConfig:
     """Config dataclass for the Model."""
 
-    d_model: int = 192
+    d_model: int = 768
     n_layers: int = 12
 
     vocab_size: int = VOCAB_SIZE
@@ -47,7 +47,7 @@ class ModelConfig:
     attention_n_heads: int = 12
     attention_n_kv_heads: Optional[int] = 4
 
-    activation_hidden_dim: int = 768
+    activation_hidden_dim: int = 3072
 
     norm_eps: float = 1e-6
 

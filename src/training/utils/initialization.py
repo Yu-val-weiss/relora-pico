@@ -22,6 +22,7 @@ import torch
 import wandb
 import yaml
 from datasets import Dataset, IterableDataset, load_dataset
+from huggingface_hub import create_branch, create_repo
 from lightning.fabric.loggers import Logger as FabricLogger
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
@@ -187,13 +188,25 @@ def initialize_fabric(training_config: TrainingConfig, experiment_tracker: Optio
         >>> fabric = initialize_fabric(training_config, wandb_logger)
     """
 
+    total_devices = training_config.fabric.num_devices * training_config.fabric.num_nodes
+
+    if total_devices > 1:
+        strategy = "deepspeed_stage_2"
+    else:
+        strategy = "auto"  # Sets up SingleDevice Strategy by default
+
+    # NOTE: The strategy is set to use either DeepSpeed (Zero Stage 2) on multi-GPU,
+    # or SingleDevice Strategy on single-GPU set ups. If you'd like to use a different strategy,
+    # you can change the strategy flag in the fabric initialization, but be aware that this might
+    # cause issues with checkpointing, evaluation, etc.
+
     fabric = L.Fabric(
         accelerator=training_config.fabric.accelerator,
         precision=training_config.fabric.precision,
         devices=training_config.fabric.num_devices,
         num_nodes=training_config.fabric.num_nodes,
         loggers=[experiment_tracker] if experiment_tracker is not None else None,
-        strategy=training_config.fabric.strategy,
+        strategy=strategy,
     )
 
     fabric.launch()
@@ -595,77 +608,35 @@ def initialize_logging(
 
 ########################################################
 #
-# Checkpointing
+# HuggingFace/Remote Checkpointing
 #
-########################################################k
+########################################################
 
 
-def initialize_checkpointing(checkpointing_config: CheckpointingConfig, fabric: L.Fabric):
-    """Initialize model checkpointing functionality.
+def initialize_hf_checkpointing(checkpointing_config: CheckpointingConfig, fabric: L.Fabric):
+    """Initialize HuggingFace Checkpointing.
 
-    Sets up the infrastructure for saving model checkpoints, with support for
-    pushing checkpoints to HuggingFace Hub. Creates necessary repositories
-    and branches if they don't exist.
-
-    Directory Structure:
-        {checkpointing_config.runs_dir}/
-        └── {checkpointing_config.run_name}/
-            └── {checkpointing_config.checkpoints_dir}/
-                └── step_{step_number}/
-                    └── ...
+    Creates a HuggingFace repository if it doesn't exist, and creates a branch named after the run.
 
     Args:
-        checkpointing_config: Configuration object containing checkpointing settings.
-        fabric: Fabric instance.
+        checkpointing_config: Configuration object containing checkpointing settings;
+            must have a 'save_checkpoint_repo_id' attribute.
+        fabric: fabric instance.
 
     Raises:
         RuntimeError: If unable to create HuggingFace repository after multiple attempts.
-
-    Notes:
-        - Creates HuggingFace repository if it doesn't exist
-        - Creates a branch named after the run
-        - Sets up local repository for pushing checkpoints
     """
 
     if fabric.global_rank != 0:
         return
 
     huggingface_repo_id = checkpointing_config.save_checkpoint_repo_id
-    if huggingface_repo_id is None:
-        return
+    assert huggingface_repo_id is not None, "save_checkpoint_repo_id must be provided."
 
-    import time
+    create_repo(huggingface_repo_id, exist_ok=True)
 
-    from huggingface_hub.errors import HfHubHTTPError
-    from huggingface_hub.hf_api import create_branch, create_repo
-    from huggingface_hub.repository import Repository
-
-    run_dir = os.path.join(checkpointing_config.runs_dir, checkpointing_config.run_name)
-    checkpoint_dir = os.path.join(run_dir, checkpointing_config.checkpoints_dir)
-
-    _repo_sleep_time = 1
-    _repo_created = False
-    while not _repo_created:
-        try:
-            # Make sure the repo exists.
-            create_repo(
-                huggingface_repo_id,
-                exist_ok=True,
-            )
-            _repo_created = True
-        except HfHubHTTPError as err:
-            if _repo_sleep_time > 64:
-                raise RuntimeError(
-                    f"Could not create huggingface repo {huggingface_repo_id} after {64} seconds."
-                ) from err
-            time.sleep(_repo_sleep_time)
-            _repo_sleep_time *= 2
-
-    # create branch
-    create_branch(repo_id=huggingface_repo_id, branch=checkpointing_config.run_name, exist_ok=True)
-
-    _ = Repository(
-        checkpoint_dir,
-        clone_from=huggingface_repo_id,
-        revision=checkpointing_config.run_name,
+    create_branch(
+        repo_id=huggingface_repo_id,
+        branch=checkpointing_config.run_name,
+        exist_ok=True,
     )

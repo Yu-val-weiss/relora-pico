@@ -4,12 +4,12 @@ Utility package that contains functions for the training process, e.g. initializ
 
 # For convenience, we export the initialization functions here
 from .initialization import (
-    initialize_checkpointing,
     initialize_configuration,
     initialize_dataloader,
     initialize_dataset,
     initialize_experiment_tracker,
     initialize_fabric,
+    initialize_hf_checkpointing,
     initialize_logging,
     initialize_lr_scheduler,
     initialize_optimizer,
@@ -19,12 +19,12 @@ from .initialization import (
 from .relora_training import reset_optimizer_for_relora
 
 __all__ = [
-    "initialize_checkpointing",
     "initialize_configuration",
     "initialize_dataloader",
     "initialize_dataset",
     "initialize_experiment_tracker",
     "initialize_fabric",
+    "initialize_hf_checkpointing",
     "initialize_logging",
     "initialize_lr_scheduler",
     "initialize_optimizer",

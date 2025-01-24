@@ -16,9 +16,8 @@ class FabricConfig:
 
     num_nodes: int = 1
     num_devices: int = 1
-    precision: str = "16-mixed"
+    precision: str = "bf16-mixed"
     accelerator: str = "cuda"
-    strategy: str = "deepspeed_stage_2"
 
 
 @dataclass
@@ -27,11 +26,11 @@ class OptimizationConfig:
 
     # Optimizer
     optimizer: str = "adamw"
-    lr: float = 1e-5
+    lr: float = 3e-4
 
     # Learning Rate Scheduler
     lr_scheduler: Literal["linear_with_warmup", "relora_jagged_cosine"] = "linear_with_warmup"
-    lr_warmup_steps: int = 50_000
+    lr_warmup_steps: int = 2500
 
     # Extra LR Config for relora_jagged_cosine
     restart_warmup_steps: int = 0
@@ -47,5 +46,4 @@ class TrainingConfig:
 
     fabric: FabricConfig = field(default_factory=FabricConfig)
     optimization: OptimizationConfig = field(default_factory=OptimizationConfig)
-    strategy: str = "deepspeed"
     max_steps: int = 200_000
