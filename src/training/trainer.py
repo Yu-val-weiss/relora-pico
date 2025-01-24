@@ -415,6 +415,10 @@ class Trainer:
         )
 
         for sub_batch_step, sub_batch in enumerate(self.train_iterator, start=initial_sub_batch_step):
+            self.log(
+                f"🪜 Batch step - {batch_step} -- sub batch step {sub_batch_step}"
+                f" -- lr {self.lr_scheduler.get_last_lr()[0]:.2e}"
+            )
             # NOTE: We want to store the entire training batch whenever we are computing learning dynamics
             # and we are at a checkpointing step.
             should_store_training_batch = self.should_compute_learning_dynamics and (
@@ -585,7 +589,7 @@ class Trainer:
                         )
 
             # relora reset if necessary
-            can_reset_relora = relora_active and not should_accumulate_gradients
+            can_reset_relora = relora_active and not should_accumulate_gradients  # only reset at full batch
 
             if (
                 can_reset_relora
@@ -696,6 +700,7 @@ class Trainer:
             self.log("Using ReLoRA!")
             self.log(f"└─ Targeting modules: {', '.join(relora.target_modules)}")
             self.log(f"└─ Reset frequency: {relora.reset_frequency}")
+            self.log(f"└─ LoRA Rank (r): {relora.r}")
             if relora.lora_only:
                 self.log("└─ Using only LoRA modules, will not perform merge-and-reinit.")
         self.log("Distributed Setup:")
