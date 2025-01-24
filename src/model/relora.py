@@ -190,9 +190,9 @@ class ReLoRAPico(Pico):
                 nn.init.zeros_(relora_module.A_lora.weight)  # no need to do B, since already init at 0
 
             if relora_conf.lora_only:
-                assert (
-                    not relora_conf.keep_original_weights
-                ), "Only one of lora_only and keep_original_weights can be true"
+                if relora_conf.keep_original_weights:
+                    msg = "Only one of lora_only and keep_original_weights can be true"
+                    raise ValueError(msg)
                 module.weight = None
 
             del module
@@ -265,12 +265,18 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
         # NOTE The typical from_dict method doesn't actually set the attributes unless they are
         # defined in the constructor.
 
-        return_unused_kwargs = kwargs.get("return_unused_kwargs", False)
+        return_unused_kwargs = kwargs.pop("return_unused_kwargs", False)
 
-        pico_config = super().from_dict(config_dict)
+        # handle parent class from_dict
+        result = super().from_dict(config_dict, return_unused_kwargs=return_unused_kwargs)
+
         if return_unused_kwargs:
-            pico_config, unused_kwargs = pico_config
+            pico_config, unused_kwargs = result
+        else:
+            pico_config = result
+            unused_kwargs = {}
 
+        # Add ReLoRA config if present
         if "relora" in config_dict:
             pico_config.relora = ReLoRAConfig(**config_dict["relora"])
 
