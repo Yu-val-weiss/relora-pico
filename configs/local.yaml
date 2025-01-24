@@ -5,19 +5,20 @@ checkpointing:
   save_checkpoint_repo_id: null # set to null to disable uploading checkpoints to HuggingFace Hub
 
   training:
-    auto_resume: true
+    auto_resume: false
   
   learning_dynamics:
     layer_suffixes: []
 
 model:
   n_layers: 2
+  d_model: 96
+  activation_hidden_dim: 384
 
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy
   dataloader:
-    batch_size: 1
-    mini_batch_size: 1
+    batch_size: 32
     max_seq_len: 10
   
 monitoring:
@@ -38,7 +39,7 @@ training:
     lr: 0.001
     lr_warmup_steps: 10
 
-    gradient_accumulation_steps: 1
+    gradient_accumulation_steps: 16
 
 evaluation:
   metrics: null
