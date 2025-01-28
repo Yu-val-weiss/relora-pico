@@ -42,4 +42,5 @@ training:
     gradient_accumulation_steps: 16
 
 evaluation:
-  metrics: null
+  paloma:
+    batch_size: 2
