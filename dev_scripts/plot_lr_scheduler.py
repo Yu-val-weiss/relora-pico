@@ -27,7 +27,7 @@ def main():
             restart_warmup_steps=RESTART_WARMUP_STEPS,
             min_lr_ratio=0.1,
         ),
-        strategy="auto",
+        # strategy="auto",
         max_steps=STEPS,
     )
 
