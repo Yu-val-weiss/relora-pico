@@ -117,11 +117,9 @@ class Trainer:
         self.tokenizer = initialize_tokenizer(data_config=self.configs["data"])
 
         # Setup Model, Optimizer, and Dataloaders
-        relora_conf = self.configs["model"].relora
-        use_relora = relora_conf is not None
         self.model = (
             ReLoRAPico(model_config=self.configs["model"], fabric=self.fabric)
-            if use_relora
+            if self.configs["model"].relora is not None
             else Pico(model_config=self.configs["model"], fabric=self.fabric)
         )
 
@@ -211,7 +209,7 @@ class Trainer:
         )
 
         if self.should_compute_learning_dynamics:
-            if self.configs["checkpointing"].learning_dynamics.eval_data_batch is not None:
+            if self.configs["checkpointing"].learning_dynamics.eval_data is not None:
                 self.learning_dynamics_eval_dataset = load_dataset(
                     self.configs["checkpointing"].learning_dynamics.eval_data,
                     split="val",
