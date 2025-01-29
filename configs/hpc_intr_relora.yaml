@@ -16,10 +16,10 @@ model:
   activation_hidden_dim: 1536
   relora:
     target_modules: 
-      - SwiGLU
-      - Attention
+      - attention
+      - feed_forward
     reset_frequency: 10
-    r: 256
+    r: 16
 
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy

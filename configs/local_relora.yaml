@@ -8,6 +8,7 @@ checkpointing:
     auto_resume: false
   
   learning_dynamics:
+    # layer_suffixes: ["_lora"]
     layer_suffixes: []
 
 model:
@@ -16,15 +17,15 @@ model:
   activation_hidden_dim: 384
   relora:
     target_modules: 
-      - SwiGLU
-      - Attention
+      - attention
+      - feed_forward
     reset_frequency: 10
-    r: 256
+    r: 16
 
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy
   dataloader:
-    batch_size: 32
+    batch_size: 2
     max_seq_len: 10
   
 monitoring:
@@ -32,6 +33,9 @@ monitoring:
     log_every_n_steps: 1
   experiment_tracker:
     framework: null
+    # framework: wandb
+    # wandb_project: relora-pico
+    # wandb_entity: mps_tiny_relora
 
 training:
   fabric: 
@@ -49,8 +53,9 @@ training:
     min_lr_ratio: 0.1
     restart_warmup_steps: 5
 
-    gradient_accumulation_steps: 16
+    gradient_accumulation_steps: 1
 
 evaluation:
-  paloma:
-    batch_size: 2
+  metrics: null
+  # paloma:
+  #   batch_size: 2
