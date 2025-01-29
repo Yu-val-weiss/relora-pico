@@ -257,7 +257,7 @@ class Trainer:
                     fabric=self.fabric,
                     model=self.model,
                 )
-                self._log_evaluation_results(evaluation_results, self.train_start_gradient_step)
+                self._log_evaluation_results(evaluation_results, self.initial_batch_step)
                 save_evaluation_results(
                     checkpointing_config=self.configs["checkpointing"],
                     fabric=self.fabric,
@@ -277,7 +277,7 @@ class Trainer:
                         fabric=self.fabric,
                         model=self.model,
                     )
-                    self._log_evaluation_results(evaluation_results, self.train_start_gradient_step)
+                    self._log_evaluation_results(evaluation_results, self.initial_batch_step)
                     save_evaluation_results(
                         checkpointing_config=self.configs["checkpointing"],
                         fabric=self.fabric,
