@@ -18,7 +18,7 @@ model:
   relora:
     target_modules: 
       - attention
-      - feed_forward
+      - swiglu
     reset_frequency: 10
     r: 16
 
