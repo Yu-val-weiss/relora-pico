@@ -8,6 +8,7 @@ Adapted from:
 """
 
 import math
+import os
 from dataclasses import asdict
 from typing import Any, Optional, Union
 
@@ -200,6 +201,11 @@ class ReLoRAPico(Pico):
             parent = self.get_parent(module_name)
             child_suffix = module_name.split(".")[-1]
             setattr(parent, child_suffix, relora_module)
+
+            if os.environ.get("VERBOSE_RELORA", "false").lower() == "true":
+                print(f"RELORAD {module_name}")
+                for n, p in relora_module.named_parameters():
+                    print(f"{n=}, {p.size()=}, {p.requires_grad=}")
 
     def get_parent(self, module_name: str) -> nn.Module:
         """Gets the module's parent.
