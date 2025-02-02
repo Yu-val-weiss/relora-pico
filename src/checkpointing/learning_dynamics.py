@@ -22,7 +22,7 @@ from transformers import PreTrainedTokenizerBase
 
 from src.config import CheckpointingConfig
 from src.config.checkpointing_config import LearningDynamicsCheckpointingConfig
-from src.model import Pico
+from src.model import Pico, ReLoRAPico
 
 
 # NOTE: DeepSpeed requires a dummy optimizer to be passed in to the setup function
@@ -202,12 +202,13 @@ class CheckpointStateExtractor:
 
             # check if there is already a key for the module name
             if module_name not in checkpoint_activations:
-                # if there is no key, then we create a new key and store the hidden states
-                checkpoint_activations[module_name] = gathered_activations
+                if hasattr(module, "weight"):
+                    # if there is no key, then we create a new key and store the hidden states
+                    checkpoint_activations[module_name] = gathered_activations
 
-                # extract the weight matrix just once
-                weight_matrix = module.weight.detach().cpu()
-                checkpoint_weights[module_name] = weight_matrix
+                    # extract the weight matrix just once
+                    weight_matrix = module.weight.detach().cpu()
+                    checkpoint_weights[module_name] = weight_matrix
             else:
                 # if there is already a key, then we concatenate the new hidden states to the existing ones
                 checkpoint_activations[module_name] = torch.cat(
@@ -256,7 +257,11 @@ def compute_learning_dynamics_states(
     extractor_dataloader = fabric.setup_dataloaders(extractor_dataloader, use_distributed_sampler=True)
 
     # Create a new model instance with same parameters but zero gradients
-    _model = Pico(model.config, fabric=fabric)
+    _model = (
+        Pico(model.config, fabric=fabric)
+        if model.config.relora is None
+        else ReLoRAPico(model.config, fabric=fabric)
+    )
     _model.load_state_dict(model.state_dict())
 
     if isinstance(fabric.strategy, DeepSpeedStrategy):
