@@ -412,6 +412,16 @@ class Trainer:
             else []
         )
 
+        ###############################################################
+        #
+        # Core loop starts here
+        # NOTE: the ratio between sub_batch_step and batch_step
+        # is the configured number of gradient_accumulation_steps
+        # i.e. with 32 configured gradient accumulation steps,
+        # there are 32 sub_batch_steps for each batch_step
+        #
+        ###############################################################
+
         for sub_batch_step, sub_batch in enumerate(self.train_iterator, start=initial_sub_batch_step):
             self.log(
                 f"🪜 Batch step - {batch_step} -- sub batch step {sub_batch_step}"
