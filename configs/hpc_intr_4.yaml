@@ -1,0 +1,56 @@
+checkpointing:
+  run_name: hpc_intr_relora
+  save_every_n_steps: 10
+
+  save_checkpoint_repo_id: null # set to null to disable uploading checkpoints to HuggingFace Hub
+
+  training:
+    auto_resume: false
+  
+  learning_dynamics:
+    layer_suffixes: []
+
+model:
+  n_layers: 12
+  d_model: 384
+  activation_hidden_dim: 1536
+  relora:
+    target_modules: 
+      - attention
+      - swiglu
+    reset_frequency: 10
+    r: 16
+
+data:
+  dataset: pico-lm/pretokenized-paloma-tinsy
+  dataloader:
+    batch_size: 32
+    max_seq_len: 10
+  
+monitoring:
+  logging:
+    log_every_n_steps: 5
+  experiment_tracker:
+    framework: wandb
+    wandb_project: relora-pico
+
+training:
+  fabric: 
+    accelerator: gpu
+    strategy: auto
+    num_nodes: 1
+    num_devices: 4
+
+  max_steps: 200
+
+  optimization:
+    lr_scheduler: relora_jagged_cosine
+    lr: 0.001
+    lr_warmup_steps: 5
+    min_lr_ratio: 0.1
+    restart_warmup_steps: 5
+
+    gradient_accumulation_steps: 1
+
+evaluation:
+  metrics: null
