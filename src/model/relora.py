@@ -145,18 +145,13 @@ class ReLoRALinear(nn.Module):
 class ReLoRAPico(Pico):
     """ReLoRA wrapper for the Pico model."""
 
-    def __init__(
-        self,
-        model_config: Union["ModelConfig", "ReLoRAPicoHFConfig"],
-        fabric: Optional["L.Fabric"] = None,
-    ):
+    def __init__(self, model_config: Union["ModelConfig", "ReLoRAPicoHFConfig"]):
         """Initialise the Pico model.
 
         Args:
             model_config (Union[ModelConfig, PicoHFConfig]): Model config.
-            fabric (L.Fabric, optional): Fabric instance to use. Defaults to None.
         """
-        super().__init__(model_config, fabric)
+        super().__init__(model_config)
 
         relora_conf = self.config.relora
 
