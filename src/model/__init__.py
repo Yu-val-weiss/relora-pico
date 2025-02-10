@@ -6,6 +6,6 @@ recommend you add modules to this package.
 """
 
 from .pico import Pico
-from .relora import ReLoRAPico
+from .relora import ReLoRALinear, ReLoRAPico
 
-__all__ = ["Pico", "ReLoRAPico"]
+__all__ = ["Pico", "ReLoRALinear", "ReLoRAPico"]

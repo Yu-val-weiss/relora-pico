@@ -31,7 +31,7 @@ from src.checkpointing import (
     save_learning_dynamics_states,
 )
 from src.evaluation import run_evaluation
-from src.model import Pico, ReLoRAPico
+from src.model import Pico, ReLoRALinear, ReLoRAPico
 from src.training.utils import (
     initialize_configuration,
     initialize_dataloader,
@@ -413,11 +413,13 @@ class Trainer:
             batch_step * self.configs["training"].optimization.gradient_accumulation_steps
         )
 
-        relora_active = self.configs["model"].relora is not None
+        self.relora_active = self.configs["model"].relora is not None
+
+        self.relora_reset_count = 0
 
         relora_params = (
             [p for n, p in self.model.named_parameters() if p.requires_grad and "_lora" in n]
-            if relora_active
+            if self.relora_active
             else []
         )
 
@@ -606,7 +608,9 @@ class Trainer:
                         )
 
             # relora reset if necessary
-            can_reset_relora = relora_active and not should_accumulate_gradients  # only reset at full batch
+            can_reset_relora = (
+                self.relora_active and not should_accumulate_gradients
+            )  # only reset at full batch
 
             if (
                 can_reset_relora
@@ -626,7 +630,10 @@ class Trainer:
                     reset_params=relora_params,
                     optimizer_state_keys=self.optimizer_state_keys,
                 )
+                self.relora_reset_count += 1
                 self.log("└── Optimizer reset successfully!")
+
+                self.fabric.log("relora/reset_count", self.relora_reset_count, step=batch_step)
 
             # Break if we've reached training steps
             if batch_step >= self.configs["training"].max_steps:
@@ -672,6 +679,16 @@ class Trainer:
             self.lr_scheduler.get_last_lr()[0],
             step=batch_step,
         )
+        if self.relora_active and self.configs["model"].relora.trainable_scaling:
+            scaling_factors = []
+            for name, module in self.model.named_modules():
+                if isinstance(module, ReLoRALinear):
+                    sf = module.s.data.item()
+                    scaling_factors.append(sf)
+                    self.fabric.log(f"relora_scaling_factors/{name}", sf, step=batch_step)
+            scaling_factors = torch.tensor(scaling_factors)
+            self.fabric.log("relora/sf_mean", scaling_factors.mean(), step=batch_step)
+            self.fabric.log("relora/sf_std", scaling_factors.std(), step=batch_step)
 
         # Log to console in tree format
         self.log(f"Step {batch_step} -- 🔄 Training Metrics")
