@@ -108,9 +108,9 @@ class Trainer:
 
         # Setup Model, Optimizer, and Dataloaders
         self.model = (
-            ReLoRAPico(model_config=self.configs["model"], fabric=self.fabric)
+            ReLoRAPico(model_config=self.configs["model"])
             if self.configs["model"].relora is not None
-            else Pico(model_config=self.configs["model"], fabric=self.fabric)
+            else Pico(model_config=self.configs["model"])
         )
 
         self.optimizer, self.optimizer_state_keys = initialize_optimizer(
