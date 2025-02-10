@@ -38,7 +38,7 @@ def functional_merge_and_reinit(module: nn.Module) -> None:
     nn.init.kaiming_uniform_(module.A_lora.weight, a=math.sqrt(5))
     nn.init.zeros_(module.B_lora.weight)
     if module.trainable_scaling:
-        nn.init.zeros_(module.s)
+        nn.init.ones_(module.s)
 
 
 class ReLoRALinear(nn.Module):
@@ -134,7 +134,7 @@ class ReLoRALinear(nn.Module):
         nn.init.kaiming_uniform_(self.A_lora.weight, a=math.sqrt(5))
         nn.init.zeros_(self.B_lora.weight)
         if self.trainable_scaling:
-            nn.init.zeros_(self.s)
+            nn.init.ones_(self.s)
 
 
 class ReLoRAPico(Pico):
