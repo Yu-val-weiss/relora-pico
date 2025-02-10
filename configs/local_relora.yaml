@@ -21,6 +21,7 @@ model:
       - swiglu
     reset_frequency: 10
     r: 16
+    trainable_scaling: true
 
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy
@@ -32,10 +33,8 @@ monitoring:
   logging:
     log_every_n_steps: 1
   experiment_tracker:
-    framework: null
-    # framework: wandb
-    # wandb_project: relora-pico
-    # wandb_entity: mps_tiny_relora
+    framework: wandb
+    wandb_project: relora-pico
 
 training:
   fabric: 
