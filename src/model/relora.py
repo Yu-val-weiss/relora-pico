@@ -12,7 +12,6 @@ import os
 from dataclasses import asdict
 from typing import Any, Optional, Union
 
-import lightning as L
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -50,7 +49,7 @@ class ReLoRALinear(nn.Module):
         in_features: int,
         out_features: int,
         model_config: Union["ModelConfig", "PicoHFConfig"],
-        fabric: Optional["L.Fabric"] = None,
+        module_device: torch.device,
         *,
         bias: bool = True,
         bias_data: Optional[torch.Tensor] = None,
@@ -59,13 +58,9 @@ class ReLoRALinear(nn.Module):
         """Wraps a linear layer into a ReLoRA layer."""
         super().__init__()
 
-        self.fabric = fabric
-
         relora_config = model_config.relora
 
         assert relora_config is not None
-
-        device = self.fabric.device if self.fabric is not None else None
 
         # set up bias and weight
         if relora_config.lora_only is True:
@@ -76,14 +71,14 @@ class ReLoRALinear(nn.Module):
                 if bias:
                     bias_data = torch.zeros(
                         out_features,
-                        device=device,
+                        device=module_device,
                         requires_grad=True,
                     )
             self.bias = nn.Parameter(bias_data) if bias and bias_data is not None else None
 
         if weight_data is None:
             # NOTE trainable weights are W_a and W_b
-            weight_data = torch.zeros(out_features, in_features, device=device)
+            weight_data = torch.zeros(out_features, in_features, device=module_device)
 
         self.weight = nn.Parameter(weight_data, requires_grad=False)
 
@@ -176,7 +171,7 @@ class ReLoRAPico(Pico):
                 module.in_features,
                 module.out_features,
                 self.config,
-                self.fabric,
+                module.weight.device,
                 bias=module.bias is not None,
                 bias_data=bias_data,
                 weight_data=weight_data,
