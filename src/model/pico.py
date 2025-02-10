@@ -313,6 +313,15 @@ class Attention(nn.Module):
         keys = keys.transpose(1, 2)
         values = values.transpose(1, 2)
 
+        apply_gqa = self.n_rep > 1
+        if apply_gqa and queries.device.type == "mps":
+            # NOTE: MPS does not support GQA in the SDPA kernel, but we can repeat the keys and values
+            # outside of the kernel to get the same effect.
+            # See: https://pytorch.org/docs/stable/generated/torch.nn.functional.scaled_dot_product_attention.html
+            keys = keys.repeat_interleave(self.n_rep, dim=-3)
+            values = values.repeat_interleave(self.n_rep, dim=-3)
+            apply_gqa = False
+
         backends = [SDPBackend.CUDNN_ATTENTION, SDPBackend.MATH]
 
         with sdpa_kernel(backends=backends):
@@ -320,8 +329,8 @@ class Attention(nn.Module):
                 queries.contiguous(),
                 keys.contiguous(),
                 values.contiguous(),
-                attn_mask=mask,
-                enable_gqa=True if self.n_rep > 1 else False,
+                attn_mask=mask.to(queries.dtype),
+                enable_gqa=apply_gqa,
             )
 
         attn_output = attn_output.transpose(1, 2).contiguous().view(bsz, seq_len, -1)
@@ -514,7 +523,7 @@ class Pico(nn.Module):
         # Create causal mask for current sequence
         mask = None
         if seq_len > 1:
-            mask = torch.full((seq_len, seq_len), float("-inf"), device=h.device)
+            mask = torch.full((seq_len, seq_len), float("-inf"))
             mask = torch.triu(mask, diagonal=1)
 
             # If using KV cache, extend mask to cover cached sequence length

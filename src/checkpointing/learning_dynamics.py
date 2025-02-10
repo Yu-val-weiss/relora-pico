@@ -270,11 +270,7 @@ def compute_learning_dynamics_states(
     extractor_dataloader = fabric.setup_dataloaders(extractor_dataloader, use_distributed_sampler=True)
 
     # Create a new model instance with same parameters but zero gradients
-    _model = (
-        Pico(model.config, fabric=fabric)
-        if model.config.relora is None
-        else ReLoRAPico(model.config, fabric=fabric)
-    )
+    _model = Pico(model.config) if model.config.relora is None else ReLoRAPico(model.config)
     _model.load_state_dict(model.state_dict())
 
     if isinstance(fabric.strategy, DeepSpeedStrategy):
