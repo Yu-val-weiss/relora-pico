@@ -9,8 +9,7 @@ checkpointing:
     auto_resume: false
   
   learning_dynamics:
-    layer_suffixes: ["_lora"]
-    # layer_suffixes: []
+    layer_suffixes: []
 
 model:
   n_layers: 2
@@ -34,8 +33,9 @@ monitoring:
   logging:
     log_every_n_steps: 1
   experiment_tracker:
-    framework: wandb
-    wandb_project: relora-pico
+    famework: null
+    # framework: wandb
+    # wandb_project: relora-pico
 
 training:
   fabric: 
