@@ -9,15 +9,22 @@ Adapted from:
 
 import math
 import os
-from dataclasses import asdict
-from typing import Any, Optional, Union
+from dataclasses import asdict, make_dataclass
+from pathlib import Path
+from typing import TYPE_CHECKING, Any, Optional, Union
 
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from huggingface_hub import upload_file
 
-from src.config.model_config import ModelConfig, ReLoRAConfig
-from src.model.pico import Pico, PicoHF, PicoHFConfig
+from .pico import Pico, PicoHF, PicoHFConfig
+
+try:
+    if TYPE_CHECKING:
+        from src.config.model_config import ModelConfig
+except ImportError:
+    pass
 
 
 def functional_merge_and_reinit(module: nn.Module) -> None:
@@ -239,7 +246,8 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
     def to_dict(self) -> dict:
         """Convert config to dictionary for JSON serialization."""
         config_dict = super().to_dict()
-        if config_dict.get("relora") is not None:
+        relora_conf = config_dict.get("relora")
+        if relora_conf is not None and not isinstance(relora_conf, dict):
             config_dict["relora"] = asdict(self.relora)
         return config_dict
 
@@ -263,6 +271,8 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
 
         return_unused_kwargs = kwargs.pop("return_unused_kwargs", False)
 
+        relora_dict: dict | None = config_dict.pop("relora", None)
+
         # handle parent class from_dict
         result = super().from_dict(config_dict, return_unused_kwargs=return_unused_kwargs)
 
@@ -273,8 +283,13 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
             unused_kwargs = {}
 
         # Add ReLoRA config if present
-        if "relora" in config_dict:
-            pico_config.relora = ReLoRAConfig(**config_dict["relora"])
+        if relora_dict:
+            # Create dataclass dynamically from relora config, to avoid import from src.config.model_config
+            ReLoRAConfig = make_dataclass(
+                "ReLoRAConfig", [(name, type(v)) for name, v in relora_dict.items()]
+            )
+
+            pico_config.relora = ReLoRAConfig(**relora_dict)
 
         if return_unused_kwargs:
             return pico_config, unused_kwargs
@@ -295,6 +310,23 @@ class ReLoRAPicoHF(PicoHF):
         """
         super().__init__(config)
         self.pico = ReLoRAPico(config)
+
+    def push_to_hub(self, repo_id, commit_message, revision=None, token=None, **kwargs):
+        """Override to push pico as well"""
+        super().push_to_hub(
+            repo_id=repo_id, commit_message=commit_message, revision=revision, token=token, **kwargs
+        )
+
+        pico_path = Path(__file__).resolve().parent / "pico.py"
+
+        upload_file(
+            path_or_fileobj=pico_path,
+            path_in_repo="pico.py",
+            repo_id=repo_id,
+            revision=revision,
+            commit_message=commit_message,
+            **kwargs,
+        )
 
 
 ReLoRAPicoHFConfig.register_for_auto_class()
