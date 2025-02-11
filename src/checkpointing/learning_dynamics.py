@@ -51,7 +51,7 @@ class CheckpointStateExtractor:
         self.fabric = fabric
         self.model = model
 
-    def extract_states(self, dataloader, compute_gradients: bool = False):
+    def extract_states(self, dataloader, compute_gradients: bool = False, relora_active: bool = False):
         """Extracts model states (activations, weights, and optionally gradients).
 
         Given a dataloader, this function will perform a forward pass of the model on each batch,
@@ -61,6 +61,7 @@ class CheckpointStateExtractor:
         Args:
             dataloader: The dataloader containing the dataset to extract states from.
             compute_gradients: Whether to compute the gradients of the model parameters.
+            relora_active: Whether relora is active, changes logic for tensors.
 
         Returns:
             A dictionary containing the activations, weights, and optionally gradients of the model.
@@ -85,7 +86,7 @@ class CheckpointStateExtractor:
         for sub_batch in dataloader:
             _input_ids = torch.tensor(sub_batch["input_ids"], device=self.fabric.device)
 
-            if compute_gradients:
+            if compute_gradients and relora_active:
                 if "labels" in sub_batch:
                     input_ids = _input_ids
                     labels = torch.tensor(sub_batch["labels"], device=self.fabric.device)
@@ -96,7 +97,8 @@ class CheckpointStateExtractor:
                 input_ids = _input_ids
                 labels = None
 
-            if labels is None:
+            # cannot actually compute gradients for relora, as the weight matrices hold no gradients
+            if labels is None or relora_active:
                 # we can throw away the outputs, we are only interested in the hidden states
                 with torch.no_grad():
                     _ = self.model(input_ids)
@@ -122,7 +124,7 @@ class CheckpointStateExtractor:
 
         layer_suffixes = self.learning_dynamics_config.layer_suffixes
         checkpoint_gradients = {}
-        if compute_gradients:
+        if compute_gradients and not relora_active:  # do not compute if relora active
             for name, param in self.model.named_parameters():
                 # only do this for the weight matrix of the layer_suffixes
                 if any(layer_suffix in name for layer_suffix in layer_suffixes) and "weight" in name:
@@ -166,6 +168,8 @@ class CheckpointStateExtractor:
         layer_suffixes = self.learning_dynamics_config.layer_suffixes
 
         for name, module in self.model.named_modules():
+            if "dropout" in name:  # relora dropout does not have a weight parameter, so skip it
+                continue
             if any(layer_suffix in name for layer_suffix in layer_suffixes):
                 _forward_hook = module.register_forward_hook(
                     self._get_forward_hook(name, checkpoint_activations, checkpoint_weights)
@@ -269,8 +273,10 @@ def compute_learning_dynamics_states(
     )
     extractor_dataloader = fabric.setup_dataloaders(extractor_dataloader, use_distributed_sampler=True)
 
+    relora_active = model.config.relora is not None
+
     # Create a new model instance with same parameters but zero gradients
-    _model = Pico(model.config) if model.config.relora is None else ReLoRAPico(model.config)
+    _model = ReLoRAPico(model.config) if relora_active else Pico(model.config)
     _model.load_state_dict(model.state_dict())
 
     if isinstance(fabric.strategy, DeepSpeedStrategy):
@@ -284,7 +290,9 @@ def compute_learning_dynamics_states(
     state_extractor = CheckpointStateExtractor(checkpointing_config.learning_dynamics, fabric, _model)
 
     checkpoint_activations, checkpoint_weights, checkpoint_gradients = state_extractor.extract_states(
-        extractor_dataloader, compute_gradients=compute_gradients
+        extractor_dataloader,
+        compute_gradients=compute_gradients,
+        relora_active=relora_active,
     )
 
     del _model
