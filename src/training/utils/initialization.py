@@ -21,6 +21,7 @@ import lightning as L
 import torch
 import yaml
 from datasets import Dataset, DownloadConfig, load_dataset
+from datasets import config as datasets_config
 from huggingface_hub import add_collection_item, create_branch, create_repo
 from lightning.fabric.loggers import Logger as FabricLogger
 from torch.utils.data import DataLoader
@@ -250,6 +251,8 @@ def initialize_dataset(
         Optional[int]: Number of steps to fast-forward the iterator by, if return_fast_forward_steps is True.
     """
 
+    datasets_config.STREAMING_READ_MAX_RETRIES = 40  # default is 20
+    datasets_config.STREAMING_READ_RETRY_INTERVAL = 10  # default is 5
     download_config = DownloadConfig(
         max_retries=10,  # default is 1 and can lead to pre-mature HTTPS errors
     )
