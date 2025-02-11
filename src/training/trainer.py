@@ -712,6 +712,7 @@ class Trainer:
         global_batch_size = self.configs["data"].dataloader.batch_size
         per_device_batch_size = self.train_dataloader.batch_size
         gradient_accumulation_steps = self.configs["training"].optimization.gradient_accumulation_steps
+        max_seq_len = self.configs["model"].max_seq_len
         relora = self.configs["model"].relora
 
         device_type = ""
@@ -730,6 +731,7 @@ class Trainer:
         self.log("Model Setup:")
         self.log(f"└─ Total Parameters: {total_params:,}")
         self.log(f"└─ Trainable Parameters: {trainable_params:,}")
+        self.log(f"└─ Max seq len: {max_seq_len}")
         if relora is not None:
             self.log("Using ReLoRA!")
             self.log(f"└─ Targeting modules: {', '.join(relora.target_modules)}")
