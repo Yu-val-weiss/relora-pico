@@ -2,7 +2,8 @@ checkpointing:
   run_name: local_relora
   save_every_n_steps: 10
 
-  save_checkpoint_repo_id: collections/yuvalw/relora-pico-6766e4e726eb8811626915c0
+  save_checkpoint_repo_id: relora_pico_test
+  hf_collection_slug: yuvalw/relora-pico-6766e4e726eb8811626915c0
 
   training:
     auto_resume: false
