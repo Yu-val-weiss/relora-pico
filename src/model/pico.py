@@ -165,7 +165,9 @@ class RoPE(nn.Module):
         _freqs_cis = self._freqs_cis[start_pos:end_pos]
         ndim = len(input_shape)
         assert 0 <= 1 < ndim
-        assert _freqs_cis.shape == (input_shape[1], input_shape[-1])
+        assert _freqs_cis.shape == (input_shape[1], input_shape[-1]), (
+            f"expected {(input_shape[1], input_shape[-1])}, got {_freqs_cis.shape}"
+        )
 
         # TODO: Check whether this is correct (might be able to remove this)
         shape = [d if i == 1 or i == ndim - 1 else 1 for i, d in enumerate(input_shape)]
