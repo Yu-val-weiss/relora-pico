@@ -530,7 +530,7 @@ class Trainer:
                         fabric=self.fabric,
                         model=self.model,
                         dataset=training_batch_dataset,
-                        compute_gradients=True,
+                        compute_gradients=not self.relora_active,
                     )
 
                     save_learning_dynamics_states(
