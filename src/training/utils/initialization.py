@@ -19,15 +19,14 @@ from typing import Dict, Optional, Union
 
 import lightning as L
 import torch
-import wandb
 import yaml
 from datasets import Dataset, DownloadConfig, load_dataset
 from huggingface_hub import create_branch, create_repo
 from lightning.fabric.loggers import Logger as FabricLogger
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
-from wandb.integration.lightning.fabric import WandbLogger
 
+import wandb
 from src.config import (
     CheckpointingConfig,
     DataConfig,
@@ -37,6 +36,7 @@ from src.config import (
     ReLoRAConfig,
     TrainingConfig,
 )
+from wandb.integration.lightning.fabric import WandbLogger
 
 warnings.filterwarnings(
     "ignore",
