@@ -21,7 +21,7 @@ import lightning as L
 import torch
 import yaml
 from datasets import Dataset, DownloadConfig, load_dataset
-from huggingface_hub import create_branch, create_repo
+from huggingface_hub import add_collection_item, create_branch, create_repo
 from lightning.fabric.loggers import Logger as FabricLogger
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
@@ -674,7 +674,21 @@ def initialize_hf_checkpointing(checkpointing_config: CheckpointingConfig, fabri
     huggingface_repo_id = checkpointing_config.save_checkpoint_repo_id
     assert huggingface_repo_id is not None, "save_checkpoint_repo_id must be provided."
 
-    create_repo(huggingface_repo_id, exist_ok=True)
+    repo = create_repo(huggingface_repo_id, exist_ok=True)
+
+    # can create a repo without a specified namespace (will default to username)
+    # however the rest of the HF calls need the fully qualified name
+    # this is returned by create repo, so we update the config for later calls
+    checkpointing_config.save_checkpoint_repo_id = repo.repo_id
+    huggingface_repo_id = repo.repo_id
+
+    if checkpointing_config.hf_collection_slug:
+        add_collection_item(
+            checkpointing_config.hf_collection_slug,
+            huggingface_repo_id,
+            repo.repo_type,
+            exists_ok=True,
+        )
 
     create_branch(
         repo_id=huggingface_repo_id,

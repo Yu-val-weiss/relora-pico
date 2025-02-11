@@ -44,7 +44,7 @@ class LearningDynamicsCheckpointingConfig:
         default_factory=lambda: [
             "attention.v_proj",
             "attention.o_proj",
-            "feed_forward.w_2",
+            "swiglu.w_2",
         ]
     )
 
@@ -79,10 +79,11 @@ class CheckpointingConfig:
     learning_dynamics_dir: str = LEARNING_DYNAMICS_DIR
 
     # How often to save checkpoints
-    save_every_n_steps: int = 2000
+    save_every_n_steps: int = 1000
 
     # Should be in the format of <(username or )>/<repo_name>, e.g. pico-lm/pico-7b
     save_checkpoint_repo_id: Optional[str] = "pico-lm/demo"
+    hf_collection_slug: Optional[str] = None
 
     training: TrainingCheckpointingConfig = field(default_factory=TrainingCheckpointingConfig)
     evaluation: EvaluationCheckpointingConfig = field(default_factory=EvaluationCheckpointingConfig)
