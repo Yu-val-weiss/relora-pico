@@ -206,13 +206,13 @@ class CheckpointStateExtractor:
 
             # check if there is already a key for the module name
             if module_name not in checkpoint_activations:
-                if hasattr(module, "weight"):
-                    # if there is no key, then we create a new key and store the hidden states
-                    checkpoint_activations[module_name] = gathered_activations
+                # if there is no key, then we create a new key and store the hidden states
+                checkpoint_activations[module_name] = gathered_activations
 
-                    # extract the weight matrix just once
-                    weight_matrix = module.weight.detach().cpu()
-                    checkpoint_weights[module_name] = weight_matrix
+                # extract the weight matrix just once
+                weight_matrix = module.weight.detach().cpu()
+
+                checkpoint_weights[module_name] = weight_matrix
             else:
                 # if there is already a key, then we concatenate the new hidden states to the existing ones
                 checkpoint_activations[module_name] = torch.cat(
