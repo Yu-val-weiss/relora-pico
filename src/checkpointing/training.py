@@ -17,15 +17,15 @@ from huggingface_hub import upload_file, upload_folder
 from lightning import Fabric
 from lightning.fabric.strategies import DeepSpeedStrategy
 from lightning.fabric.utilities.seed import _collect_rng_states, _set_rng_states
-
-# typing imports
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
 from transformers import PreTrainedTokenizerBase
 
 from src.config import CheckpointingConfig
+from src.training.utils.io import use_backoff
 
 
+@use_backoff()
 def load_checkpoint(
     checkpointing_config: CheckpointingConfig,
     checkpoint_step: Union[str, int],
@@ -91,6 +91,7 @@ def load_checkpoint(
     return model, optimizer, lr_scheduler, checkpoint_step
 
 
+@use_backoff()
 def save_checkpoint(
     configs: Dict[str, Any],
     checkpoint_step: int,

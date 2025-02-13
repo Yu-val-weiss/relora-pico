@@ -21,7 +21,6 @@ from typing import TYPE_CHECKING
 
 import torch
 
-# typing imports
 if TYPE_CHECKING:
     from lightning.fabric import Fabric
     from torch import nn

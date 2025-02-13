@@ -12,8 +12,10 @@ from huggingface_hub import upload_folder
 from lightning.fabric import Fabric
 
 from src.config import CheckpointingConfig
+from src.training.utils.io import use_backoff
 
 
+@use_backoff()
 def save_evaluation_results(
     checkpointing_config: CheckpointingConfig,
     checkpoint_step: int,

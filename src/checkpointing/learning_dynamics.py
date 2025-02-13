@@ -23,6 +23,7 @@ from transformers import PreTrainedTokenizerBase
 from src.config import CheckpointingConfig
 from src.config.checkpointing_config import LearningDynamicsCheckpointingConfig
 from src.model import Pico, ReLoRAPico
+from src.training.utils.io import use_backoff
 
 
 # NOTE: DeepSpeed requires a dummy optimizer to be passed in to the setup function
@@ -325,6 +326,7 @@ def compute_learning_dynamics_states(
     }
 
 
+@use_backoff()
 def save_learning_dynamics_states(
     checkpointing_config: CheckpointingConfig,
     checkpoint_step: int,
