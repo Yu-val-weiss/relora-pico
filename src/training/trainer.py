@@ -622,14 +622,13 @@ class Trainer:
 
                 self.log("├── Performing ReLoRA reset...")
                 self.model.merge_and_reinit()
-                self.fabric.barrier()
                 self.log("├── ReLoRA reset successfully!")
 
                 self.log("├── Performing optimizer reset...")
-                self.log(f"!!! SHOULD RESET {len(relora_params)}")
+                self.fabric.barrier()
                 reset_optimizer_for_relora(
                     self.optimizer,
-                    reset_params=relora_params,
+                    named_reset_params=relora_params,
                     optimizer_state_keys=self.optimizer_state_keys,
                 )
                 self.fabric.barrier()

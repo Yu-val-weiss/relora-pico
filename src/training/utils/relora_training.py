@@ -1,6 +1,9 @@
 """File containing ReLoRA training utils."""
 
 import torch
+from deepspeed.runtime.zero.stage_1_and_2 import DeepSpeedZeroOptimizer
+
+PRUNING_RATIO = 0.999
 
 
 @torch.no_grad()
@@ -15,45 +18,72 @@ def random_prune_(tensor: torch.Tensor, pruning_ratio: float) -> None:
     tensor.mul_(pruning_mask)
 
 
+def _simple_reset(
+    optimizer: torch.optim.Optimizer,
+    named_reset_params: list[tuple[str, torch.nn.Parameter]],
+    optimizer_state_keys: list[str],
+) -> None:
+    for _, p in named_reset_params:
+        param_state = optimizer.state[p]
+        for key in optimizer_state_keys:
+            random_prune_(param_state[key], PRUNING_RATIO)
+
+
+def _zero_opt_reset(
+    optimizer: torch.optim.Optimizer,
+    named_reset_params: list[tuple[str, torch.nn.Parameter]],
+    optimizer_state_keys: list[str],
+) -> None:
+    # deep speed zero optimizer stores state for all parameters in a single flat tensor
+
+    optimizer: DeepSpeedZeroOptimizer = optimizer.optimizer
+    partition_params = set(optimizer.params_in_partition[0])  # parameters in this partition of the optimizer
+    slice_mappings = optimizer._param_slice_mappings[0]
+
+    st_key = next(iter(optimizer.state.keys()))
+
+    st_dict = optimizer.state[st_key]
+    mask_tensors: dict[str, torch.Tensor] = {
+        key: torch.ones_like(st_dict[key]) for key in optimizer_state_keys
+    }
+
+    for n, p in named_reset_params:
+        if p in partition_params:
+            fixed_name = n.split(".module.")[-1]
+            param_slice = slice_mappings[fixed_name]
+            for key in optimizer_state_keys:
+                mask_tensors[key][param_slice.start : param_slice.start + param_slice.numel] = torch.rand(
+                    param_slice.numel, device=st_dict[key].device
+                )
+
+    with torch.no_grad():
+        for key in optimizer_state_keys:
+            mask = mask_tensors[key] > PRUNING_RATIO
+            mask = mask.type_as(st_dict[key])
+            print(mask)
+            print(
+                f"from {torch.cuda.current_device()} -- {key} before = {torch.count_nonzero(st_dict[key])}"
+            )
+            st_dict[key].mul_(mask)
+            print(f"from {torch.cuda.current_device()} -- {key} after = {torch.count_nonzero(st_dict[key])}")
+
+
 def reset_optimizer_for_relora(
     optimizer: torch.optim.Optimizer,
     *,
-    reset_params: list[torch.nn.Parameter],
+    named_reset_params: list[tuple[str, torch.nn.Parameter]],
     optimizer_state_keys: list[str],
 ) -> None:
     """Resets optimizer for relora.
 
     Args:
         optimizer (torch.optim.Optimizer): Optimizer to reset.
-        reset_params: list[torch.nn.Parameter],
-        optimizer_state_keys: list[str],
+        named_reset_params: list[tuple[str, torch.nn.Parameter]], includes names of params.
+        optimizer_state_keys: list[str].
     """
 
-    # For regular optimizers:
-    #   - optimizer.state is a dict[torch.nn.Parameter, dict[str, torch.Tensor]]
-    #   - optimizer.state[p] is a dict[str, torch.Tensor] where str is
-    #   - an optimizer state key e.g., "exp_avg", "exp_avg_sq"
-
-    # For ZeroRedundancyOptimizer, it works differently:
-    #   - ZeroRedundancyOptimizer.state always maps to empty dicts.
-    #   - instead, it uses optimizer.optim.state for rank-local updates.
-    # also, fabric wraps the optimizer in lightning.fabric.wrappers.FabricDeepSpeedZeroOptimizer
-    # to get to where we need, we need to call optimizer.optimizer.optim.state
-    # is_zero_opt = "DeepSpeedZero" in optimizer.__class__.__name__
-    # if is_zero_opt:
-    #     print(dir(optimizer))
-    # optimizer_state = optimizer.state if not is_zero_opt else optimizer.optimizer.optimizer.state_dict()
-    reset_count = 0
-    print("opt state", len(optimizer.state))
-    print("opt opt state", len(optimizer.optimizer.optimizer.state))
-    for i, param_group in enumerate(optimizer.param_groups):
-        print(f"Group {i}: {len(param_group['params'])} parameters")
-    for i, param_group in enumerate(optimizer.optimizer.optimizer.param_groups):
-        print(f"Group inside {i}: {len(param_group['params'])} parameters")
-    for n, p in reset_params:
-        if id(p) in optimizer.state:
-            param_state = optimizer.state[id(p)]
-            for key in optimizer_state_keys:
-                random_prune_(param_state[key], 0.999)
-            reset_count += 1
-    print(f"reset count: {reset_count} from {torch.cuda.current_device()}")
+    is_zero_opt = "DeepSpeedZero" in optimizer.__class__.__name__
+    if is_zero_opt:
+        _zero_opt_reset(optimizer, named_reset_params, optimizer_state_keys)
+    else:
+        _simple_reset(optimizer, named_reset_params, optimizer_state_keys)
