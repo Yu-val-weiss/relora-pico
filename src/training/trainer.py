@@ -417,8 +417,8 @@ class Trainer:
 
         self.relora_reset_count = 0
 
-        relora_params = (
-            [p for n, p in self.model.named_parameters() if p.requires_grad and "_lora" in n]
+        relora_params: list[tuple[str, torch.nn.Parameter]] = (
+            [(n, p) for n, p in self.model.named_parameters() if p.requires_grad and "_lora" in n]
             if self.relora_active
             else []
         )
@@ -622,14 +622,17 @@ class Trainer:
 
                 self.log("├── Performing ReLoRA reset...")
                 self.model.merge_and_reinit()
+                self.fabric.barrier()
                 self.log("├── ReLoRA reset successfully!")
 
                 self.log("├── Performing optimizer reset...")
+                self.log(f"!!! SHOULD RESET {len(relora_params)}")
                 reset_optimizer_for_relora(
                     self.optimizer,
                     reset_params=relora_params,
                     optimizer_state_keys=self.optimizer_state_keys,
                 )
+                self.fabric.barrier()
                 self.relora_reset_count += 1
                 self.log("└── Optimizer reset successfully!")
 

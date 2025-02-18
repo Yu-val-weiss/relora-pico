@@ -6,6 +6,9 @@ checkpointing:
 
   training:
     auto_resume: false
+  
+  learning_dynamics:
+    layer_suffixes: []
 
 model:
   n_layers: 4
@@ -15,7 +18,7 @@ model:
     target_modules: 
       - attention
       - swiglu
-    reset_frequency: 20
+    reset_frequency: 10
     r: 16
 
 data:
