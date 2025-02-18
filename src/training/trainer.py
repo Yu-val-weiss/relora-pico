@@ -626,11 +626,14 @@ class Trainer:
 
                 self.log("├── Performing optimizer reset...")
                 self.fabric.barrier()
-                reset_optimizer_for_relora(
+                zeroed_tup = reset_optimizer_for_relora(
                     self.optimizer,
                     named_reset_params=relora_params,
                     optimizer_state_keys=self.optimizer_state_keys,
                 )
+                self.fabric.all_reduce(zeroed_tup, reduce_op="sum")
+                self.log(zeroed_tup)
+                self.log(f"├── {(zeroed_tup[0] / zeroed_tup[1] + 1e-10) * 100:.2f} of non-zero state zeroed")
                 self.fabric.barrier()
                 self.relora_reset_count += 1
                 self.log("└── Optimizer reset successfully!")
