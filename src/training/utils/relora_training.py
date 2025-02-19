@@ -1,8 +1,8 @@
 """File containing ReLoRA training utils."""
 
+import lightning as L
 import torch
 from deepspeed.runtime.zero.stage_1_and_2 import DeepSpeedZeroOptimizer
-import lightning as L
 
 PRUNING_RATIO = 0.999
 
@@ -46,10 +46,9 @@ def _zero_opt_reset(
     optimizer_state_keys: list[str],
 ) -> tuple[torch.Tensor, torch.Tensor]:
     """Resets optimizer states for DeepSpeed Zero optimizer.
-    DeepSpeed zero optimizer stores state for all parameters in a single flat tensor, so requires special logic.
+    DeepSpeed zero optimizer stores state for all parameters in a single flat tensor,
+    so requires special logic.
     """
-
-    #
 
     optimizer: DeepSpeedZeroOptimizer = optimizer.optimizer  # get inner optimizer
     # parameters in this partition of the optimizer
@@ -57,9 +56,7 @@ def _zero_opt_reset(
     # maps a slice of the flat tensor relating to a specific paramter
     slice_mappings = optimizer._param_slice_mappings[0]
 
-    assert len(optimizer.state) == 1, (
-        "expected single tensor in DeepSpeedZeroOptimizer state"
-    )
+    assert len(optimizer.state) == 1, "expected single tensor in DeepSpeedZeroOptimizer state"
 
     state_dict = next(iter(optimizer.state.values()))
 
@@ -74,13 +71,9 @@ def _zero_opt_reset(
             fixed_name = n.split(".module.")[-1]
             param_slice_map = slice_mappings[fixed_name]
             param_size = param_slice_map.numel
-            param_slice = slice(
-                param_slice_map.start, param_slice_map.start + param_size
-            )
+            param_slice = slice(param_slice_map.start, param_slice_map.start + param_size)
             for key in optimizer_state_keys:
-                mask_tensors[key][param_slice] = torch.rand(
-                    param_size, device=state_dict[key].device
-                )
+                mask_tensors[key][param_slice] = torch.rand(param_size, device=state_dict[key].device)
                 non_zero_sum += torch.count_nonzero(state_dict[key][param_slice])
 
     zeroed = torch.tensor(0, device=fabric.device)
@@ -113,14 +106,10 @@ def reset_optimizer_for_relora(
 
     is_zero_opt = "DeepSpeedZero" in optimizer.__class__.__name__
     if is_zero_opt:
-        tup = _zero_opt_reset(
-            optimizer, fabric, named_reset_params, optimizer_state_keys
-        )
+        tup = _zero_opt_reset(optimizer, fabric, named_reset_params, optimizer_state_keys)
         fabric.all_reduce(tup, reduce_op="sum")
         zeroed, non_zero_sum = tup
     else:
-        zeroed, non_zero_sum = _simple_reset(
-            optimizer, fabric, named_reset_params, optimizer_state_keys
-        )
+        zeroed, non_zero_sum = _simple_reset(optimizer, fabric, named_reset_params, optimizer_state_keys)
 
     return zeroed / non_zero_sum
