@@ -417,8 +417,8 @@ class Trainer:
 
         self.relora_reset_count = 0
 
-        relora_params = (
-            [p for n, p in self.model.named_parameters() if p.requires_grad and "_lora" in n]
+        relora_params: list[tuple[str, torch.nn.Parameter]] = (
+            [(n, p) for n, p in self.model.named_parameters() if p.requires_grad and "_lora" in n]
             if self.relora_active
             else []
         )
@@ -625,15 +625,19 @@ class Trainer:
                 self.log("├── ReLoRA reset successfully!")
 
                 self.log("├── Performing optimizer reset...")
-                reset_optimizer_for_relora(
+                self.fabric.barrier()
+                zeroed_proportion = reset_optimizer_for_relora(
                     self.optimizer,
-                    reset_params=relora_params,
+                    self.fabric,
+                    named_reset_params=relora_params,
                     optimizer_state_keys=self.optimizer_state_keys,
                 )
+                self.fabric.barrier()
                 self.relora_reset_count += 1
-                self.log("└── Optimizer reset successfully!")
-
-                self.fabric.log("relora/reset_count", self.relora_reset_count, step=batch_step)
+                self.log(f"└── Optimizer reset successfully! Zeroed {zeroed_proportion * 100:.2f}%")
+                if self.fabric.is_global_zero:
+                    self.fabric.log("relora/reset_count", self.relora_reset_count, step=batch_step)
+                    self.fabric.log("relora/opt_zeroed", zeroed_proportion, step=batch_step)
 
             # Break if we've reached training steps
             if batch_step >= self.configs["training"].max_steps:
