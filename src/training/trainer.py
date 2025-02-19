@@ -626,7 +626,7 @@ class Trainer:
 
                 self.log("├── Performing optimizer reset...")
                 self.fabric.barrier()
-                zeroed_pct = reset_optimizer_for_relora(
+                zeroed_proportion = reset_optimizer_for_relora(
                     self.optimizer,
                     self.fabric,
                     named_reset_params=relora_params,
@@ -634,10 +634,10 @@ class Trainer:
                 )
                 self.fabric.barrier()
                 self.relora_reset_count += 1
-                self.log(f"└── Optimizer reset successfully! {zeroed_pct}")
+                self.log(f"└── Optimizer reset successfully! {zeroed_proportion * 100:.2f}")
                 if self.fabric.is_global_zero:
                     self.fabric.log("relora/reset_count", self.relora_reset_count, step=batch_step)
-                    self.fabric.log("relora/opt_zeroed_pct", zeroed_pct, step=batch_step)
+                    self.fabric.log("relora/opt_zeroed_pct", zeroed_proportion, step=batch_step)
 
             # Break if we've reached training steps
             if batch_step >= self.configs["training"].max_steps:
