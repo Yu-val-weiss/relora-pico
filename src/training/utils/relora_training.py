@@ -2,6 +2,7 @@
 
 import torch
 from deepspeed.runtime.zero.stage_1_and_2 import DeepSpeedZeroOptimizer
+import lightning as L
 
 PRUNING_RATIO = 0.999
 
@@ -20,31 +21,37 @@ def random_prune_(tensor: torch.Tensor, pruning_ratio: float) -> None:
 
 def _simple_reset(
     optimizer: torch.optim.Optimizer,
+    fabric: L.Fabric,
     named_reset_params: list[tuple[str, torch.nn.Parameter]],
     optimizer_state_keys: list[str],
-) -> tuple[int, int]:
-    non_zero_sum = 0
-    zeroed = 0
+) -> tuple[torch.Tensor, torch.Tensor]:
+    non_zero_sum = torch.Tensor(0, device=fabric.device)
+    zeroed = torch.Tensor(0, device=fabric.device)
 
     for _, p in named_reset_params:
         param_state = optimizer.state[p]
         for key in optimizer_state_keys:
-            non_zero = torch.count_nonzero(param_state[key]).item()
+            non_zero = torch.count_nonzero(param_state[key])
             non_zero_sum += non_zero
             random_prune_(param_state[key], PRUNING_RATIO)
-            zeroed += non_zero - torch.count_nonzero(param_state[key]).item()
+            zeroed += non_zero - torch.count_nonzero(param_state[key])
 
     return zeroed, non_zero_sum
 
 
 def _zero_opt_reset(
     optimizer: torch.optim.Optimizer,
+    fabric: L.Fabric,
     named_reset_params: list[tuple[str, torch.nn.Parameter]],
     optimizer_state_keys: list[str],
-) -> tuple[int, int]:
-    # deep speed zero optimizer stores state for all parameters in a single flat tensor
+) -> tuple[torch.Tensor, torch.Tensor]:
+    """Resets optimizer states for DeepSpeed Zero optimizer.
+    DeepSpeed zero optimizer stores state for all parameters in a single flat tensor, so requires special logic.
+    """
 
-    optimizer: DeepSpeedZeroOptimizer = optimizer.optimizer
+    #
+
+    optimizer: DeepSpeedZeroOptimizer = optimizer.optimizer  # get inner optimizer
     # parameters in this partition of the optimizer
     partition_params = set(optimizer.params_in_partition[0])
     # maps a slice of the flat tensor relating to a specific paramter
@@ -58,10 +65,7 @@ def _zero_opt_reset(
         key: torch.ones_like(state_dict[key]) for key in optimizer_state_keys
     }
 
-    # curr_dev = torch.cuda.current_device()
-
-    # print(f"{curr_dev} -- {mask_tensors['exp_avg']} -- {torch.sum(mask_tensors['exp_avg'] == 1)}")
-    non_zero_sum = 0
+    non_zero_sum = torch.tensor(0, device=fabric.device)
 
     for n, p in named_reset_params:
         if p in partition_params:
@@ -71,37 +75,42 @@ def _zero_opt_reset(
             param_slice = slice(param_slice_map.start, param_slice_map.start + param_size)
             for key in optimizer_state_keys:
                 mask_tensors[key][param_slice] = torch.rand(param_size, device=state_dict[key].device)
-                non_zero_sum += torch.count_nonzero(state_dict[key][param_size]).item()
+                non_zero_sum += torch.count_nonzero(state_dict[key][param_slice])
 
-    # print(f"{curr_dev} -- {mask_tensors['exp_avg']} -- {torch.sum(mask_tensors['exp_avg'] == 1)}")
-
-    zeroed = 0
+    zeroed = torch.tensor(0, device=fabric.device)
 
     with torch.no_grad():
         for key in optimizer_state_keys:
             mask = mask_tensors[key] > PRUNING_RATIO
-            non_zero = torch.count_nonzero(state_dict[key]).item()
+            non_zero = torch.count_nonzero(state_dict[key])
             state_dict[key].mul_(mask)
-            zeroed += non_zero - torch.count_nonzero(state_dict[key]).item()
+            zeroed += non_zero - torch.count_nonzero(state_dict[key])
 
     return zeroed, non_zero_sum
 
 
 def reset_optimizer_for_relora(
     optimizer: torch.optim.Optimizer,
+    fabric: L.Fabric,
     *,
     named_reset_params: list[tuple[str, torch.nn.Parameter]],
     optimizer_state_keys: list[str],
-) -> tuple[int, int]:
+) -> torch.Tensor:
     """Resets optimizer for relora.
 
     Args:
         optimizer (torch.optim.Optimizer): Optimizer to reset.
+        fabric (Fabric): fabric instance.
         named_reset_params: list[tuple[str, torch.nn.Parameter]], includes names of params.
         optimizer_state_keys: list[str].
     """
 
     is_zero_opt = "DeepSpeedZero" in optimizer.__class__.__name__
     if is_zero_opt:
-        return _zero_opt_reset(optimizer, named_reset_params, optimizer_state_keys)
-    return _simple_reset(optimizer, named_reset_params, optimizer_state_keys)
+        tup = _zero_opt_reset(optimizer, fabric, named_reset_params, optimizer_state_keys)
+        fabric.all_reduce(tup, reduce_op="sum")
+        zeroed, non_zero_sum = tup
+    else:
+        zeroed, non_zero_sum = _simple_reset(optimizer, fabric, named_reset_params, optimizer_state_keys)
+
+    return zeroed / non_zero_sum
