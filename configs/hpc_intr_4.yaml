@@ -1,5 +1,5 @@
 checkpointing:
-  run_name: hpc_intr_relora_test_2_gpus
+  run_name: hpc_intr_relora_test_4_gpus
   save_every_n_steps: 10
 
   save_checkpoint_repo_id: null
@@ -12,14 +12,14 @@ checkpointing:
 
 model:
   n_layers: 8
-  d_model: 128
-  activation_hidden_dim: 256
+  d_model: 768
+  activation_hidden_dim: 3072
   relora:
     target_modules: 
       - attention
       - swiglu
     reset_frequency: 10
-    r: 16
+    r: 64
 
 data:
   dataset: pico-lm/pretokenized-paloma-tinsy
@@ -49,7 +49,7 @@ training:
     min_lr_ratio: 0.1
     restart_warmup_steps: 5
 
-    gradient_accumulation_steps: 4
+    gradient_accumulation_steps: 1
 
 evaluation:
   metrics: null
