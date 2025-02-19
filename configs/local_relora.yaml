@@ -33,7 +33,7 @@ monitoring:
   logging:
     log_every_n_steps: 1
   experiment_tracker:
-    famework: null
+    framework: null
     # framework: wandb
     # wandb_project: relora-pico
 
