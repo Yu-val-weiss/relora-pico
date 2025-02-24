@@ -3,7 +3,7 @@ checkpointing:
   save_every_n_steps: 10
 
   save_checkpoint_repo_id: relora_pico_test
-  hf_collection_slug: yuvalw/relora-pico-6766e4e726eb8811626915c0
+  hf_collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   training:
     auto_resume: false
@@ -35,7 +35,7 @@ monitoring:
   experiment_tracker:
     framework: null
     # framework: wandb
-    # wandb_project: relora-pico
+    # wandb_project: pico-relora
 
 training:
   fabric: 
