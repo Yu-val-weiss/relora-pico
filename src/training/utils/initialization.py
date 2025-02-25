@@ -464,7 +464,9 @@ def initialize_lr_scheduler(training_config: TrainingConfig, optimizer: torch.op
             if restart_warmup_steps <= 0:
                 raise ValueError("If using relora_jagged_cosine scheduler, restart_warmup_steps must be > 0")
             if restart_frequency % first_warmup_steps != 0:
-                raise ValueError("If using relora_jagged_cosine scheduler, restart_warmup_steps must be > 0")
+                raise ValueError(
+                    "If using relora_jagged_cosine scheduler, restart_freq % first_warmup_steps must be 0"
+                )
 
             def _get_cosine_decay(progress: float) -> float:
                 return 0.5 * (1.0 + math.cos(math.pi * progress))
