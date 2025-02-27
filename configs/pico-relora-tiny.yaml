@@ -4,7 +4,7 @@ checkpointing:
   hf_collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   learning_dynamics:
-    batch_size: 256
+    batch_size: 128
 
 monitoring:
   logging:
@@ -38,4 +38,4 @@ training:
   
 evaluation: 
   paloma:
-    batch_size: 32
+    batch_size: 16
