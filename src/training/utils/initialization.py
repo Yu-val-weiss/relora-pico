@@ -546,7 +546,7 @@ def _initialize_log_file(checkpointing_config: CheckpointingConfig) -> str:
 
     # datetime stamp
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file_name = f"log_{timestamp}.txt"
+    log_file_name = f"log_{timestamp}.log"
     log_file_path = os.path.join(logs_dir, log_file_name)
 
     open(log_file_path, "w").close()  # Create an empty log file
@@ -631,7 +631,7 @@ def initialize_logging(
     if fabric.global_rank != 0:
         return
 
-    logger = logging.getLogger(__name__)
+    logger = logging.getLogger("pico-train")
     logger.setLevel(logging.INFO)
 
     # Create file handler
@@ -640,7 +640,10 @@ def initialize_logging(
     file_handler.setLevel(monitoring_config.logging.log_level)
 
     # Create formatter and add it to the handler
-    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s")
+    formatter = logging.Formatter(
+        "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
     file_handler.setFormatter(formatter)
 
     # Add the handler to the logger
