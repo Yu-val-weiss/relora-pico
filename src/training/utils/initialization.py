@@ -585,7 +585,7 @@ def initialize_experiment_tracker(
         if checkpointing_config.training.auto_resume:
             # If we are loading a checkpoint, we can try to find the run id of the previous run
             previous_runs = wandb.Api().runs(
-                path="pico-lm/pico",
+                path=f"{monitoring_config.experiment_tracker.wandb_entity}/{monitoring_config.experiment_tracker.wandb_project}",
                 filters={"display_name": checkpointing_config.run_name},
             )
             try:

@@ -7,7 +7,7 @@ checkpointing:
   save_checkpoint_repo_id: "pico-lm/pico-medium"
 
   learning_dynamics:
-    batch_size: 256
+    batch_size: 128
 
 model:
     d_model: 768
@@ -15,7 +15,7 @@ model:
 
 training:
   optimization:
-    gradient_accumulation_steps: 4
+    gradient_accumulation_steps: 8
   
   fabric:
     num_nodes: 4
@@ -23,5 +23,5 @@ training:
   
 evaluation: 
   paloma:
-    batch_size: 32
+    batch_size: 16
   
