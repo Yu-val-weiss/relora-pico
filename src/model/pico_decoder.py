@@ -663,7 +663,7 @@ class PicoDecoderHF(PreTrainedModel):
         Forwards pass for the HuggingFace version of the Pico Model. Basic wrapper around the
         Pico model's forward pass, and returns the output as a HuggingFace CausalLMOutput.
         """
-        logits, past_key_values = self.pico(input_ids, past_key_values, use_cache)
+        logits, past_key_values = self.pico_decoder(input_ids, past_key_values, use_cache)
         if use_cache:
             return CausalLMOutputWithPast(
                 logits=logits,
