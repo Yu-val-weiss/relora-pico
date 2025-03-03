@@ -1,3 +1,5 @@
+"""Wraps io to retry with backoff"""
+
 import time
 from functools import wraps
 
@@ -16,7 +18,7 @@ def use_backoff(max_retries=10, initial_delay=1, backoff_factor=2):
     Args:
         fn: Function to execute
         max_retries: Maximum number of retry attempts (default: 3)
-        delay: Initial delay between retries in seconds (default: 1)
+        initial_delay: Initial delay between retries in seconds (default: 1)
         backoff_factor: Multiplier for delay between retries (default: 2)
 
     Returns:
@@ -41,9 +43,7 @@ def use_backoff(max_retries=10, initial_delay=1, backoff_factor=2):
                         time.sleep(current_delay)
                         current_delay *= backoff_factor
 
-            raise Exception(
-                f"IO Operation failed after {max_retries} attempts: {str(last_exception)}"
-            )
+            raise Exception(f"IO Operation failed after {max_retries} attempts: {str(last_exception)}")
 
         return wrapper
 
