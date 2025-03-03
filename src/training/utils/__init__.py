@@ -12,10 +12,12 @@ from .initialization import (
     initialize_hf_checkpointing,
     initialize_logging,
     initialize_lr_scheduler,
+    initialize_model,
     initialize_optimizer,
     initialize_run_dir,
     initialize_tokenizer,
 )
+from .logging import pretty_print_yaml_config
 from .relora_training import reset_optimizer_for_relora
 
 __all__ = [
@@ -27,8 +29,10 @@ __all__ = [
     "initialize_hf_checkpointing",
     "initialize_logging",
     "initialize_lr_scheduler",
+    "initialize_model",
     "initialize_optimizer",
     "initialize_run_dir",
     "initialize_tokenizer",
+    "pretty_print_yaml_config",
     "reset_optimizer_for_relora",
 ]

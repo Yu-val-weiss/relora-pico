@@ -34,7 +34,7 @@ from src.checkpointing import (
     save_learning_dynamics_states,
 )
 from src.evaluation import run_evaluation
-from src.model import Pico, ReLoRALinear, ReLoRAPico
+from src.model import ReLoRALinear
 from src.training.utils import (
     initialize_configuration,
     initialize_dataloader,
@@ -44,12 +44,13 @@ from src.training.utils import (
     initialize_hf_checkpointing,
     initialize_logging,
     initialize_lr_scheduler,
+    initialize_model,
     initialize_optimizer,
     initialize_run_dir,
     initialize_tokenizer,
+    pretty_print_yaml_config,
     reset_optimizer_for_relora,
 )
-from src.training.utils.logging import pretty_print_yaml_config
 
 
 class Trainer:
@@ -111,12 +112,7 @@ class Trainer:
         )
 
         # Setup Model, Optimizer, and Dataloaders
-        self.model = (
-            ReLoRAPico(model_config=self.configs["model"])
-            if self.configs["model"].relora is not None
-            else Pico(model_config=self.configs["model"])
-        )
-
+        self.model = initialize_model(model_config=self.configs["model"])
         self.optimizer, self.optimizer_state_keys = initialize_optimizer(
             training_config=self.configs["training"], model=self.model
         )

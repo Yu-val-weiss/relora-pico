@@ -10,6 +10,8 @@ from typing import Dict, Optional
 
 import deepspeed
 import torch
+
+# typing imports
 import torch.nn as nn
 import torch.optim as optim
 from datasets import Dataset
@@ -22,7 +24,7 @@ from transformers import PreTrainedTokenizerBase
 
 from src.config import CheckpointingConfig
 from src.config.checkpointing_config import LearningDynamicsCheckpointingConfig
-from src.model import Pico, ReLoRAPico
+from src.training.utils.initialization import initialize_model
 from src.training.utils.io import use_backoff
 
 
@@ -280,7 +282,7 @@ def compute_learning_dynamics_states(
     relora_active = model.config.relora is not None
 
     # Create a new model instance with same parameters but zero gradients
-    _model = ReLoRAPico(model.config) if relora_active else Pico(model.config)
+    _model = initialize_model(model.config)
     _model.load_state_dict(model.state_dict())
 
     if isinstance(fabric.strategy, DeepSpeedStrategy):

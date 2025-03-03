@@ -37,6 +37,7 @@ from src.config import (
     ReLoRAConfig,
     TrainingConfig,
 )
+from src.model import PicoDecoder, PicoReLoRADecoder
 from src.training.utils.io import use_backoff
 from wandb.integration.lightning.fabric import WandbLogger
 
@@ -83,6 +84,7 @@ def _init_relora_config(model_config: ModelConfig):
     if "reset_frequency" not in relora_dict:
         raise ValueError("ReLoRA reset frequency required!")
     model_config.relora = ReLoRAConfig(**relora_dict)
+    model_config.model_type = PicoReLoRADecoder.MODEL_TYPE
 
 
 def initialize_configuration(
@@ -374,6 +376,37 @@ def initialize_dataloader(
         pin_memory=True,  # Speeds up transfer to GPU
         collate_fn=_collate_fn,
     )
+
+
+########################################################
+#
+# Model Initialization
+#
+########################################################
+
+
+def initialize_model(model_config: ModelConfig):
+    """Initialize the model for training.
+
+    Loads in a given model implemented in the `src.model` package and returns it.
+
+    NOTE: out of the box we currently only support the PicoDecoder model (a causal transformer
+    language model). If you'd like to implement your own model, you can do so by adding a new
+    model class in the `src.model` package, and then adding a new entry here.
+
+    Args:
+        model_config: Configuration object containing model settings.
+
+    Returns:
+        PyTorch model instance.
+
+    """
+    if model_config.model_type == "pico_decoder":
+        return PicoDecoder(model_config)
+    elif model_config.model_type == PicoReLoRADecoder.MODEL_TYPE:
+        return PicoReLoRADecoder(model_config)
+    else:
+        raise ValueError(f"Invalid model type: {model_config.model_type}")
 
 
 ########################################################
