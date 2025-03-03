@@ -1,7 +1,7 @@
 """
-The Pico Model: A Lightweight Transformer Language Model
+Pico Decoder: A Lightweight Causal Transformer Language Model
 
-Pico uses a simple LLAMA-style transformer architecture, written for clarity and educational purposes.
+Pico Decoder uses a simple LLAMA-style transformer architecture, written for clarity and educational purposes
 
 Everything is written with a modular design for easy modification and experimentation.
 
@@ -55,7 +55,7 @@ class RMSNorm(torch.nn.Module):
     resulting in improved stability and performance.
 
     Args:
-        config (Union[ModelConfig, PicoHFConfig]): Configuration object containing normalization parameters
+        config (Union[ModelConfig, PicoDecoderHFConfig]): config object containing normalization parameters
             - config.norm_eps: Small constant for numerical stability
             - config.d_model: Model dimension for the weight parameter
 
@@ -63,11 +63,11 @@ class RMSNorm(torch.nn.Module):
         https://arxiv.org/abs/1910.07467
     """
 
-    def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+    def __init__(self, config: Union["ModelConfig", "PicoDecoderHFConfig"]):
         """Initalise Root Mean Square Layer Normalization module.
 
         Args:
-            config (Union[ModelConfig,PicoHFConfig]): Config object containing normalization parameters
+            config (Union[ModelConfig,PicoDecoderHFConfig]): Config object containing normalization params
             - config.norm_eps: Small constant for numerical stability
             - config.d_model: Model dimension for the weight parameter
         """
@@ -104,7 +104,7 @@ class RoPE(nn.Module):
     operations for efficient rotation.
 
     Args:
-        config (Union[ModelConfig, PicoHFConfig]): Model configuration containing:
+        config (Union[ModelConfig, PicoDecoderHFConfig]): Model configuration containing:
             - config.position_emb_theta: Base for frequency computation
             - config.d_model: Model dimension
             - config.attention_n_heads: Number of attention heads
@@ -116,11 +116,11 @@ class RoPE(nn.Module):
 
     _freqs_cis_tensor: torch.Tensor | None = None
 
-    def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+    def __init__(self, config: Union["ModelConfig", "PicoDecoderHFConfig"]):
         """Initialise Rotary Positional Embeddings (RoPE) module.
 
         Args:
-            config (Union[ModelConfig, PicoHFConfig]): Model configuration containing:
+            config (Union[ModelConfig, PicoDecoderHFConfig]): Model configuration containing:
                 - config.position_emb_theta: Base for frequency computation
                 - config.d_model: Model dimension
                 - config.attention_n_heads: Number of attention heads
@@ -227,7 +227,10 @@ class Attention(nn.Module):
         - Output: (batch_size, seq_len, d_model)
     """
 
-    def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+    def __init__(
+        self,
+        config: Union["ModelConfig", "PicoDecoderHFConfig"],
+    ):
         """Initialise Multi-head Attention module.
 
         Args:
@@ -355,7 +358,7 @@ class SwiGLU(nn.Module):
     serving as the feed-forward network in transformer blocks.
 
     Args:
-        config (Union[ModelConfig, PicoHFConfig]): Configuration containing:
+        config (Union[ModelConfig, PicoDecoderHFConfig]): Configuration containing:
             - config.d_model: Model dimension
             - config.activation_hidden_dim: Hidden dimension (typically 4 * d_model)
 
@@ -363,11 +366,11 @@ class SwiGLU(nn.Module):
         https://arxiv.org/abs/2002.05202
     """
 
-    def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+    def __init__(self, config: Union["ModelConfig", "PicoDecoderHFConfig"]):
         """Intialise SwiGLU Activation Function module.
 
         Args:
-        config (Union[ModelConfig, PicoHFConfig]): Configuration containing:
+        config (Union[ModelConfig, PicoDecoderHFConfig]): Configuration containing:
             - config.d_model: Model dimension
             - config.activation_hidden_dim: Hidden dimension (typically 4 * d_model)
         """
@@ -387,12 +390,12 @@ class SwiGLU(nn.Module):
 
 ########################################################
 #
-# PicoBlock and the Pico Model
+# PicoDecoderBlock
 #
 ########################################################
 
 
-class PicoBlock(nn.Module):
+class PicoDecoderBlock(nn.Module):
     """Single Transformer Block with Attention and Feed-forward layers.
 
     Implements a standard transformer block with:
@@ -400,18 +403,18 @@ class PicoBlock(nn.Module):
     - SwiGLU feed-forward network with normalization and residual connection
 
     Args:
-        config (Union[ModelConfig, PicoHFConfig]): Model configuration; either a dataclass or
-            a HuggingFace PicoHFConfig
+        config (Union[ModelConfig, PicoDecoderHFConfig]): Model configuration; either a dataclass or
+            a HuggingFace PicoDecoderHFConfig
     """
 
-    def __init__(self, config: Union["ModelConfig", "PicoHFConfig"]):
+    def __init__(self, config: Union["ModelConfig", "PicoDecoderHFConfig"]):
         """Initialise a PicoBlock, a standard Transformer block with:
             - Multi-head attention with normalization and residual connection
             - SwiGLU feed-forward network with normalization and residual connection
 
         Args:
-            config (Union[ModelConfig, PicoHFConfig]): Model configuration; either a dataclass or
-                a HuggingFace PicoHFConfig
+            config (Union[ModelConfig, PicoDecoderHFConfig]): Model configuration; either a dataclass or
+                a HuggingFace PicoDecoderHFConfig
         """
         super().__init__()
 
@@ -454,42 +457,47 @@ class PicoBlock(nn.Module):
 
 ########################################################
 #
-# Pico Model
+# Pico Decoder (Causal Transformer Model)
 #
 ########################################################
 
 
-class Pico(nn.Module):
+class PicoDecoder(nn.Module):
     """
-    Core Pico model: combines the embedding, Pico layers, and output projection into a single model.
+    Pico Decoder: combines the embedding, causal decoder blocks, and output projection into a
+    single autoregressive model.
 
     For more information on the model, see the classes for the modules that make up the model.
     """
 
-    def __init__(self, model_config: Union["ModelConfig", "PicoHFConfig"]):
+    def __init__(
+        self,
+        model_config: Union["ModelConfig", "PicoDecoderHFConfig"],
+    ):
         """Initialise the Pico model.
 
         Args:
-            model_config (Union[ModelConfig, PicoHFConfig]): Model config.
+            model_config (Union[ModelConfig, PicoDecoderHFConfig]): Model config.
         """
+
         super().__init__()
         self.config = model_config
 
         self.embedding_proj = nn.Embedding(self.config.vocab_size, self.config.d_model)
-        self.layers = nn.ModuleList([PicoBlock(self.config) for _ in range(self.config.n_layers)])
+        self.layers = nn.ModuleList([PicoDecoderBlock(self.config) for _ in range(self.config.n_layers)])
         self.output_norm = RMSNorm(self.config)
         self.de_embedding_proj = nn.Linear(self.config.d_model, self.config.vocab_size, bias=False)
 
-    def convert_to_hf_model(self) -> "PicoHF":
+    def convert_to_hf_model(self) -> "PicoDecoderHF":
         """Convert the Lightning model to a HuggingFace model."""
         # Create HF config without fabric-specific settings
-        hf_config = PicoHFConfig.from_dataclass(self.config)
+        hf_config = PicoDecoderHFConfig.from_dataclass(self.config)
 
         # Create new HF model
-        hf_model = PicoHF(hf_config)
+        hf_model = PicoDecoderHF(hf_config)
 
         # Copy state dict, excluding fabric-specific keys
-        hf_model.load_state_dict(self.state_dict(prefix="pico."))
+        hf_model.load_state_dict(self.state_dict(prefix="pico_decoder."))
 
         return hf_model
 
@@ -566,7 +574,7 @@ class Pico(nn.Module):
 """
 HuggingFace wrapper for the Pico model.
 
-Wait why do we need a wrapper? Aren't we just using the Pico class directly? Good question!
+Why do we need a wrapper? Good question!
 
 Many evaluation frameworks require a model be setup as a HuggingFace model, so we provide a simple
 wrapper that does just that. When we save checkpoints of the Pico model, we save both the normal
@@ -578,14 +586,14 @@ This also lets you do cool things like:
 """
 
 
-class PicoHFConfig(PretrainedConfig):
+class PicoDecoderHFConfig(PretrainedConfig):
     """HuggingFace config for Pico model."""
 
-    model_type = "pico"
+    model_type = "pico_decoder"
 
     @classmethod
-    def from_dict(cls, config_dict: Dict[str, Any], **kwargs) -> "PicoHFConfig":
-        """Create a PicoHFConfig from a dict.
+    def from_dict(cls, config_dict: Dict[str, Any], **kwargs) -> "PicoDecoderHFConfig":
+        """Create a PicoDecoderHFConfig from a dict.
 
         Args:
             config_dict (Dict[str, Any]): Config dict to use.
@@ -596,7 +604,7 @@ class PicoHFConfig(PretrainedConfig):
             in second element of tuple. Defaults to False.
 
         Returns:
-            PicoHFConfig: Config for HuggingFace-compatible version of Pico.
+            PicoDecoderHFConfig: Config for HuggingFace-compatible version of Pico.
         """
         # NOTE The typical from_dict method doesn't actually set the attributes unless they are
         # defined in the constructor.
@@ -616,32 +624,32 @@ class PicoHFConfig(PretrainedConfig):
         return pico_config
 
     @classmethod
-    def from_dataclass(cls, model_config: "ModelConfig") -> "PicoHFConfig":
+    def from_dataclass(cls, model_config: "ModelConfig") -> "PicoDecoderHFConfig":
         """Initialise from a ModelConfig dataclass.
 
         Args:
             model_config (ModelConfig): Dataclass to initialise from
 
         Returns:
-            PicoHFConfig: the new PicoHFConfig dataclass
+            PicoDecoderHFConfig: the new PicoDecoderHFConfig dataclass
         """
         return cls.from_dict(asdict(model_config))
 
 
-class PicoHF(PreTrainedModel):
+class PicoDecoderHF(PreTrainedModel):
     """HuggingFace wrapper for Pico model."""
 
-    config_class = PicoHFConfig
+    config_class = PicoDecoderHFConfig
     _no_split_modules = ["PicoBlock", "Attention", "SwiGLU", "RMSNorm"]
 
-    def __init__(self, config: PicoHFConfig):
+    def __init__(self, config: PicoDecoderHFConfig):
         """Initialise HuggingFace wrapper for Pico model.
 
         Args:
-            config (PicoHFConfig): Config to initialise from.
+            config (PicoDecoderHFConfig): Config to initialise from.
         """
         super().__init__(config)
-        self.pico = Pico(config)
+        self.pico_decoder = PicoDecoder(config)
 
     def forward(
         self,
@@ -655,7 +663,7 @@ class PicoHF(PreTrainedModel):
         Forwards pass for the HuggingFace version of the Pico Model. Basic wrapper around the
         Pico model's forward pass, and returns the output as a HuggingFace CausalLMOutput.
         """
-        logits, past_key_values = self.pico(input_ids, past_key_values, use_cache)
+        logits, past_key_values = self.pico_decoder(input_ids, past_key_values, use_cache)
         if use_cache:
             return CausalLMOutputWithPast(
                 logits=logits,
@@ -668,6 +676,6 @@ class PicoHF(PreTrainedModel):
 
 
 # Register for auto classes
-PicoHFConfig.register_for_auto_class()
-PicoHF.register_for_auto_class("AutoModel")
-PicoHF.register_for_auto_class("AutoModelForCausalLM")
+PicoDecoderHFConfig.register_for_auto_class()
+PicoDecoderHF.register_for_auto_class("AutoModel")
+PicoDecoderHF.register_for_auto_class("AutoModelForCausalLM")

@@ -1,11 +1,13 @@
 """
 Model Package
 
-This Package contains the Pico model. If you have other models you'd like to implement, we
-recommend you add modules to this package.
+This Package contains Pico models (currently only the Pico Decoder). We plan to implement other
+architectures in the future.
+
+If you have other models you'd like to implement, we recommend you add modules to this package.
 """
 
-from .pico import Pico
-from .relora import ReLoRALinear, ReLoRAPico
+from .pico_decoder import PicoDecoder
+from .relora import PicoReLoRADecoder, ReLoRALinear
 
-__all__ = ["Pico", "ReLoRALinear", "ReLoRAPico"]
+__all__ = ["PicoDecoder", "ReLoRALinear", "PicoReLoRADecoder"]

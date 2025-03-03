@@ -6,7 +6,7 @@ checkpointing:
   hf_collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   training:
-    auto_resume: true
+    auto_resume: false
   
   learning_dynamics:
     layer_suffixes: []

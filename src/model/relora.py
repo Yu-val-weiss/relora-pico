@@ -1,4 +1,5 @@
-"""Pico ReLoRA - adding ReLoRA to Pico! (see src/model/pico.py for pico's implementation).
+"""PicoDecoder ReLoRA - adding ReLoRA to PicoDecoder!
+(see src/model/pico_decoder.py for PicoDecoder's implementation).
 
 References:
     - ReLoRA: https://arxiv.org/pdf/2307.05695
@@ -18,7 +19,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from huggingface_hub import upload_file
 
-from .pico import Pico, PicoHF, PicoHFConfig
+from .pico_decoder import PicoDecoder, PicoDecoderHF, PicoDecoderHFConfig
 
 try:
     if TYPE_CHECKING:
@@ -55,7 +56,7 @@ class ReLoRALinear(nn.Module):
         self,
         in_features: int,
         out_features: int,
-        model_config: Union["ModelConfig", "PicoHFConfig"],
+        model_config: Union["ModelConfig", "PicoDecoderHFConfig"],
         module_device: torch.device,
         *,
         bias: bool = True,
@@ -144,14 +145,16 @@ class ReLoRALinear(nn.Module):
             nn.init.ones_(self.s)
 
 
-class ReLoRAPico(Pico):
-    """ReLoRA wrapper for the Pico model."""
+class PicoReLoRADecoder(PicoDecoder):
+    """ReLoRA wrapper for the PicoDecoder model."""
 
-    def __init__(self, model_config: Union["ModelConfig", "ReLoRAPicoHFConfig"]):
-        """Initialise the Pico model.
+    MODEL_TYPE = "pico_relora_decoder"
+
+    def __init__(self, model_config: Union["ModelConfig", "PicoReLoRADecoderHFConfig"]):
+        """Initialise the PicoDecoder model.
 
         Args:
-            model_config (Union[ModelConfig, PicoHFConfig]): Model config.
+            model_config (Union[ModelConfig, PicoDecoderHFConfig]): Model config.
         """
         super().__init__(model_config)
 
@@ -224,24 +227,24 @@ class ReLoRAPico(Pico):
             if isinstance(module, ReLoRALinear):
                 module.merge_and_reinit()
 
-    def convert_to_hf_model(self) -> "ReLoRAPicoHF":
+    def convert_to_hf_model(self) -> "ReLoRAPicoDecoderHF":
         """Convert the Lightning model to a HuggingFace model."""
         # Create HF config without fabric-specific settings
-        hf_config = ReLoRAPicoHFConfig.from_dataclass(self.config)
+        hf_config = PicoReLoRADecoderHFConfig.from_dataclass(self.config)
 
         # Create new HF model
-        hf_model = ReLoRAPicoHF(hf_config)
+        hf_model = ReLoRAPicoDecoderHF(hf_config)
 
         # Copy state dict, excluding fabric-specific keys
-        hf_model.load_state_dict(self.state_dict(prefix="pico."))
+        hf_model.load_state_dict(self.state_dict(prefix="pico_decoder."))
 
         return hf_model
 
 
-class ReLoRAPicoHFConfig(PicoHFConfig):
+class PicoReLoRADecoderHFConfig(PicoDecoderHFConfig):
     """ReLoRA wrapper for HFConfig."""
 
-    model_type = "relora-pico"
+    model_type = PicoReLoRADecoder.MODEL_TYPE
 
     def to_dict(self) -> dict:
         """Convert config to dictionary for JSON serialization."""
@@ -252,8 +255,8 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
         return config_dict
 
     @classmethod
-    def from_dict(cls, config_dict: dict[str, Any], **kwargs) -> "ReLoRAPicoHFConfig":
-        """Create a PicoHFConfig from a dict.
+    def from_dict(cls, config_dict: dict[str, Any], **kwargs) -> "PicoReLoRADecoderHFConfig":
+        """Create a PicoDecoderHFConfig from a dict.
 
         Args:
             config_dict (Dict[str, Any]): Config dict to use.
@@ -264,7 +267,7 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
             in second element of tuple. Defaults to False.
 
         Returns:
-            ReLoRAPicoHFConfig: Config for HuggingFace-compatible version of ReLoRAPico.
+            ReLoRAPicoDecoderHFConfig: Config for HuggingFace-compatible version of ReLoRAPico.
         """
         # NOTE The typical from_dict method doesn't actually set the attributes unless they are
         # defined in the constructor.
@@ -296,32 +299,32 @@ class ReLoRAPicoHFConfig(PicoHFConfig):
         return pico_config
 
 
-class ReLoRAPicoHF(PicoHF):
-    """ReLoRA wrapper for HuggingFace wrapper for Pico model."""
+class ReLoRAPicoDecoderHF(PicoDecoderHF):
+    """ReLoRA wrapper for HuggingFace wrapper for PicoDecoder model."""
 
-    config_class = ReLoRAPicoHFConfig
+    config_class = PicoReLoRADecoderHFConfig
     _no_split_modules = ["PicoBlock", "Attention", "SwiGLU", "RMSNorm", "ReLoRALinear"]
 
-    def __init__(self, config: ReLoRAPicoHFConfig):
-        """Initialise HuggingFace wrapper for Pico model.
+    def __init__(self, config: PicoReLoRADecoderHFConfig):
+        """Initialise HuggingFace wrapper for PicoDecoder model.
 
         Args:
-            config (ReLoRaPicoHFConfig): Config to initialise from.
+            config (ReLoRaPicoDecoderHFConfig): Config to initialise from.
         """
         super().__init__(config)
-        self.pico = ReLoRAPico(config)
+        self.pico_decoder = PicoReLoRADecoder(config)
 
     def push_to_hub(self, repo_id, commit_message, revision=None, token=None, **kwargs):
-        """Override to push pico as well"""
+        """Override to push PicoDecoder as well"""
         super().push_to_hub(
             repo_id=repo_id, commit_message=commit_message, revision=revision, token=token, **kwargs
         )
 
-        pico_path = Path(__file__).resolve().parent / "pico.py"
+        pico_path = Path(__file__).resolve().parent / "pico_decoder.py"
 
         upload_file(
             path_or_fileobj=pico_path,
-            path_in_repo="pico.py",
+            path_in_repo="pico_decoder.py",
             repo_id=repo_id,
             revision=revision,
             commit_message=commit_message,
@@ -329,6 +332,6 @@ class ReLoRAPicoHF(PicoHF):
         )
 
 
-ReLoRAPicoHFConfig.register_for_auto_class()
-ReLoRAPicoHF.register_for_auto_class("AutoModel")
-ReLoRAPicoHF.register_for_auto_class("AutoModelForCausalLM")
+PicoReLoRADecoderHFConfig.register_for_auto_class()
+ReLoRAPicoDecoderHF.register_for_auto_class("AutoModel")
+ReLoRAPicoDecoderHF.register_for_auto_class("AutoModelForCausalLM")

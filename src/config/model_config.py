@@ -37,6 +37,10 @@ class ReLoRAConfig:
 class ModelConfig:
     """Config dataclass for the Model."""
 
+    model_type: str = "pico_decoder"
+
+    # Pico Decoder Defaults
+
     d_model: int = 768
     n_layers: int = 12
 
