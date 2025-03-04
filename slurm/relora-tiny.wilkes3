@@ -9,6 +9,7 @@
 #SBATCH --nodes=4               # This needs to match Fabric(num_nodes=...)
 #SBATCH --ntasks-per-node=4     # This needs to match Fabric(devices=...)
 #SBATCH --gres=gpu:4            # Request N GPUs per machine
+#SBATCH --exclusive
 #SBATCH --time=12:00:00
 #SBATCH --mail-type=ALL
 #! Number of nodes and tasks per node allocated by SLURM (do not change):
