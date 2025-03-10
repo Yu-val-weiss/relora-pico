@@ -2,7 +2,7 @@ checkpointing:
   run_name: hpc_intr_relora_test_2_gpus
   save_every_n_steps: 10
 
-  save_checkpoint_repo_id: null
+  save_to_hf: false
 
   training:
     auto_resume: false
@@ -29,9 +29,10 @@ data:
 monitoring:
   logging:
     log_every_n_steps: 1
-  experiment_tracker:
-    framework: wandb
-    wandb_project: pico-relora
+  save_to_wandb: true
+  wandb:
+    entity: pico-lm
+    project: pico-relora
 
 training:
   fabric: 

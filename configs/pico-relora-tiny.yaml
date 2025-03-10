@@ -1,7 +1,9 @@
 checkpointing:
   run_name: "pico-relora-tiny-1"
-  save_checkpoint_repo_id: pico-relora-tiny
-  hf_collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
+  save_to_hf: true
+  hf_checkpoint:
+    repo_id: pico-relora-tiny
+  hcollection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   learning_dynamics:
     batch_size: 128
@@ -9,9 +11,10 @@ checkpointing:
 monitoring:
   logging:
     log_every_n_steps: 1
-  experiment_tracker:
-    framework: wandb
-    wandb_project: pico-relora
+  save_to_wandb: true
+  wandb:
+    entity: pico-lm
+    project: pico-relora
 
 model:
     d_model: 96

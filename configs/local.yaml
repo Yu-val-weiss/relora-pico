@@ -2,8 +2,7 @@ checkpointing:
   run_name: local
   save_every_n_steps: 10
 
-  save_checkpoint_repo_id: null # set to null to disable uploading checkpoints to HuggingFace Hub
-
+  save_to_hf: false 
   training:
     auto_resume: false
   
@@ -24,8 +23,7 @@ data:
 monitoring:
   logging:
     log_every_n_steps: 10
-  experiment_tracker:
-    framework: null
+  save_to_wandb: false
 
 training:
   fabric: 

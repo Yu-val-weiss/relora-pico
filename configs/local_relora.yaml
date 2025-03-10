@@ -2,8 +2,10 @@ checkpointing:
   run_name: local_relora
   save_every_n_steps: 10
 
-  save_checkpoint_repo_id: relora_pico_test
-  hf_collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
+  save_to_hf: true
+  hf_checkpoint:
+    repo_id: relora_pico_test
+    collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   training:
     auto_resume: false
@@ -32,10 +34,10 @@ data:
 monitoring:
   logging:
     log_every_n_steps: 1
-  experiment_tracker:
-    framework: null
-    # framework: wandb
-    # wandb_project: pico-relora
+  save_to_wandb: true
+  wandb:
+    entity: pico-lm
+    project: pico-relora
 
 training:
   fabric: 
