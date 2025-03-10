@@ -39,7 +39,6 @@ from src.training.utils import (
     initialize_configuration,
     initialize_dataloader,
     initialize_dataset,
-    initialize_experiment_tracker,
     initialize_fabric,
     initialize_hf_checkpointing,
     initialize_logging,
@@ -48,6 +47,7 @@ from src.training.utils import (
     initialize_optimizer,
     initialize_run_dir,
     initialize_tokenizer,
+    initialize_wandb,
     pretty_print_yaml_config,
     reset_optimizer_for_relora,
 )
@@ -92,15 +92,18 @@ class Trainer:
         initialize_run_dir(checkpointing_config=self.configs["checkpointing"])
 
         # Setup Logger
-        self.experiment_tracker = initialize_experiment_tracker(
-            monitoring_config=self.configs["monitoring"],
-            checkpointing_config=self.configs["checkpointing"],
-        )
+        if self.configs["monitoring"].save_to_wandb:
+            wandb_logger = initialize_wandb(
+                monitoring_config=self.configs["monitoring"],
+                checkpointing_config=self.configs["checkpointing"],
+            )
+        else:
+            wandb_logger = None
 
         # Setup Fabric
         self.fabric = initialize_fabric(
             training_config=self.configs["training"],
-            experiment_tracker=self.experiment_tracker,
+            wandb_logger=wandb_logger,
         )
         L.seed_everything(42, verbose=False)
 
@@ -124,7 +127,7 @@ class Trainer:
         self.model, self.optimizer = self.fabric.setup(self.model, self.optimizer)
 
         # Setup HuggingFace Checkpointing
-        if self.configs["checkpointing"].save_checkpoint_repo_id is not None:
+        if self.configs["checkpointing"].save_to_hf:
             initialize_hf_checkpointing(
                 checkpointing_config=self.configs["checkpointing"], fabric=self.fabric
             )
@@ -254,7 +257,6 @@ class Trainer:
             optimizer=self.optimizer,
             lr_scheduler=self.lr_scheduler,
             tokenizer=self.tokenizer,
-            upload_logs=False,
         )
 
         # Save Initial Evaluation Results
@@ -321,7 +323,7 @@ class Trainer:
                     fabric=self.fabric,
                     model=self.model,
                     dataset=self.learning_dynamics_eval_dataset,
-                    compute_gradients=False,
+                    compute_gradients=True,
                 )
                 save_learning_dynamics_states(
                     checkpointing_config=self.configs["checkpointing"],
@@ -551,7 +553,7 @@ class Trainer:
                             fabric=self.fabric,
                             model=self.model,
                             dataset=self.learning_dynamics_eval_dataset,
-                            compute_gradients=False,
+                            compute_gradients=True,
                         )
                         save_learning_dynamics_states(
                             checkpointing_config=self.configs["checkpointing"],

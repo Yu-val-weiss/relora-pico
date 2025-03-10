@@ -567,14 +567,12 @@ class PicoDecoder(nn.Module):
 
 ########################################################
 #
-# PicoConfig and PicoForHF
+# HuggingFace Wrapper
 #
 ########################################################
 
 """
 HuggingFace wrapper for the Pico model.
-
-Why do we need a wrapper? Good question!
 
 Many evaluation frameworks require a model be setup as a HuggingFace model, so we provide a simple
 wrapper that does just that. When we save checkpoints of the Pico model, we save both the normal

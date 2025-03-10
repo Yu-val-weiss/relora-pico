@@ -7,7 +7,6 @@ from .initialization import (
     initialize_configuration,
     initialize_dataloader,
     initialize_dataset,
-    initialize_experiment_tracker,
     initialize_fabric,
     initialize_hf_checkpointing,
     initialize_logging,
@@ -16,6 +15,7 @@ from .initialization import (
     initialize_optimizer,
     initialize_run_dir,
     initialize_tokenizer,
+    initialize_wandb,
 )
 from .logging import pretty_print_yaml_config
 from .relora_training import reset_optimizer_for_relora
@@ -24,7 +24,6 @@ __all__ = [
     "initialize_configuration",
     "initialize_dataloader",
     "initialize_dataset",
-    "initialize_experiment_tracker",
     "initialize_fabric",
     "initialize_hf_checkpointing",
     "initialize_logging",
@@ -33,6 +32,7 @@ __all__ = [
     "initialize_optimizer",
     "initialize_run_dir",
     "initialize_tokenizer",
+    "initialize_wandb",
     "pretty_print_yaml_config",
     "reset_optimizer_for_relora",
 ]

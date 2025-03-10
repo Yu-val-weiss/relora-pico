@@ -5,7 +5,6 @@ Specifies the monitoring process, e.g. how to log metrics and keep track of trai
 """
 
 from dataclasses import dataclass, field
-from typing import Optional
 
 
 @dataclass
@@ -17,12 +16,11 @@ class LoggingConfig:
 
 
 @dataclass
-class ExperimentTrackerConfig:
-    """Experiment tracker config Dataclass."""
+class WandbConfig:
+    """Weights and Biases configuation Dataclass"""
 
-    framework: Optional[str] = "wandb"
-    wandb_project: Optional[str] = "pico"
-    wandb_entity: Optional[str] = "pico-lm"
+    project: str = ""
+    entity: str = ""
 
 
 @dataclass
@@ -30,4 +28,7 @@ class MonitoringConfig:
     """Monitoring config dataclass."""
 
     logging: LoggingConfig = field(default_factory=LoggingConfig)
-    experiment_tracker: ExperimentTrackerConfig = field(default_factory=ExperimentTrackerConfig)
+
+    # Weights and Biases
+    save_to_wandb: bool = True
+    wandb: WandbConfig = field(default_factory=WandbConfig)
