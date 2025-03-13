@@ -708,8 +708,14 @@ class Trainer:
             self.log(f"Step {batch_step} -- 📊 Evaluation Results")
             for i, (metric, result) in enumerate(evaluation_results.items()):
                 prefix = "└──" if i == len(evaluation_results) - 1 else "├──"
-                self.log(f"{prefix} {metric}: {result}")
-                self.fabric.log(f"eval/{metric}", result, step=batch_step)
+                result_for_logging = result
+                if metric == "blimp":
+                    result_for_logging = result.pop("accuracy")
+                self.log(f"{prefix} {metric}: {result_for_logging}")
+                self.fabric.log(f"eval/{metric}", result_for_logging, step=batch_step)
+                if metric == "blimp":
+                    for k, v in result.items():
+                        self.fabric.log(f"blimp/{k}", v, step=batch_step)
 
     def _log_training_configuration(self):
         """

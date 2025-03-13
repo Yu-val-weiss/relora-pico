@@ -22,7 +22,7 @@ model:
       - attention
       - swiglu
     reset_frequency: 10
-    r: 16
+    r: 8
     trainable_scaling: true
 
 data:
@@ -58,6 +58,10 @@ training:
     gradient_accumulation_steps: 1
 
 evaluation:
-  metrics: null
-  # paloma:
-  #   batch_size: 2
+  metrics: 
+    - blimp
+  paloma:
+    batch_size: 2
+  blimp:
+    batch_size: 4
+    samples_per_set: null

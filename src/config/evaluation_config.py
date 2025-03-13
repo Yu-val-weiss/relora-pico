@@ -21,6 +21,15 @@ class PalomaEvaluationConfig:
 
 
 @dataclass
+class BlimpEvaluationConfig:
+    """Config dataclass for BLiMP Evaluation."""
+
+    metric_uids: list[str] = field(default_factory=lambda: ["*"])
+    batch_size: int = 16
+    samples_per_set: Optional[int] = None
+
+
+@dataclass
 class EvaluationConfig:
     """Config dataclass for Evaluation."""
 
@@ -30,3 +39,4 @@ class EvaluationConfig:
     # NOTE: Add other evaluation configs here
     # Each evaluation metric should have its own config
     paloma: PalomaEvaluationConfig = field(default_factory=PalomaEvaluationConfig)
+    blimp: PalomaEvaluationConfig = field(default_factory=BlimpEvaluationConfig)

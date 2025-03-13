@@ -27,6 +27,7 @@ if TYPE_CHECKING:
 
     from src.config import CheckpointingConfig, EvaluationConfig
 
+from .tasks.blimp import run_blimp_evaluation
 from .tasks.paloma import run_paloma_evaluation
 
 
@@ -97,11 +98,13 @@ def run_evaluation(
         for metric in evaluation_config.metrics:
             # NOTE: add your own metrics here
             if metric == "paloma":
-                paloma_result = run_paloma_evaluation(model_path, evaluation_config.paloma)
+                eval_result = run_paloma_evaluation(model_path, evaluation_config.paloma)
+            elif metric == "blimp":
+                eval_result = run_blimp_evaluation(model_path, evaluation_config.blimp)
             else:
                 raise ValueError(f"Metric {metric} not supported")
 
-            evaluation_results[metric] = paloma_result
+            evaluation_results[metric] = eval_result
 
     torch.cuda.empty_cache()
 
