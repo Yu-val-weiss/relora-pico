@@ -85,9 +85,10 @@ Unlike other model suites, Pico is specifically designed for learning dynamics r
 
 1. **Clone Project**
 
-```bash
-git clone https://github.com/rdiehlmartinez/pico.git && cd pico
-```
+   ```bash
+   git clone https://github.com/pico-lm/pico-train
+   cd pico
+   ```
 
 2. **Configure Environment**
 
@@ -143,7 +144,7 @@ git clone https://github.com/rdiehlmartinez/pico.git && cd pico
   - Tools for uploading checkpoints to Hugging Face
 
 - **`src/config`**  
-  - Flexible YAML-based config system (hyperparameters, data pipelines, logging)
+  - Flexible Dataclass-based config system (model and training hyperparameters, checkpointing, logging)
 
 - **`configs/demo.yaml`**  
   - Example config with default values for quick experimentation
@@ -167,12 +168,14 @@ Pico is open-source under the [Apache License 2.0](LICENSE).
 If you use **Pico** in your research, please cite:
 
 ```bibtex
-@software{pico2024,
+@software{pico2025,
     author = {Diehl Martinez, Richard},
-    title = {Pico: Framework for Training Tiny Language Models},
-    year = {2024},
-    url = {https://github.com/rdiehlmartinez/pico}
+    title = {Pico: A Lightweight Framework for Studying Language Model Learning Dynamics},
+    year = {2025},
+    url = {https://github.com/pico-lm}
 }
 ```
 
 **Happy Training!** For more information and tutorials, visit our website at [picolm.io](https://picolm.io).
+
+```
