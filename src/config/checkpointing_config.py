@@ -15,7 +15,6 @@ from ._constants import (
     FABRIC_CHECKPOINT_FILENAME,
     LEARNING_DYNAMICS_DIR,
     LOGS_DIR,
-    MAX_SEQ_LEN,
     RUNS_DIR,
 )
 
@@ -24,6 +23,7 @@ from ._constants import (
 class TrainingCheckpointingConfig:
     """Config dataclass for Training Checkpointing."""
 
+    # Automatically resume training from the most recent checkpoint
     auto_resume: bool = True
 
 
@@ -31,7 +31,7 @@ class TrainingCheckpointingConfig:
 class EvaluationCheckpointingConfig:
     """Config dataclass for Evaluation Checkpointing."""
 
-    load_checkpoint_path: Optional[str] = None
+    # Directory in which evaluation results are saved
     eval_results_dir: str = EVAL_RESULTS_DIR
 
 
@@ -49,8 +49,8 @@ class LearningDynamicsCheckpointingConfig:
     )
 
     # Sequence index at which to extract hidden states; by default, we extract the hidden states
-    # at the last token of the sequence
-    sequence_idx: int = MAX_SEQ_LEN - 1
+    # at the last token of the sequence (-1)
+    sequence_idx: int = -1
 
     # size of the sub-batch used for extracting learning dynamics states
     batch_size: int = 8
@@ -76,12 +76,10 @@ class HuggingFaceCheckpointingConfig:
 class CheckpointingConfig:
     """Config dataclass for Checkpointing."""
 
-    # Name of the run
+    # Assign a name to the run
     run_name: Optional[str] = None
 
-    # add date/time qualifier to run name
-    qualify_run_name: bool = False
-
+    # Defining checkpointing directories
     runs_dir: str = RUNS_DIR
     checkpoints_dir: str = CHECKPOINTS_DIR
     logs_dir: str = LOGS_DIR

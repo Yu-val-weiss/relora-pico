@@ -39,7 +39,7 @@ class ModelConfig:
 
     model_type: str = "pico_decoder"
 
-    # Pico Decoder Defaults
+    # Pico Decoder default hyperparameters
 
     d_model: int = 768
     n_layers: int = 12

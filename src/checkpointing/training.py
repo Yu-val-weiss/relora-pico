@@ -11,12 +11,12 @@ import os
 from dataclasses import asdict
 from typing import Any, Dict, Tuple, Union
 
-import torch.nn as nn
 import yaml
 from huggingface_hub import upload_file, upload_folder
-from lightning import Fabric
+from lightning.fabric import Fabric
 from lightning.fabric.strategies import DeepSpeedStrategy
 from lightning.fabric.utilities.seed import _collect_rng_states, _set_rng_states
+from torch import nn
 from torch.optim import Optimizer
 from torch.optim.lr_scheduler import LRScheduler
 from transformers import PreTrainedTokenizerBase
@@ -228,7 +228,7 @@ def save_checkpoint(
     ########################################################
 
     if fabric.global_rank == 0:
-        # Push to HuggingFace Hub if configured
+        # Push only on rank zero thread
 
         if checkpointing_config.save_to_hf:
             repo_id = checkpointing_config.hf_checkpoint.repo_id
@@ -250,6 +250,7 @@ def save_checkpoint(
                     token=os.getenv("HF_TOKEN"),
                 )
 
+                # Upload training config, also only in first step
                 upload_file(
                     path_or_fileobj=config_path,
                     path_in_repo="training_config.yaml",

@@ -48,9 +48,9 @@ from src.training.utils import (
     initialize_run_dir,
     initialize_tokenizer,
     initialize_wandb,
-    pretty_print_yaml_config,
     reset_optimizer_for_relora,
 )
+from src.training.utils.logging import pretty_print_yaml_config
 
 
 class Trainer:
@@ -123,7 +123,7 @@ class Trainer:
             training_config=self.configs["training"], optimizer=self.optimizer
         )
 
-        # Wrap with Fabric
+        # Wrap model and optimizer with Fabric
         self.model, self.optimizer = self.fabric.setup(self.model, self.optimizer)
 
         # Setup HuggingFace Checkpointing
@@ -230,7 +230,7 @@ class Trainer:
                 self.learning_dynamics_eval_dataset = None
 
     def train(self) -> None:
-        """Execute the main training workflow.
+        """Execute the main training pipeline.
 
         This method orchestrates the complete training process by:
         1. Creating an initial checkpoint to save the starting state and evaluate the model as a
@@ -704,18 +704,19 @@ class Trainer:
 
     def _log_evaluation_results(self, evaluation_results: Dict[str, Any], batch_step: int):
         """Log model evaluation metrics to experiment tracking system and console."""
-        if self.fabric.global_rank == 0:
-            self.log(f"Step {batch_step} -- 📊 Evaluation Results")
-            for i, (metric, result) in enumerate(evaluation_results.items()):
-                prefix = "└──" if i == len(evaluation_results) - 1 else "├──"
-                result_for_logging = result
-                if metric == "blimp":
-                    result_for_logging = result.pop("accuracy")
-                self.log(f"{prefix} {metric}: {result_for_logging}")
-                self.fabric.log(f"eval/{metric}", result_for_logging, step=batch_step)
-                if metric == "blimp":
-                    for k, v in result.items():
-                        self.fabric.log(f"blimp/{k}", v, step=batch_step)
+        self.log(f"Step {batch_step} -- 📊 Evaluation Results")
+        for i, (metric, result) in enumerate(evaluation_results.items()):
+            prefix = "└──" if i == len(evaluation_results) - 1 else "├──"
+            result_for_logging = result
+            if metric == "blimp":
+                result_for_logging = result.pop("accuracy")
+            self.log(f"{prefix} {metric}: {result_for_logging}")
+            self.fabric.log(f"eval/{metric}", result_for_logging, step=batch_step)
+            self.log(f"{prefix} {metric}: {result_for_logging}")
+            self.fabric.log(f"eval/{metric}", result_for_logging, step=batch_step)
+            if metric == "blimp":
+                for k, v in result.items():
+                    self.fabric.log(f"blimp/{k}", v, step=batch_step)
 
     def _log_training_configuration(self):
         """
@@ -792,5 +793,5 @@ class Trainer:
 
     @rank_zero_only
     def log(self, msg: str, level: int = logging.INFO) -> None:
-        """Log messages only from rank zero process."""
+        """NOTE: Log messages only from rank zero process."""
         self.logger.log(level, msg)

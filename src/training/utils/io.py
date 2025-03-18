@@ -1,4 +1,4 @@
-"""Wraps io to retry with backoff"""
+"""Defines a retry wrapper for io operations."""
 
 import time
 from functools import wraps

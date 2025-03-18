@@ -17,15 +17,12 @@ libraries/frameworks.
 from __future__ import annotations
 
 import os
-from typing import TYPE_CHECKING
 
 import torch
+from lightning.fabric import Fabric
+from torch import nn
 
-if TYPE_CHECKING:
-    from lightning.fabric import Fabric
-    from torch import nn
-
-    from src.config import CheckpointingConfig, EvaluationConfig
+from src.config import CheckpointingConfig, EvaluationConfig
 
 from .tasks.blimp import run_blimp_evaluation
 from .tasks.paloma import run_paloma_evaluation
@@ -85,14 +82,11 @@ def run_evaluation(
     # NOTE: Evaluation is only run on first processes to enable third-party evaluation libraries
     # to determine how to handle distributed evaluation.
     if fabric.global_rank == 0:
-        if checkpointing_config.evaluation.load_checkpoint_path is not None:
-            model_path = checkpointing_config.evaluation.load_checkpoint_path
-        else:
-            run_name = checkpointing_config.run_name
-            model_path = (
-                f"{os.getcwd()}/{checkpointing_config.runs_dir}/"
-                f"{run_name}/{checkpointing_config.checkpoints_dir}/latest"
-            )
+        run_name = checkpointing_config.run_name
+        model_path = (
+            f"{os.getcwd()}/{checkpointing_config.runs_dir}/"
+            f"{run_name}/{checkpointing_config.checkpoints_dir}/latest"
+        )
         os.makedirs(model_path, exist_ok=True)
 
         for metric in evaluation_config.metrics:

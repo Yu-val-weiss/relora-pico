@@ -13,6 +13,7 @@ from ._constants import BATCH_SIZE, VOCAB_SIZE
 class DatasetConfig:
     """Config dataclass for the Dataset."""
 
+    # Defines the HuggingFace name of a dataset
     name: str = "pico-lm/pretokenized-dolma"
 
 
@@ -29,6 +30,7 @@ class DataLoaderConfig:
 class TokenizerConfig:
     """Config dataclass for the Tokenizer."""
 
+    # Specify a tokenizer to use
     name: str = "allenai/OLMo-7B-0724-hf"
     vocab_size: int = VOCAB_SIZE
 

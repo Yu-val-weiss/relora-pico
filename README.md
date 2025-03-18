@@ -1,25 +1,49 @@
-# Pico: Tiny Language Models for Learning Dynamics Research, with ReLoRA
+# 🚀 **Pico Train** but with **ReLoRA**
 
-Pico is a framework designed to facilitate research into language model learning dynamics through a comprehensive suite of small to medium-scale models (1M-1B parameters). Built on a LLAMA-style architecture, Pico emphasizes simplicity, modularity, and research accessibility.
+**Pico Train** is a minimalistic framework for training language models—from tiny 1M-parameter models to mid-scale 1B—while automatically storing **rich checkpoints** (including activations and gradients) for **in-depth learning dynamics research**.
 
-The framework serves two key purposes:
+Our **suite of pre-trained models** is already publicly available on our [Hugging Face organization](https://huggingface.co/pico-lm), and a dedicated companion library for advanced analysis—[**pico-analyze**](https://github.com/pico-lm/pico-analyze)—is fully released for deeper checkpoint studies.
 
-1. **Pre-trained Model Suite**: Access our complete suite of models trained on 420B tokens
-2. **Training Framework**: Easily train your own model suite from scratch with minimal setup
+> For a **detailed run-through**, check out the **full tutorial** on our website at [picolm.io](https://picolm.io).
 
-This dual-purpose design means researchers can either:
+---
 
-- Use our pre-trained models and checkpoints for immediate analysis
-- Train their own suite of models to test specific hypotheses or explore different architectures
+## **Key Features**
 
-## 🔄 Training Philosophy
+1. **Pico Decoder: LLAMA-style Transformer Architecture**  
+   - RMSNorm, RoPE, multi-head self-attention with KV-cache, and SwiGLU activations  
+   - Currently supports the **pico-decoder** model, with future expansions planned (pico-diffusion, pico-statespace, etc.)
 
-All models in a Pico suite (whether our pre-trained ones or your custom trained ones):
+2. **Comprehensive Checkpoints**  
+   - Saves model states, optimizer states, and training metadata  
+   - Enriched with **activation and gradient** snapshots for interpretability  
 
-- Share identical architectures and optimizers
-- Train on the same tokens in identical order
-- Save rich checkpoint data including activations and gradients
-- Enable direct comparisons across model scales
+3. **Focused Scale Range**  
+   - Optimized to train models from **1M to 1B parameters**, where learning dynamics research is often most viable  
+
+4. **Clean, Pre-tokenized Data**  
+   - Uses the curated [Pretokenized-Dolma](https://allenai.org/dolma) dataset, available on [Hugging Face](https://huggingface.co/pico-lm/pretokenized-dolma)  
+   - Identical data order ensures **consistent** training across model sizes  
+
+5. **Research Ready**  
+   - Minimal, well-documented code suitable for **forking and tailoring**  
+   - Logs essential metrics (e.g. perplexity) throughout training  
+   - Works seamlessly with [pico-analyze](https://github.com/pico-lm/pico-analyze) for advanced post-training interpretation
+
+---
+
+## **Training Philosophy**
+
+All models in the Pico suite (both pre-trained and user-trained):
+
+- Employ **identical architectures** and **optimizer settings**  
+- **Share** the same data order and tokens  
+- Automatically log **rich checkpoint data** (including activations, gradients)  
+- Facilitate **direct cross-scale comparisons**
+
+This uniformity means you can isolate model size as the primary variable, giving you clearer insights into **how model capacity affects learning**.
+
+---
 
 ## 📦 Resources
 
@@ -66,108 +90,89 @@ git clone https://github.com/rdiehlmartinez/pico.git && cd pico
 ```
 
 2. **Configure Environment**
-Create `.env` file:
 
-```bash
-export HF_TOKEN=your_huggingface_token
-export WANDB_API_KEY=your_wandb_key
-```
+   Create a `.env` file at the root with your Hugging Face and Weights & Biases tokens:
 
-3. **Setup Dependencies**
+   ```bash
+   export HF_TOKEN=your_huggingface_token
+   export WANDB_API_KEY=your_wandb_key
+   ```
 
-```bash
-source setup.sh
-```
+3. **Install Dependencies**
 
-### Exploring the Codebase
+   ```bash
+   source setup.sh
+   ```
 
-The core implementation is organized into these key files and packages:
+   This script checks your environment, installs necessary tools, and sets up a Poetry virtual environment.
 
-- **`src/model/pico.py`**: The heart of Pico
-  - LLAMA-style transformer implementation
-  - Attention mechanism with KV-cache
-  - RoPE positional embeddings
-  - Documentation references for each component
+4. **Train Your Model Suite**
 
-- **`src/training/trainer.py`**: Training pipeline
-  - Distributed training setup
-  - Checkpoint management
-  - Logging configuration
+   - Edit (or create) a config file (e.g., `configs/demo.yaml`) to specify your architecture and training preferences.
+   - Then run:
 
-- **`src/config`**: Model configuration
-  - Hyperparameter definitions
-  - Model architecture settings
-  - Training parameters
+     ```bash
+     poetry run train --config_path configs/demo.yaml
+     ```
 
-- **`src/checkpointing`**: Checkpointing and State Management
-  - Training state persistence (model, optimizer, scheduler)
-  - Learning dynamics tracking (activations, weights, gradients)
-  - Evaluation results storage
-  - Automatically store huggingface-compatible version of model for down-stream use
+   - This launches training, automatically checkpointing states and saving learning dynamics data.
 
-### Common Starting Points
+5. **Explore Checkpoints**
+   - By default, checkpoints are stored under `runs/YOUR_RUN_NAME/checkpoints/`.
+   - Each checkpoint contains:
+     - **Model state** (PyTorch + Hugging Face formats)
+     - **Optimizer state**
+     - **Gradients and activations** for interpretability
+     - **Evaluation logs** (e.g. perplexity) and metrics
 
-1. **Using Pre-trained Models**
+---
 
-```python
-from transformers import AutoModelForCausalLM
+## **Repository Structure**
 
-# Load a specific model size
-model = AutoModelForCausalLM.from_pretrained("pico-lm/[...]")
-```
+- **`src/model/pico_decoder.py`**  
+  - Core LLAMA-style decoder implementation (attention, RMSNorm, RoPE, etc.)
 
-2. **Training Your Own Suite**
+- **`src/training/trainer.py`**  
+  - Main training loop  
+  - Manages distributed and multi-node settings  
+  - Collects/logs metrics  
+  - Orchestrates checkpoint saving
 
-```bash
-# Create a config yaml file, e.g. `my_config.yaml`
-# You can follow the provided demo template in configs/demo.yaml
-# If no config file is provided the default config values are used
-poetry run train --config_path my_config.yaml
-```
+- **`src/checkpointing`**  
+  - Logic for saving model states, gradients, activations  
+  - Tools for uploading checkpoints to Hugging Face
 
-## 📊 Coming Soon: Pico Analysis
+- **`src/config`**  
+  - Flexible YAML-based config system (hyperparameters, data pipelines, logging)
 
-A companion framework for analyzing Pico checkpoints:
+- **`configs/demo.yaml`**  
+  - Example config with default values for quick experimentation
 
-- Mechanistic interpretability tools
-- Learning dynamics visualization
-- Cross-scale model comparisons
-- Training trajectory analysis
+---
 
-## 📚 References
+## **Advanced Analysis with Pico Analyze**
 
-Our implementation draws inspiration from and builds upon:
+For deeper checkpoint analysis—comparing gradients, tracking representation shifts, measuring sparsity—use our companion repository [**pico-analyze**](https://github.com/pico-lm/pico-analyze). It automatically processes **pico-train** checkpoints and applies advanced metrics like **CKA**, **PWCCA**, **Gini**, **Hoyer**, and more to reveal **how** your models learn over time.
 
-- [LLAMA](https://arxiv.org/abs/2302.13971)
-- [RoPE](https://arxiv.org/abs/2104.09864)
-- [SwiGLU](https://arxiv.org/abs/2002.05202)
+---
 
-## 🤝 Contributing
+## **License**
 
-We welcome contributions in:
+Pico is open-source under the [Apache License 2.0](LICENSE).
 
-- New features and improvements
-- Documentation and tutorials
-- Bug fixes and testing
-- Research findings and analysis
+---
 
-## 📝 License
+## **Citation**
 
-Apache 2.0 License
-
-## 📫 Contact
-
-- GitHub: [rdiehlmartinez/pico](https://github.com/rdiehlmartinez/pico)
-- Author: [Richard Diehl Martinez](https://richarddiehlmartinez.com)
-
-## Citation
-
-If you use Pico in your research, please cite:
+If you use **Pico** in your research, please cite:
 
 ```bibtex
 @software{pico2024,
     author = {Diehl Martinez, Richard},
     title = {Pico: Framework for Training Tiny Language Models},
     year = {2024},
+    url = {https://github.com/rdiehlmartinez/pico}
 }
 ```
+
+**Happy Training!** For more information and tutorials, visit our website at [picolm.io](https://picolm.io).

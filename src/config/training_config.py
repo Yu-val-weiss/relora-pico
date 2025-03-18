@@ -14,9 +14,11 @@ from ._constants import GRADIENT_ACCUMULATION_STEPS
 class FabricConfig:
     """Config dataclass for Fabric."""
 
+    # Configure nodes/devices for parallelised training
     num_nodes: int = 1
     num_devices: int = 1
     precision: str = "bf16-mixed"
+    # Hardware accelerator to use, can be cpu/cuda/mps etc.
     accelerator: str = "cuda"
 
 
@@ -36,7 +38,11 @@ class OptimizationConfig:
     restart_warmup_steps: int = 0
     min_lr_ratio: float = 0.0
 
-    # Gradient Accumulation
+    # Extra LR Config for relora_jagged_cosine
+    restart_warmup_steps: int = 0
+    min_lr_ratio: float = 0.0
+
+    # Define number of gradient accumulation steps
     gradient_accumulation_steps: int = GRADIENT_ACCUMULATION_STEPS
 
 
