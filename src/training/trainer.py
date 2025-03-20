@@ -712,8 +712,6 @@ class Trainer:
                 result_for_logging = result.pop("accuracy")
             self.log(f"{prefix} {metric}: {result_for_logging}")
             self.fabric.log(f"eval/{metric}", result_for_logging, step=batch_step)
-            self.log(f"{prefix} {metric}: {result_for_logging}")
-            self.fabric.log(f"eval/{metric}", result_for_logging, step=batch_step)
             if metric == "blimp":
                 for k, v in result.items():
                     self.fabric.log(f"blimp/{k}", v, step=batch_step)
