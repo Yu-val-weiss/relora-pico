@@ -1,8 +1,8 @@
 checkpointing:
-  run_name: "pico-relora-tiny-1"
+  run_name: "pico-relora-tiny-1-v2"
   save_to_hf: true
   hf_checkpoint:
-    repo_id: pico-relora-tiny
+    repo_id: pico-relora-tiny-v2
   hcollection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   learning_dynamics:
@@ -40,5 +40,10 @@ training:
     num_devices: 4
   
 evaluation: 
+  metrics:
+    - blimp
+    - paloma
   paloma:
+    batch_size: 16
+  blimp:
     batch_size: 16

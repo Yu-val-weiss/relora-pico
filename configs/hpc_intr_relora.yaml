@@ -57,6 +57,10 @@ training:
     gradient_accumulation_steps: 4
 
 evaluation:
-  # metrics: null
+  metrics:
+    - blimp
+    - paloma
+  blimp:
+    batch_size: 16
   paloma:
     batch_size: 4
