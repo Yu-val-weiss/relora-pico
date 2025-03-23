@@ -1,34 +1,30 @@
+# Demo config file 
+# You can follow this template to create your own config file
+# Refer to the config files in the configs/ directory to see all the available options
+
 checkpointing:
-  run_name: "pico-relora-tiny-1-v2"
+  run_name: "pico-relora-small-1"
   save_to_hf: true
   hf_checkpoint:
-    repo_id: pico-relora-tiny-v2
+    repo_id: pico-relora-small
     collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   learning_dynamics:
     batch_size: 128
 
+model:
+    d_model: 384
+    activation_hidden_dim: 1536
+
 monitoring:
-  logging:
-    log_every_n_steps: 1
   save_to_wandb: true
   wandb:
-    entity: pico-lm
-    project: pico-relora
-
-model:
-    d_model: 96
-    activation_hidden_dim: 384
-    relora:
-      target_modules: 
-        - attention
-        - swiglu
-      reset_frequency: 2000
-      r: 16
+    project: "pico-relora"
+    entity: "pico-lm"
 
 training:
   optimization:
-    gradient_accumulation_steps: 4
+    gradient_accumulation_steps: 8
 
     lr_scheduler: relora_jagged_cosine
     lr_warmup_steps: 2000
