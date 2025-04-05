@@ -1,6 +1,6 @@
 # 🚀 **Pico Train** but with **ReLoRA**
 
-**Pico Train** is a minimalistic framework for training language models—from tiny 1M-parameter models to mid-scale 1B—while automatically storing **rich checkpoints** (including activations and gradients) for **in-depth learning dynamics research**.
+Pico Train is a lightweight framework for training language models—from tiny-scale (~1M parameters) to mid-scale (~1B parameters)—with built-in rich checkpointing that captures activations, gradients, and model states, enabling detailed learning dynamics research.
 
 Our **suite of pre-trained models** is already publicly available on our [Hugging Face organization](https://huggingface.co/pico-lm), and a dedicated companion library for advanced analysis—[**pico-analyze**](https://github.com/pico-lm/pico-analyze)—is fully released for deeper checkpoint studies.
 
@@ -19,13 +19,13 @@ Our **suite of pre-trained models** is already publicly available on our [Huggin
    - Enriched with **activation and gradient** snapshots for interpretability  
 
 3. **Focused Scale Range**  
-   - Optimized to train models from **1M to 1B parameters**, where learning dynamics research is often most viable  
+   - Optimized to train models from **1M to 1B parameters**, where learning dynamics research is most viable  
 
-4. **Clean, Pre-tokenized Data**  
-   - Uses the curated [Pretokenized-Dolma](https://allenai.org/dolma) dataset, available on [Hugging Face](https://huggingface.co/pico-lm/pretokenized-dolma)  
-   - Identical data order ensures **consistent** training across model sizes  
+4. **Clean, Pre-tokenized Data**
+   - Uses a pre-tokenized, pre-shuffled version of [Dolma](https://allenai.org/dolma) that we make available on [Hugging Face](https://huggingface.co/datasets/pico-lm/pretokenized-dolma)  
+   - Facilitates training models using identical data for **consistency** and **comparability**
 
-5. **Research Ready**  
+6. **Research Ready**  
    - Minimal, well-documented code suitable for **forking and tailoring**  
    - Logs essential metrics (e.g. perplexity) throughout training  
    - Works seamlessly with [pico-analyze](https://github.com/pico-lm/pico-analyze) for advanced post-training interpretation
@@ -177,5 +177,3 @@ If you use **Pico** in your research, please cite:
 ```
 
 **Happy Training!** For more information and tutorials, visit our website at [picolm.io](https://picolm.io).
-
-```
