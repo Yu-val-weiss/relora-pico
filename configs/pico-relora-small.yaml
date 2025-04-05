@@ -15,6 +15,12 @@ checkpointing:
 model:
     d_model: 384
     activation_hidden_dim: 1536
+    relora:
+      target_modules: 
+        - attention
+        - swiglu
+      reset_frequency: 2000
+      r: 16
 
 monitoring:
   save_to_wandb: true
