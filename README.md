@@ -87,7 +87,7 @@ Unlike other model suites, Pico is specifically designed for learning dynamics r
 
    ```bash
    git clone https://github.com/pico-lm/pico-train
-   cd pico
+   cd pico-train
    ```
 
 2. **Configure Environment**
