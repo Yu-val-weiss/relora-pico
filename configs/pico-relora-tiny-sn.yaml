@@ -6,7 +6,7 @@ checkpointing:
     collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
 
   learning_dynamics:
-    batch_size: 128
+    batch_size: 64
 
 monitoring:
   logging:
