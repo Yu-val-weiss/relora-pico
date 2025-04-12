@@ -48,7 +48,7 @@ export NCCL_IB_HCA=mlx5
 export NCCL_IB_DISABLE=0
 
 application="/home/yw580/.local/bin/poetry"
-options="run train --config_path configs/pico-relora-tiny.yaml"
+options="run train --config_path configs/pico-relora-tiny-sn.yaml"
 CMD="$application $options"
 
 # Run your training script
