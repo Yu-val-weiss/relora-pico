@@ -7,7 +7,7 @@
 #SBATCH --job-name=relora-pico-tiny-sn
 #SBATCH --open-mode=append
 #SBATCH --nodes=1               # This needs to match Fabric(num_nodes=...)
-#SBATCH --ntasks-per-node=2     # This needs to match Fabric(devices=...)
+#SBATCH --ntasks=2              # This needs to match Fabric(devices=...)
 #SBATCH --gres=gpu:2            # Request N GPUs per machine
 #SBATCH --time=12:00:00
 #SBATCH --mail-type=ALL

@@ -1,5 +1,5 @@
 checkpointing:
-  run_name: "pico-relora-tiny-1-v2-sn"
+  run_name: "pico-relora-tiny-v2-sn"
   save_to_hf: true
   hf_checkpoint:
     repo_id: pico-relora-tiny-v2-sn
