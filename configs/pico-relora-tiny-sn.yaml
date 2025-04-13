@@ -1,5 +1,6 @@
 checkpointing:
   run_name: "pico-relora-tiny-v2-sn"
+  save_every_n_steps: 50
   save_to_hf: true
   hf_checkpoint:
     repo_id: pico-relora-tiny-v2-sn
@@ -10,7 +11,7 @@ checkpointing:
 
 monitoring:
   logging:
-    log_every_n_steps: 1
+    log_every_n_steps: 5
   save_to_wandb: true
   wandb:
     entity: pico-lm

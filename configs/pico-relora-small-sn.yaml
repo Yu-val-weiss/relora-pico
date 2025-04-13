@@ -4,6 +4,7 @@
 
 checkpointing:
   run_name: "pico-relora-small-sn"
+  save_every_n_steps: 50
   save_to_hf: true
   hf_checkpoint:
     repo_id: pico-relora-small-sn
@@ -23,6 +24,8 @@ model:
       r: 16
 
 monitoring:
+  logging:
+    log_every_n_steps: 5
   save_to_wandb: true
   wandb:
     project: "pico-relora"
