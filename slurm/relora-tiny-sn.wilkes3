@@ -7,9 +7,9 @@
 #SBATCH --job-name=relora-pico-tiny-sn
 #SBATCH --open-mode=append
 #SBATCH --nodes=1               # This needs to match Fabric(num_nodes=...)
-#SBATCH --ntasks=2
-#SBATCH --ntasks-per-node=2     # This needs to match Fabric(devices=...)
-#SBATCH --gres=gpu:2            # Request N GPUs per machine
+#SBATCH --ntasks=4
+#SBATCH --ntasks-per-node=4     # This needs to match Fabric(devices=...)
+#SBATCH --gres=gpu:4            # Request N GPUs per machine
 #SBATCH --time=12:00:00
 #SBATCH --mail-type=ALL
 #! Number of nodes and tasks per node allocated by SLURM (do not change):

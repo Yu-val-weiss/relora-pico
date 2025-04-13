@@ -29,7 +29,7 @@ model:
 
 training:
   optimization:
-    gradient_accumulation_steps: 32
+    gradient_accumulation_steps: 16
 
     lr_scheduler: relora_jagged_cosine
     lr_warmup_steps: 2000
@@ -38,7 +38,7 @@ training:
   
   fabric:
     num_nodes: 1
-    num_devices: 2
+    num_devices: 4
   
 evaluation: 
   metrics:
