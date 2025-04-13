@@ -51,12 +51,14 @@ def main():
         scheduler.step()
 
     ax.plot(lrs)
-    ax.set_xlabel("Step (1000s)", size=14)
-    ax.set_ylabel("Learning rate multiplier", size=14)
+    ax.set_xlabel("Step (1000s)", size=23)
+    ax.set_ylabel("Learning rate multiplier", size=23)
     ax.grid(True)
     ticks = np.arange(0, MAX_STEPS + 1, step=RELORA_RESET_FREQ)
     ax.set_xticks(ticks)
     ax.set_xticklabels(ticks // 1000)
+
+    ax.tick_params(axis="both", labelsize=18)
 
     fig.tight_layout()
 
