@@ -36,6 +36,7 @@ module load git-lfs-2.3.0-gcc-5.4.0-cbo6khp
 workdir="/home/yw580/rds/hpc-work/relora-pico"
 cd $workdir
 
+export SKIP_PRE_COMMIT=1 # set environment variable to skip pre-commit
 source setup.sh
 
 # Debugging flags (optional)

@@ -162,24 +162,28 @@ fi
 # ---- PRE-COMMIT SETUP ---- #
 print_section "Pre-commit Setup"
 
-# Install pre-commit hooks
-echo "Installing pre-commit hooks..."
-poetry run pre-commit install
-if [ $? -ne 0 ]; then
-    print_warning "Failed to install pre-commit hooks!"
-    ERRORS_FOUND=$((ERRORS_FOUND + 1))
+if [[ -n "$SKIP_PRE_COMMIT" ]]; then
+    print_success "SKIP_PRE_COMMIT is set. Skipping pre-commit setup."
 else
-    print_success "Pre-commit hooks installed"
-fi
+    # Install pre-commit hooks
+    echo "Installing pre-commit hooks..."
+    poetry run pre-commit install
+    if [ $? -ne 0 ]; then
+        print_warning "Failed to install pre-commit hooks!"
+        ERRORS_FOUND=$((ERRORS_FOUND + 1))
+    else
+        print_success "Pre-commit hooks installed"
+    fi
 
-# Run pre-commit hooks on all files
-echo "Running pre-commit hooks on all files..."
-poetry run pre-commit run --all-files
-if [ $? -ne 0 ]; then
-    print_warning "Pre-commit encountered issues with some files"
-    ERRORS_FOUND=$((ERRORS_FOUND + 1))
-else
-    print_success "Pre-commit initial run complete"
+    # Run pre-commit hooks on all files
+    echo "Running pre-commit hooks on all files..."
+    poetry run pre-commit run --all-files
+    if [ $? -ne 0 ]; then
+        print_warning "Pre-commit encountered issues with some files"
+        ERRORS_FOUND=$((ERRORS_FOUND + 1))
+    else
+        print_success "Pre-commit initial run complete"
+    fi
 fi
 
 # --- Final Status Message --- #
