@@ -1,6 +1,6 @@
 checkpointing:
   run_name: "pico-relora-tiny-v2-sn"
-  save_every_n_steps: 50
+  save_every_n_steps: 100
   save_to_hf: true
   hf_checkpoint:
     repo_id: pico-relora-tiny-v2-sn
