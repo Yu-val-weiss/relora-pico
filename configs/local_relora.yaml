@@ -2,7 +2,7 @@ checkpointing:
   run_name: local_relora
   save_every_n_steps: 10
 
-  save_to_hf: true
+  save_to_hf: false
   hf_checkpoint:
     repo_id: relora_pico_test
     collection_slug: yuvalw/pico-relora-6766e4e726eb8811626915c0
@@ -11,7 +11,8 @@ checkpointing:
     auto_resume: false
   
   learning_dynamics:
-    layer_suffixes: []
+    batch_size: 2
+  #   layer_suffixes: []
 
 model:
   n_layers: 2
@@ -34,7 +35,7 @@ data:
 monitoring:
   logging:
     log_every_n_steps: 1
-  save_to_wandb: true
+  save_to_wandb: false
   wandb:
     entity: pico-lm
     project: pico-relora
@@ -58,8 +59,8 @@ training:
     gradient_accumulation_steps: 1
 
 evaluation:
-  metrics: 
-    - blimp
+  metrics: null
+    # - blimp
   paloma:
     batch_size: 2
   blimp:
