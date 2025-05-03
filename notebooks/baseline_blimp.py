@@ -6,7 +6,6 @@ from pathlib import Path
 
 import evaluate
 import git
-from IPython.display import clear_output
 
 
 def get_step(commit: git.Commit):
@@ -28,7 +27,7 @@ def blimp_eval(model_id: str, batch_size: int = 16):
     return blimp_result
 
 
-def checkout_commit(commit: git.Commit):
+def checkout_commit(repo: git.Repo, commit: git.Commit):
     """Checks out the safetensors file at a given commit"""
     print(f"checking out model.safetensors at commit: {commit.message}")
     target_file = "model.safetensors"
@@ -38,11 +37,12 @@ def checkout_commit(commit: git.Commit):
 
 
 if __name__ == "__main__":
-    repo_path = Path("pico-decoder-tiny")
+    current_dir = Path(__file__).parent
+    repo_path = current_dir / Path("pico-decoder-small")
 
     # Define the repo details
-    repo_url = "https://huggingface.co/pico-lm/pico-decoder-tiny"
-    branch_name = "pico-decoder-tiny-1"
+    repo_url = "https://huggingface.co/pico-lm/pico-decoder-small"
+    branch_name = "pico-decoder-small-1"
 
     # Check if the repo directory already exists
     if not repo_path.exists():
@@ -64,7 +64,7 @@ if __name__ == "__main__":
     # note in most recent order, need to iterated reversed
     hf_commits = [commit for commit in repo.iter_commits() if "Saving HF Model" in commit.message]
 
-    base_path = Path("blimp_results")
+    base_path = current_dir / Path("blimp_results_small")
     base_path.mkdir(exist_ok=True)
 
     for commit in reversed(hf_commits):
@@ -76,10 +76,8 @@ if __name__ == "__main__":
         if json_path.exists():
             continue
 
-        checkout_commit(commit)
+        checkout_commit(repo, commit)
 
-        result = blimp_eval(str("." / repo_path))
+        result = blimp_eval(str("." / repo_path), batch_size=1000)
         with json_path.open("w") as f:
             json.dump(result, f, indent=4, sort_keys=True)
-
-        clear_output()
