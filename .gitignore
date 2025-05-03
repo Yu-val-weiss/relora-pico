@@ -172,3 +172,4 @@ wandb/
 # configs/
 
 .vscode/
+slurm-*.out
