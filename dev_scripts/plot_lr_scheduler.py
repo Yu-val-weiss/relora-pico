@@ -16,7 +16,7 @@ RELORA_RESET_FREQ = 2_000
 
 rc_fonts = {
     "text.usetex": True,
-    "text.latex.preamble": "\n".join([r"\usepackage{libertine}"]),
+    "text.latex.preamble": "\n".join([r"\usepackage{libertine}", r"\usepackage[libertine]{newtxmath}"]),
 }
 matplotlib.rcParams.update(rc_fonts)
 
