@@ -11,8 +11,8 @@ checkpointing:
     auto_resume: false
   
   learning_dynamics:
-    batch_size: 2
-  #   layer_suffixes: []
+    # batch_size: 2
+    layer_suffixes: []
 
 model:
   n_layers: 2
