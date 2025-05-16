@@ -1,0 +1,6122 @@
+[
+  {
+    "doc_id": 0,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the balloon is increasing.",
+      "Context2": "The speed of the balloon is decreasing.",
+      "Target1": "The balloon is accelerating.",
+      "Target2": "The balloon is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the balloon is increasing.",
+        " The balloon is accelerating."
+      ],
+      [
+        "The speed of the balloon is increasing.",
+        " The balloon is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.569204330444336,
+          false
+        ]
+      ],
+      [
+        [
+          -16.726280212402344,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.569204330444336,
+        false
+      ],
+      [
+        -16.726280212402344,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 1,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the balloon is decreasing.",
+      "Context2": "The speed of the balloon is increasing.",
+      "Target1": "The balloon is slowing down.",
+      "Target2": "The balloon is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the balloon is decreasing.",
+        " The balloon is slowing down."
+      ],
+      [
+        "The speed of the balloon is decreasing.",
+        " The balloon is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.02614402770996,
+          false
+        ]
+      ],
+      [
+        [
+          -14.389341354370117,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.02614402770996,
+        false
+      ],
+      [
+        -14.389341354370117,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 2,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the football is increasing.",
+      "Context2": "The speed of the football is decreasing.",
+      "Target1": "The football is accelerating.",
+      "Target2": "The football is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the football is increasing.",
+        " The football is accelerating."
+      ],
+      [
+        "The speed of the football is increasing.",
+        " The football is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.367399215698242,
+          false
+        ]
+      ],
+      [
+        [
+          -17.94333839416504,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.367399215698242,
+        false
+      ],
+      [
+        -17.94333839416504,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 3,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the football is decreasing.",
+      "Context2": "The speed of the football is increasing.",
+      "Target1": "The football is slowing down.",
+      "Target2": "The football is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the football is decreasing.",
+        " The football is slowing down."
+      ],
+      [
+        "The speed of the football is decreasing.",
+        " The football is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.334007263183594,
+          false
+        ]
+      ],
+      [
+        [
+          -16.56341552734375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.334007263183594,
+        false
+      ],
+      [
+        -16.56341552734375,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 4,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the rock is increasing.",
+      "Context2": "The speed of the rock is decreasing.",
+      "Target1": "The rock is accelerating.",
+      "Target2": "The rock is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the rock is increasing.",
+        " The rock is accelerating."
+      ],
+      [
+        "The speed of the rock is increasing.",
+        " The rock is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.351612091064453,
+          false
+        ]
+      ],
+      [
+        [
+          -17.695932388305664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.351612091064453,
+        false
+      ],
+      [
+        -17.695932388305664,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 5,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the rock is decreasing.",
+      "Context2": "The speed of the rock is increasing.",
+      "Target1": "The rock is slowing down.",
+      "Target2": "The rock is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the rock is decreasing.",
+        " The rock is slowing down."
+      ],
+      [
+        "The speed of the rock is decreasing.",
+        " The rock is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.169294357299805,
+          false
+        ]
+      ],
+      [
+        [
+          -16.230533599853516,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.169294357299805,
+        false
+      ],
+      [
+        -16.230533599853516,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 6,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the volleyball is increasing.",
+      "Context2": "The speed of the volleyball is decreasing.",
+      "Target1": "The volleyball is accelerating.",
+      "Target2": "The volleyball is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the volleyball is increasing.",
+        " The volleyball is accelerating."
+      ],
+      [
+        "The speed of the volleyball is increasing.",
+        " The volleyball is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.029569625854492,
+          false
+        ]
+      ],
+      [
+        [
+          -18.356054306030273,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.029569625854492,
+        false
+      ],
+      [
+        -18.356054306030273,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 7,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the volleyball is decreasing.",
+      "Context2": "The speed of the volleyball is increasing.",
+      "Target1": "The volleyball is slowing down.",
+      "Target2": "The volleyball is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the volleyball is decreasing.",
+        " The volleyball is slowing down."
+      ],
+      [
+        "The speed of the volleyball is decreasing.",
+        " The volleyball is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.704187393188477,
+          false
+        ]
+      ],
+      [
+        [
+          -17.136808395385742,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.704187393188477,
+        false
+      ],
+      [
+        -17.136808395385742,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 8,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the wheel is increasing.",
+      "Context2": "The speed of the wheel is decreasing.",
+      "Target1": "The wheel is accelerating.",
+      "Target2": "The wheel is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the wheel is increasing.",
+        " The wheel is accelerating."
+      ],
+      [
+        "The speed of the wheel is increasing.",
+        " The wheel is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -12.998712539672852,
+          false
+        ]
+      ],
+      [
+        [
+          -15.034259796142578,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -12.998712539672852,
+        false
+      ],
+      [
+        -15.034259796142578,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 9,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The speed of the wheel is decreasing.",
+      "Context2": "The speed of the wheel is increasing.",
+      "Target1": "The wheel is slowing down.",
+      "Target2": "The wheel is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speed of the wheel is decreasing.",
+        " The wheel is slowing down."
+      ],
+      [
+        "The speed of the wheel is decreasing.",
+        " The wheel is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.105364799499512,
+          false
+        ]
+      ],
+      [
+        [
+          -12.838492393493652,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.105364799499512,
+        false
+      ],
+      [
+        -12.838492393493652,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 10,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is about to crash. Why?",
+      "Context2": "The balloon is about to stop. Why?",
+      "Target1": "The balloon is accelerating.",
+      "Target2": "The balloon is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is about to crash. Why?",
+        " The balloon is accelerating."
+      ],
+      [
+        "The balloon is about to crash. Why?",
+        " The balloon is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.169082641601562,
+          false
+        ]
+      ],
+      [
+        [
+          -16.89691925048828,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.169082641601562,
+        false
+      ],
+      [
+        -16.89691925048828,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 11,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is about to stop. Why?",
+      "Context2": "The balloon is about to crash. Why?",
+      "Target1": "The balloon is slowing down.",
+      "Target2": "The balloon is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is about to stop. Why?",
+        " The balloon is slowing down."
+      ],
+      [
+        "The balloon is about to stop. Why?",
+        " The balloon is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.85343360900879,
+          false
+        ]
+      ],
+      [
+        [
+          -16.586688995361328,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.85343360900879,
+        false
+      ],
+      [
+        -16.586688995361328,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 12,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is about to crash. Why?",
+      "Context2": "The football is about to stop. Why?",
+      "Target1": "The football is accelerating.",
+      "Target2": "The football is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is about to crash. Why?",
+        " The football is accelerating."
+      ],
+      [
+        "The football is about to crash. Why?",
+        " The football is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.330976486206055,
+          false
+        ]
+      ],
+      [
+        [
+          -18.59122085571289,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.330976486206055,
+        false
+      ],
+      [
+        -18.59122085571289,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 13,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is about to stop. Why?",
+      "Context2": "The football is about to crash. Why?",
+      "Target1": "The football is slowing down.",
+      "Target2": "The football is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is about to stop. Why?",
+        " The football is slowing down."
+      ],
+      [
+        "The football is about to stop. Why?",
+        " The football is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.6112060546875,
+          false
+        ]
+      ],
+      [
+        [
+          -19.36150360107422,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.6112060546875,
+        false
+      ],
+      [
+        -19.36150360107422,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 14,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is about to crash. Why?",
+      "Context2": "The rock is about to stop. Why?",
+      "Target1": "The rock is accelerating.",
+      "Target2": "The rock is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is about to crash. Why?",
+        " The rock is accelerating."
+      ],
+      [
+        "The rock is about to crash. Why?",
+        " The rock is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.5360107421875,
+          false
+        ]
+      ],
+      [
+        [
+          -18.62192153930664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.5360107421875,
+        false
+      ],
+      [
+        -18.62192153930664,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 15,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is about to stop. Why?",
+      "Context2": "The rock is about to crash. Why?",
+      "Target1": "The rock is slowing down.",
+      "Target2": "The rock is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is about to stop. Why?",
+        " The rock is slowing down."
+      ],
+      [
+        "The rock is about to stop. Why?",
+        " The rock is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.754419326782227,
+          false
+        ]
+      ],
+      [
+        [
+          -20.15017318725586,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.754419326782227,
+        false
+      ],
+      [
+        -20.15017318725586,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 16,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is about to crash. Why?",
+      "Context2": "The volleyball is about to stop. Why?",
+      "Target1": "The volleyball is accelerating.",
+      "Target2": "The volleyball is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is about to crash. Why?",
+        " The volleyball is accelerating."
+      ],
+      [
+        "The volleyball is about to crash. Why?",
+        " The volleyball is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.315431594848633,
+          false
+        ]
+      ],
+      [
+        [
+          -22.137996673583984,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.315431594848633,
+        false
+      ],
+      [
+        -22.137996673583984,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 17,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is about to stop. Why?",
+      "Context2": "The volleyball is about to crash. Why?",
+      "Target1": "The volleyball is slowing down.",
+      "Target2": "The volleyball is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is about to stop. Why?",
+        " The volleyball is slowing down."
+      ],
+      [
+        "The volleyball is about to stop. Why?",
+        " The volleyball is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.49305534362793,
+          false
+        ]
+      ],
+      [
+        [
+          -22.867963790893555,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.49305534362793,
+        false
+      ],
+      [
+        -22.867963790893555,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 18,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is about to crash. Why?",
+      "Context2": "The wheel is about to stop. Why?",
+      "Target1": "The wheel is accelerating.",
+      "Target2": "The wheel is slowing down."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is about to crash. Why?",
+        " The wheel is accelerating."
+      ],
+      [
+        "The wheel is about to crash. Why?",
+        " The wheel is slowing down."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.817996978759766,
+          false
+        ]
+      ],
+      [
+        [
+          -16.27468490600586,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.817996978759766,
+        false
+      ],
+      [
+        -16.27468490600586,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 19,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "accelerate",
+      "ConceptB": "slow down",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is about to stop. Why?",
+      "Context2": "The wheel is about to crash. Why?",
+      "Target1": "The wheel is slowing down.",
+      "Target2": "The wheel is accelerating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is about to stop. Why?",
+        " The wheel is slowing down."
+      ],
+      [
+        "The wheel is about to stop. Why?",
+        " The wheel is accelerating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.30884552001953,
+          false
+        ]
+      ],
+      [
+        [
+          -16.460363388061523,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.30884552001953,
+        false
+      ],
+      [
+        -16.460363388061523,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 20,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is getting closer to the ground.",
+      "Context2": "The balloon is getting closer to the sky.",
+      "Target1": "The balloon is falling.",
+      "Target2": "The balloon is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is getting closer to the ground.",
+        " The balloon is falling."
+      ],
+      [
+        "The balloon is getting closer to the ground.",
+        " The balloon is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.517061233520508,
+          false
+        ]
+      ],
+      [
+        [
+          -14.775382995605469,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.517061233520508,
+        false
+      ],
+      [
+        -14.775382995605469,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 21,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is getting closer to the sky.",
+      "Context2": "The balloon is getting closer to the ground.",
+      "Target1": "The balloon is rising.",
+      "Target2": "The balloon is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is getting closer to the sky.",
+        " The balloon is rising."
+      ],
+      [
+        "The balloon is getting closer to the sky.",
+        " The balloon is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.878971099853516,
+          false
+        ]
+      ],
+      [
+        [
+          -14.52621841430664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.878971099853516,
+        false
+      ],
+      [
+        -14.52621841430664,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 22,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is moving down.",
+      "Context2": "The balloon is moving up.",
+      "Target1": "The balloon is falling.",
+      "Target2": "The balloon is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is moving down.",
+        " The balloon is falling."
+      ],
+      [
+        "The balloon is moving down.",
+        " The balloon is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -13.964975357055664,
+          false
+        ]
+      ],
+      [
+        [
+          -13.547898292541504,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -13.964975357055664,
+        false
+      ],
+      [
+        -13.547898292541504,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 23,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is moving up.",
+      "Context2": "The balloon is moving down.",
+      "Target1": "The balloon is rising.",
+      "Target2": "The balloon is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is moving up.",
+        " The balloon is rising."
+      ],
+      [
+        "The balloon is moving up.",
+        " The balloon is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -13.440437316894531,
+          false
+        ]
+      ],
+      [
+        [
+          -13.958624839782715,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -13.440437316894531,
+        false
+      ],
+      [
+        -13.958624839782715,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 24,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is getting closer to the ground.",
+      "Context2": "The football is getting closer to the sky.",
+      "Target1": "The football is falling.",
+      "Target2": "The football is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is getting closer to the ground.",
+        " The football is falling."
+      ],
+      [
+        "The football is getting closer to the ground.",
+        " The football is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.70968246459961,
+          false
+        ]
+      ],
+      [
+        [
+          -16.51361656188965,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.70968246459961,
+        false
+      ],
+      [
+        -16.51361656188965,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 25,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is getting closer to the sky.",
+      "Context2": "The football is getting closer to the ground.",
+      "Target1": "The football is rising.",
+      "Target2": "The football is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is getting closer to the sky.",
+        " The football is rising."
+      ],
+      [
+        "The football is getting closer to the sky.",
+        " The football is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.854999542236328,
+          false
+        ]
+      ],
+      [
+        [
+          -15.99466323852539,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.854999542236328,
+        false
+      ],
+      [
+        -15.99466323852539,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 26,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is moving down.",
+      "Context2": "The football is moving up.",
+      "Target1": "The football is falling.",
+      "Target2": "The football is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is moving down.",
+        " The football is falling."
+      ],
+      [
+        "The football is moving down.",
+        " The football is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.58592414855957,
+          false
+        ]
+      ],
+      [
+        [
+          -16.185943603515625,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.58592414855957,
+        false
+      ],
+      [
+        -16.185943603515625,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 27,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is moving up.",
+      "Context2": "The football is moving down.",
+      "Target1": "The football is rising.",
+      "Target2": "The football is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is moving up.",
+        " The football is rising."
+      ],
+      [
+        "The football is moving up.",
+        " The football is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.027969360351562,
+          false
+        ]
+      ],
+      [
+        [
+          -16.60894775390625,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.027969360351562,
+        false
+      ],
+      [
+        -16.60894775390625,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 28,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is getting closer to the ground.",
+      "Context2": "The rock is getting closer to the sky.",
+      "Target1": "The rock is falling.",
+      "Target2": "The rock is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is getting closer to the ground.",
+        " The rock is falling."
+      ],
+      [
+        "The rock is getting closer to the ground.",
+        " The rock is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.102449417114258,
+          false
+        ]
+      ],
+      [
+        [
+          -15.897680282592773,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.102449417114258,
+        false
+      ],
+      [
+        -15.897680282592773,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 29,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is getting closer to the sky.",
+      "Context2": "The rock is getting closer to the ground.",
+      "Target1": "The rock is rising.",
+      "Target2": "The rock is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is getting closer to the sky.",
+        " The rock is rising."
+      ],
+      [
+        "The rock is getting closer to the sky.",
+        " The rock is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.414037704467773,
+          false
+        ]
+      ],
+      [
+        [
+          -14.66684341430664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.414037704467773,
+        false
+      ],
+      [
+        -14.66684341430664,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 30,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is moving down.",
+      "Context2": "The rock is moving up.",
+      "Target1": "The rock is falling.",
+      "Target2": "The rock is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is moving down.",
+        " The rock is falling."
+      ],
+      [
+        "The rock is moving down.",
+        " The rock is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.405414581298828,
+          false
+        ]
+      ],
+      [
+        [
+          -15.724326133728027,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.405414581298828,
+        false
+      ],
+      [
+        -15.724326133728027,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 31,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is moving up.",
+      "Context2": "The rock is moving down.",
+      "Target1": "The rock is rising.",
+      "Target2": "The rock is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is moving up.",
+        " The rock is rising."
+      ],
+      [
+        "The rock is moving up.",
+        " The rock is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.64324951171875,
+          false
+        ]
+      ],
+      [
+        [
+          -15.344676971435547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.64324951171875,
+        false
+      ],
+      [
+        -15.344676971435547,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 32,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is getting closer to the ground.",
+      "Context2": "The volleyball is getting closer to the sky.",
+      "Target1": "The volleyball is falling.",
+      "Target2": "The volleyball is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is getting closer to the ground.",
+        " The volleyball is falling."
+      ],
+      [
+        "The volleyball is getting closer to the ground.",
+        " The volleyball is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.947662353515625,
+          false
+        ]
+      ],
+      [
+        [
+          -19.374271392822266,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.947662353515625,
+        false
+      ],
+      [
+        -19.374271392822266,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 33,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is getting closer to the sky.",
+      "Context2": "The volleyball is getting closer to the ground.",
+      "Target1": "The volleyball is rising.",
+      "Target2": "The volleyball is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is getting closer to the sky.",
+        " The volleyball is rising."
+      ],
+      [
+        "The volleyball is getting closer to the sky.",
+        " The volleyball is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.13875961303711,
+          false
+        ]
+      ],
+      [
+        [
+          -18.710947036743164,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.13875961303711,
+        false
+      ],
+      [
+        -18.710947036743164,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 34,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is moving down.",
+      "Context2": "The volleyball is moving up.",
+      "Target1": "The volleyball is falling.",
+      "Target2": "The volleyball is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is moving down.",
+        " The volleyball is falling."
+      ],
+      [
+        "The volleyball is moving down.",
+        " The volleyball is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.924652099609375,
+          false
+        ]
+      ],
+      [
+        [
+          -19.097606658935547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.924652099609375,
+        false
+      ],
+      [
+        -19.097606658935547,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 35,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is moving up.",
+      "Context2": "The volleyball is moving down.",
+      "Target1": "The volleyball is rising.",
+      "Target2": "The volleyball is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is moving up.",
+        " The volleyball is rising."
+      ],
+      [
+        "The volleyball is moving up.",
+        " The volleyball is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.116323471069336,
+          false
+        ]
+      ],
+      [
+        [
+          -18.994165420532227,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.116323471069336,
+        false
+      ],
+      [
+        -18.994165420532227,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 36,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is getting closer to the ground.",
+      "Context2": "The wheel is getting closer to the sky.",
+      "Target1": "The wheel is falling.",
+      "Target2": "The wheel is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is getting closer to the ground.",
+        " The wheel is falling."
+      ],
+      [
+        "The wheel is getting closer to the ground.",
+        " The wheel is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.06789207458496,
+          false
+        ]
+      ],
+      [
+        [
+          -16.647172927856445,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.06789207458496,
+        false
+      ],
+      [
+        -16.647172927856445,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 37,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is getting closer to the sky.",
+      "Context2": "The wheel is getting closer to the ground.",
+      "Target1": "The wheel is rising.",
+      "Target2": "The wheel is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is getting closer to the sky.",
+        " The wheel is rising."
+      ],
+      [
+        "The wheel is getting closer to the sky.",
+        " The wheel is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.1947021484375,
+          false
+        ]
+      ],
+      [
+        [
+          -15.638391494750977,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.1947021484375,
+        false
+      ],
+      [
+        -15.638391494750977,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 38,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is moving down.",
+      "Context2": "The wheel is moving up.",
+      "Target1": "The wheel is falling.",
+      "Target2": "The wheel is rising."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is moving down.",
+        " The wheel is falling."
+      ],
+      [
+        "The wheel is moving down.",
+        " The wheel is rising."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.38532543182373,
+          false
+        ]
+      ],
+      [
+        [
+          -15.773350715637207,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.38532543182373,
+        false
+      ],
+      [
+        -15.773350715637207,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 39,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "fall",
+      "ConceptB": "rise",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is moving up.",
+      "Context2": "The wheel is moving down.",
+      "Target1": "The wheel is rising.",
+      "Target2": "The wheel is falling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is moving up.",
+        " The wheel is rising."
+      ],
+      [
+        "The wheel is moving up.",
+        " The wheel is falling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.80018424987793,
+          false
+        ]
+      ],
+      [
+        [
+          -15.368036270141602,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.80018424987793,
+        false
+      ],
+      [
+        -15.368036270141602,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 40,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is larger than its initial size.",
+      "Context2": "The balloon is smaller than its initial size.",
+      "Target1": "The balloon is growing.",
+      "Target2": "The balloon is shrinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is larger than its initial size.",
+        " The balloon is growing."
+      ],
+      [
+        "The balloon is larger than its initial size.",
+        " The balloon is shrinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.118789672851562,
+          false
+        ]
+      ],
+      [
+        [
+          -18.806310653686523,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.118789672851562,
+        false
+      ],
+      [
+        -18.806310653686523,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 41,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is smaller than its initial size.",
+      "Context2": "The balloon is larger than its initial size.",
+      "Target1": "The balloon is shrinking.",
+      "Target2": "The balloon is growing."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is smaller than its initial size.",
+        " The balloon is shrinking."
+      ],
+      [
+        "The balloon is smaller than its initial size.",
+        " The balloon is growing."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.193695068359375,
+          false
+        ]
+      ],
+      [
+        [
+          -17.7401123046875,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.193695068359375,
+        false
+      ],
+      [
+        -17.7401123046875,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 42,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is larger than its initial size.",
+      "Context2": "The football is smaller than its initial size.",
+      "Target1": "The football is growing.",
+      "Target2": "The football is shrinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is larger than its initial size.",
+        " The football is growing."
+      ],
+      [
+        "The football is larger than its initial size.",
+        " The football is shrinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.348270416259766,
+          false
+        ]
+      ],
+      [
+        [
+          -20.210071563720703,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.348270416259766,
+        false
+      ],
+      [
+        -20.210071563720703,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 43,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is smaller than its initial size.",
+      "Context2": "The football is larger than its initial size.",
+      "Target1": "The football is shrinking.",
+      "Target2": "The football is growing."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is smaller than its initial size.",
+        " The football is shrinking."
+      ],
+      [
+        "The football is smaller than its initial size.",
+        " The football is growing."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.754390716552734,
+          false
+        ]
+      ],
+      [
+        [
+          -19.278648376464844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.754390716552734,
+        false
+      ],
+      [
+        -19.278648376464844,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 44,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is larger than its initial size.",
+      "Context2": "The rock is smaller than its initial size.",
+      "Target1": "The rock is growing.",
+      "Target2": "The rock is shrinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is larger than its initial size.",
+        " The rock is growing."
+      ],
+      [
+        "The rock is larger than its initial size.",
+        " The rock is shrinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.086530685424805,
+          false
+        ]
+      ],
+      [
+        [
+          -20.91323471069336,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.086530685424805,
+        false
+      ],
+      [
+        -20.91323471069336,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 45,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is smaller than its initial size.",
+      "Context2": "The rock is larger than its initial size.",
+      "Target1": "The rock is shrinking.",
+      "Target2": "The rock is growing."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is smaller than its initial size.",
+        " The rock is shrinking."
+      ],
+      [
+        "The rock is smaller than its initial size.",
+        " The rock is growing."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.408889770507812,
+          false
+        ]
+      ],
+      [
+        [
+          -19.857505798339844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.408889770507812,
+        false
+      ],
+      [
+        -19.857505798339844,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 46,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is larger than its initial size.",
+      "Context2": "The volleyball is smaller than its initial size.",
+      "Target1": "The volleyball is growing.",
+      "Target2": "The volleyball is shrinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is larger than its initial size.",
+        " The volleyball is growing."
+      ],
+      [
+        "The volleyball is larger than its initial size.",
+        " The volleyball is shrinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.341632843017578,
+          false
+        ]
+      ],
+      [
+        [
+          -24.011552810668945,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.341632843017578,
+        false
+      ],
+      [
+        -24.011552810668945,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 47,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is smaller than its initial size.",
+      "Context2": "The volleyball is larger than its initial size.",
+      "Target1": "The volleyball is shrinking.",
+      "Target2": "The volleyball is growing."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is smaller than its initial size.",
+        " The volleyball is shrinking."
+      ],
+      [
+        "The volleyball is smaller than its initial size.",
+        " The volleyball is growing."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.486881256103516,
+          false
+        ]
+      ],
+      [
+        [
+          -23.19858741760254,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.486881256103516,
+        false
+      ],
+      [
+        -23.19858741760254,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 48,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is larger than its initial size.",
+      "Context2": "The wheel is smaller than its initial size.",
+      "Target1": "The wheel is growing.",
+      "Target2": "The wheel is shrinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is larger than its initial size.",
+        " The wheel is growing."
+      ],
+      [
+        "The wheel is larger than its initial size.",
+        " The wheel is shrinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.813343048095703,
+          false
+        ]
+      ],
+      [
+        [
+          -19.140060424804688,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.813343048095703,
+        false
+      ],
+      [
+        -19.140060424804688,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 49,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "grow",
+      "ConceptB": "shrink",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is smaller than its initial size.",
+      "Context2": "The wheel is larger than its initial size.",
+      "Target1": "The wheel is shrinking.",
+      "Target2": "The wheel is growing."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is smaller than its initial size.",
+        " The wheel is shrinking."
+      ],
+      [
+        "The wheel is smaller than its initial size.",
+        " The wheel is growing."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.675106048583984,
+          false
+        ]
+      ],
+      [
+        [
+          -19.58743667602539,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.675106048583984,
+        false
+      ],
+      [
+        -19.58743667602539,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 50,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the balloon is rotating.",
+      "Context2": "The speck on the balloon is not rotating.",
+      "Target1": "The balloon is rolling.",
+      "Target2": "The balloon is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the balloon is rotating.",
+        " The balloon is rolling."
+      ],
+      [
+        "The speck on the balloon is rotating.",
+        " The balloon is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.390708923339844,
+          false
+        ]
+      ],
+      [
+        [
+          -17.77647590637207,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.390708923339844,
+        false
+      ],
+      [
+        -17.77647590637207,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 51,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the balloon is not rotating.",
+      "Context2": "The speck on the balloon is rotating.",
+      "Target1": "The balloon is sliding.",
+      "Target2": "The balloon is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the balloon is not rotating.",
+        " The balloon is sliding."
+      ],
+      [
+        "The speck on the balloon is not rotating.",
+        " The balloon is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.274463653564453,
+          false
+        ]
+      ],
+      [
+        [
+          -18.087173461914062,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.274463653564453,
+        false
+      ],
+      [
+        -18.087173461914062,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 52,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the football is rotating.",
+      "Context2": "The speck on the football is not rotating.",
+      "Target1": "The football is rolling.",
+      "Target2": "The football is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the football is rotating.",
+        " The football is rolling."
+      ],
+      [
+        "The speck on the football is rotating.",
+        " The football is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.706024169921875,
+          false
+        ]
+      ],
+      [
+        [
+          -18.860300064086914,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.706024169921875,
+        false
+      ],
+      [
+        -18.860300064086914,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 53,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the football is not rotating.",
+      "Context2": "The speck on the football is rotating.",
+      "Target1": "The football is sliding.",
+      "Target2": "The football is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the football is not rotating.",
+        " The football is sliding."
+      ],
+      [
+        "The speck on the football is not rotating.",
+        " The football is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.934551239013672,
+          false
+        ]
+      ],
+      [
+        [
+          -19.192825317382812,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.934551239013672,
+        false
+      ],
+      [
+        -19.192825317382812,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 54,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the rock is rotating.",
+      "Context2": "The speck on the rock is not rotating.",
+      "Target1": "The rock is rolling.",
+      "Target2": "The rock is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the rock is rotating.",
+        " The rock is rolling."
+      ],
+      [
+        "The speck on the rock is rotating.",
+        " The rock is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.9135684967041,
+          false
+        ]
+      ],
+      [
+        [
+          -17.87045669555664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.9135684967041,
+        false
+      ],
+      [
+        -17.87045669555664,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 55,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the rock is not rotating.",
+      "Context2": "The speck on the rock is rotating.",
+      "Target1": "The rock is sliding.",
+      "Target2": "The rock is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the rock is not rotating.",
+        " The rock is sliding."
+      ],
+      [
+        "The speck on the rock is not rotating.",
+        " The rock is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.6259765625,
+          false
+        ]
+      ],
+      [
+        [
+          -18.469694137573242,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.6259765625,
+        false
+      ],
+      [
+        -18.469694137573242,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 56,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the volleyball is rotating.",
+      "Context2": "The speck on the volleyball is not rotating.",
+      "Target1": "The volleyball is rolling.",
+      "Target2": "The volleyball is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the volleyball is rotating.",
+        " The volleyball is rolling."
+      ],
+      [
+        "The speck on the volleyball is rotating.",
+        " The volleyball is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.14318084716797,
+          false
+        ]
+      ],
+      [
+        [
+          -20.42225456237793,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.14318084716797,
+        false
+      ],
+      [
+        -20.42225456237793,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 57,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the volleyball is not rotating.",
+      "Context2": "The speck on the volleyball is rotating.",
+      "Target1": "The volleyball is sliding.",
+      "Target2": "The volleyball is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the volleyball is not rotating.",
+        " The volleyball is sliding."
+      ],
+      [
+        "The speck on the volleyball is not rotating.",
+        " The volleyball is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.87681007385254,
+          false
+        ]
+      ],
+      [
+        [
+          -20.315940856933594,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.87681007385254,
+        false
+      ],
+      [
+        -20.315940856933594,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 58,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the wheel is rotating.",
+      "Context2": "The speck on the wheel is not rotating.",
+      "Target1": "The wheel is rolling.",
+      "Target2": "The wheel is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the wheel is rotating.",
+        " The wheel is rolling."
+      ],
+      [
+        "The speck on the wheel is rotating.",
+        " The wheel is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.69344139099121,
+          false
+        ]
+      ],
+      [
+        [
+          -18.065919876098633,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.69344139099121,
+        false
+      ],
+      [
+        -18.065919876098633,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 59,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "The speck on the wheel is not rotating.",
+      "Context2": "The speck on the wheel is rotating.",
+      "Target1": "The wheel is sliding.",
+      "Target2": "The wheel is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The speck on the wheel is not rotating.",
+        " The wheel is sliding."
+      ],
+      [
+        "The speck on the wheel is not rotating.",
+        " The wheel is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.09234046936035,
+          false
+        ]
+      ],
+      [
+        [
+          -18.77606964111328,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.09234046936035,
+        false
+      ],
+      [
+        -18.77606964111328,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 60,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the balloon will touch the floor.",
+      "Context2": "In a moment, the top of the balloon will remain at the top.",
+      "Target1": "The balloon is rolling.",
+      "Target2": "The balloon is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the balloon will touch the floor.",
+        " The balloon is rolling."
+      ],
+      [
+        "In a moment, the top of the balloon will touch the floor.",
+        " The balloon is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.269989013671875,
+          false
+        ]
+      ],
+      [
+        [
+          -23.030826568603516,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.269989013671875,
+        false
+      ],
+      [
+        -23.030826568603516,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 61,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the balloon will remain at the top.",
+      "Context2": "In a moment, the top of the balloon will touch the floor.",
+      "Target1": "The balloon is sliding.",
+      "Target2": "The balloon is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the balloon will remain at the top.",
+        " The balloon is sliding."
+      ],
+      [
+        "In a moment, the top of the balloon will remain at the top.",
+        " The balloon is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.556346893310547,
+          false
+        ]
+      ],
+      [
+        [
+          -19.11012840270996,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.556346893310547,
+        false
+      ],
+      [
+        -19.11012840270996,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 62,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the football will touch the floor.",
+      "Context2": "In a moment, the top of the football will remain at the top.",
+      "Target1": "The football is rolling.",
+      "Target2": "The football is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the football will touch the floor.",
+        " The football is rolling."
+      ],
+      [
+        "In a moment, the top of the football will touch the floor.",
+        " The football is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.792755126953125,
+          false
+        ]
+      ],
+      [
+        [
+          -22.947864532470703,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.792755126953125,
+        false
+      ],
+      [
+        -22.947864532470703,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 63,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the football will remain at the top.",
+      "Context2": "In a moment, the top of the football will touch the floor.",
+      "Target1": "The football is sliding.",
+      "Target2": "The football is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the football will remain at the top.",
+        " The football is sliding."
+      ],
+      [
+        "In a moment, the top of the football will remain at the top.",
+        " The football is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.94017219543457,
+          false
+        ]
+      ],
+      [
+        [
+          -20.16287612915039,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.94017219543457,
+        false
+      ],
+      [
+        -20.16287612915039,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 64,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the rock will touch the floor.",
+      "Context2": "In a moment, the top of the rock will remain at the top.",
+      "Target1": "The rock is rolling.",
+      "Target2": "The rock is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the rock will touch the floor.",
+        " The rock is rolling."
+      ],
+      [
+        "In a moment, the top of the rock will touch the floor.",
+        " The rock is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.88411521911621,
+          false
+        ]
+      ],
+      [
+        [
+          -21.078388214111328,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.88411521911621,
+        false
+      ],
+      [
+        -21.078388214111328,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 65,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the rock will remain at the top.",
+      "Context2": "In a moment, the top of the rock will touch the floor.",
+      "Target1": "The rock is sliding.",
+      "Target2": "The rock is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the rock will remain at the top.",
+        " The rock is sliding."
+      ],
+      [
+        "In a moment, the top of the rock will remain at the top.",
+        " The rock is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.773893356323242,
+          false
+        ]
+      ],
+      [
+        [
+          -18.862056732177734,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.773893356323242,
+        false
+      ],
+      [
+        -18.862056732177734,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 66,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the volleyball will touch the floor.",
+      "Context2": "In a moment, the top of the volleyball will remain at the top.",
+      "Target1": "The volleyball is rolling.",
+      "Target2": "The volleyball is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the volleyball will touch the floor.",
+        " The volleyball is rolling."
+      ],
+      [
+        "In a moment, the top of the volleyball will touch the floor.",
+        " The volleyball is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.556222915649414,
+          false
+        ]
+      ],
+      [
+        [
+          -24.31830406188965,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.556222915649414,
+        false
+      ],
+      [
+        -24.31830406188965,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 67,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the volleyball will remain at the top.",
+      "Context2": "In a moment, the top of the volleyball will touch the floor.",
+      "Target1": "The volleyball is sliding.",
+      "Target2": "The volleyball is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the volleyball will remain at the top.",
+        " The volleyball is sliding."
+      ],
+      [
+        "In a moment, the top of the volleyball will remain at the top.",
+        " The volleyball is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.92759895324707,
+          false
+        ]
+      ],
+      [
+        [
+          -20.755464553833008,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.92759895324707,
+        false
+      ],
+      [
+        -20.755464553833008,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 68,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the wheel will touch the floor.",
+      "Context2": "In a moment, the top of the wheel will remain at the top.",
+      "Target1": "The wheel is rolling.",
+      "Target2": "The wheel is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the wheel will touch the floor.",
+        " The wheel is rolling."
+      ],
+      [
+        "In a moment, the top of the wheel will touch the floor.",
+        " The wheel is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.93861198425293,
+          false
+        ]
+      ],
+      [
+        [
+          -19.185546875,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.93861198425293,
+        false
+      ],
+      [
+        -19.185546875,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 69,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "In a moment, the top of the wheel will remain at the top.",
+      "Context2": "In a moment, the top of the wheel will touch the floor.",
+      "Target1": "The wheel is sliding.",
+      "Target2": "The wheel is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a moment, the top of the wheel will remain at the top.",
+        " The wheel is sliding."
+      ],
+      [
+        "In a moment, the top of the wheel will remain at the top.",
+        " The wheel is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.42380142211914,
+          false
+        ]
+      ],
+      [
+        [
+          -18.07056427001953,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.42380142211914,
+        false
+      ],
+      [
+        -18.07056427001953,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 70,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is moving forward on a surface. The surface is very flat.",
+      "Context2": "The balloon is moving forward on a surface. The surface is very slippery.",
+      "Target1": "The balloon is rolling.",
+      "Target2": "The balloon is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is moving forward on a surface. The surface is very flat.",
+        " The balloon is rolling."
+      ],
+      [
+        "The balloon is moving forward on a surface. The surface is very flat.",
+        " The balloon is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.091690063476562,
+          false
+        ]
+      ],
+      [
+        [
+          -14.853776931762695,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.091690063476562,
+        false
+      ],
+      [
+        -14.853776931762695,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 71,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is moving forward on a surface. The surface is very slippery.",
+      "Context2": "The balloon is moving forward on a surface. The surface is very flat.",
+      "Target1": "The balloon is sliding.",
+      "Target2": "The balloon is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is moving forward on a surface. The surface is very slippery.",
+        " The balloon is sliding."
+      ],
+      [
+        "The balloon is moving forward on a surface. The surface is very slippery.",
+        " The balloon is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.974538803100586,
+          false
+        ]
+      ],
+      [
+        [
+          -13.791348457336426,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.974538803100586,
+        false
+      ],
+      [
+        -13.791348457336426,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 72,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is moving forward on a surface. The surface is very flat.",
+      "Context2": "The football is moving forward on a surface. The surface is very slippery.",
+      "Target1": "The football is rolling.",
+      "Target2": "The football is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is moving forward on a surface. The surface is very flat.",
+        " The football is rolling."
+      ],
+      [
+        "The football is moving forward on a surface. The surface is very flat.",
+        " The football is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.6881103515625,
+          false
+        ]
+      ],
+      [
+        [
+          -14.837355613708496,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.6881103515625,
+        false
+      ],
+      [
+        -14.837355613708496,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 73,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is moving forward on a surface. The surface is very slippery.",
+      "Context2": "The football is moving forward on a surface. The surface is very flat.",
+      "Target1": "The football is sliding.",
+      "Target2": "The football is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is moving forward on a surface. The surface is very slippery.",
+        " The football is sliding."
+      ],
+      [
+        "The football is moving forward on a surface. The surface is very slippery.",
+        " The football is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.269702911376953,
+          false
+        ]
+      ],
+      [
+        [
+          -14.710786819458008,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.269702911376953,
+        false
+      ],
+      [
+        -14.710786819458008,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 74,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is moving forward on a surface. The surface is very flat.",
+      "Context2": "The rock is moving forward on a surface. The surface is very slippery.",
+      "Target1": "The rock is rolling.",
+      "Target2": "The rock is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is moving forward on a surface. The surface is very flat.",
+        " The rock is rolling."
+      ],
+      [
+        "The rock is moving forward on a surface. The surface is very flat.",
+        " The rock is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.581429481506348,
+          false
+        ]
+      ],
+      [
+        [
+          -15.095314979553223,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.581429481506348,
+        false
+      ],
+      [
+        -15.095314979553223,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 75,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is moving forward on a surface. The surface is very slippery.",
+      "Context2": "The rock is moving forward on a surface. The surface is very flat.",
+      "Target1": "The rock is sliding.",
+      "Target2": "The rock is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is moving forward on a surface. The surface is very slippery.",
+        " The rock is sliding."
+      ],
+      [
+        "The rock is moving forward on a surface. The surface is very slippery.",
+        " The rock is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.10964584350586,
+          false
+        ]
+      ],
+      [
+        [
+          -14.23962116241455,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.10964584350586,
+        false
+      ],
+      [
+        -14.23962116241455,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 76,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is moving forward on a surface. The surface is very flat.",
+      "Context2": "The volleyball is moving forward on a surface. The surface is very slippery.",
+      "Target1": "The volleyball is rolling.",
+      "Target2": "The volleyball is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is moving forward on a surface. The surface is very flat.",
+        " The volleyball is rolling."
+      ],
+      [
+        "The volleyball is moving forward on a surface. The surface is very flat.",
+        " The volleyball is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.54155158996582,
+          false
+        ]
+      ],
+      [
+        [
+          -18.464872360229492,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.54155158996582,
+        false
+      ],
+      [
+        -18.464872360229492,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 77,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is moving forward on a surface. The surface is very slippery.",
+      "Context2": "The volleyball is moving forward on a surface. The surface is very flat.",
+      "Target1": "The volleyball is sliding.",
+      "Target2": "The volleyball is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is moving forward on a surface. The surface is very slippery.",
+        " The volleyball is sliding."
+      ],
+      [
+        "The volleyball is moving forward on a surface. The surface is very slippery.",
+        " The volleyball is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.85896873474121,
+          false
+        ]
+      ],
+      [
+        [
+          -17.433151245117188,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.85896873474121,
+        false
+      ],
+      [
+        -17.433151245117188,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 78,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is moving forward on a surface. The surface is very flat.",
+      "Context2": "The wheel is moving forward on a surface. The surface is very slippery.",
+      "Target1": "The wheel is rolling.",
+      "Target2": "The wheel is sliding."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is moving forward on a surface. The surface is very flat.",
+        " The wheel is rolling."
+      ],
+      [
+        "The wheel is moving forward on a surface. The surface is very flat.",
+        " The wheel is sliding."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -13.508140563964844,
+          false
+        ]
+      ],
+      [
+        [
+          -13.496736526489258,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -13.508140563964844,
+        false
+      ],
+      [
+        -13.496736526489258,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 79,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "roll",
+      "ConceptB": "slide",
+      "ContextType": "indirect",
+      "ContextDiff": "other",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is moving forward on a surface. The surface is very slippery.",
+      "Context2": "The wheel is moving forward on a surface. The surface is very flat.",
+      "Target1": "The wheel is sliding.",
+      "Target2": "The wheel is rolling."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is moving forward on a surface. The surface is very slippery.",
+        " The wheel is sliding."
+      ],
+      [
+        "The wheel is moving forward on a surface. The surface is very slippery.",
+        " The wheel is rolling."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -13.547063827514648,
+          false
+        ]
+      ],
+      [
+        [
+          -12.926187515258789,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -13.547063827514648,
+        false
+      ],
+      [
+        -12.926187515258789,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 80,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is going underwater.",
+      "Context2": "The balloon is staying on the surface.",
+      "Target1": "The balloon is sinking.",
+      "Target2": "The balloon is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is going underwater.",
+        " The balloon is sinking."
+      ],
+      [
+        "The balloon is going underwater.",
+        " The balloon is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.102184295654297,
+          false
+        ]
+      ],
+      [
+        [
+          -16.745559692382812,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.102184295654297,
+        false
+      ],
+      [
+        -16.745559692382812,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 81,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is staying on the surface.",
+      "Context2": "The balloon is going underwater.",
+      "Target1": "The balloon is floating.",
+      "Target2": "The balloon is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is staying on the surface.",
+        " The balloon is floating."
+      ],
+      [
+        "The balloon is staying on the surface.",
+        " The balloon is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.35742473602295,
+          false
+        ]
+      ],
+      [
+        [
+          -16.622482299804688,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.35742473602295,
+        false
+      ],
+      [
+        -16.622482299804688,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 82,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is losing altitude.",
+      "Context2": "The balloon is staying at the same altitude.",
+      "Target1": "The balloon is sinking.",
+      "Target2": "The balloon is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is losing altitude.",
+        " The balloon is sinking."
+      ],
+      [
+        "The balloon is losing altitude.",
+        " The balloon is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.768821716308594,
+          false
+        ]
+      ],
+      [
+        [
+          -16.458498001098633,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.768821716308594,
+        false
+      ],
+      [
+        -16.458498001098633,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 83,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is staying at the same altitude.",
+      "Context2": "The balloon is losing altitude.",
+      "Target1": "The balloon is floating.",
+      "Target2": "The balloon is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is staying at the same altitude.",
+        " The balloon is floating."
+      ],
+      [
+        "The balloon is staying at the same altitude.",
+        " The balloon is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.10656452178955,
+          false
+        ]
+      ],
+      [
+        [
+          -16.74891471862793,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.10656452178955,
+        false
+      ],
+      [
+        -16.74891471862793,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 84,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is going underwater.",
+      "Context2": "The football is staying on the surface.",
+      "Target1": "The football is sinking.",
+      "Target2": "The football is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is going underwater.",
+        " The football is sinking."
+      ],
+      [
+        "The football is going underwater.",
+        " The football is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.296009063720703,
+          false
+        ]
+      ],
+      [
+        [
+          -20.66520881652832,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.296009063720703,
+        false
+      ],
+      [
+        -20.66520881652832,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 85,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is staying on the surface.",
+      "Context2": "The football is going underwater.",
+      "Target1": "The football is floating.",
+      "Target2": "The football is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is staying on the surface.",
+        " The football is floating."
+      ],
+      [
+        "The football is staying on the surface.",
+        " The football is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.92913055419922,
+          false
+        ]
+      ],
+      [
+        [
+          -18.829917907714844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.92913055419922,
+        false
+      ],
+      [
+        -18.829917907714844,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 86,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is losing altitude.",
+      "Context2": "The football is staying at the same altitude.",
+      "Target1": "The football is sinking.",
+      "Target2": "The football is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is losing altitude.",
+        " The football is sinking."
+      ],
+      [
+        "The football is losing altitude.",
+        " The football is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.928871154785156,
+          false
+        ]
+      ],
+      [
+        [
+          -20.982385635375977,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.928871154785156,
+        false
+      ],
+      [
+        -20.982385635375977,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 87,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is staying at the same altitude.",
+      "Context2": "The football is losing altitude.",
+      "Target1": "The football is floating.",
+      "Target2": "The football is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is staying at the same altitude.",
+        " The football is floating."
+      ],
+      [
+        "The football is staying at the same altitude.",
+        " The football is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.963472366333008,
+          false
+        ]
+      ],
+      [
+        [
+          -18.762889862060547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.963472366333008,
+        false
+      ],
+      [
+        -18.762889862060547,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 88,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is going underwater.",
+      "Context2": "The rock is staying on the surface.",
+      "Target1": "The rock is sinking.",
+      "Target2": "The rock is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is going underwater.",
+        " The rock is sinking."
+      ],
+      [
+        "The rock is going underwater.",
+        " The rock is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.415876388549805,
+          false
+        ]
+      ],
+      [
+        [
+          -19.318016052246094,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.415876388549805,
+        false
+      ],
+      [
+        -19.318016052246094,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 89,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is staying on the surface.",
+      "Context2": "The rock is going underwater.",
+      "Target1": "The rock is floating.",
+      "Target2": "The rock is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is staying on the surface.",
+        " The rock is floating."
+      ],
+      [
+        "The rock is staying on the surface.",
+        " The rock is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.51446533203125,
+          false
+        ]
+      ],
+      [
+        [
+          -17.66170883178711,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.51446533203125,
+        false
+      ],
+      [
+        -17.66170883178711,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 90,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is losing altitude.",
+      "Context2": "The rock is staying at the same altitude.",
+      "Target1": "The rock is sinking.",
+      "Target2": "The rock is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is losing altitude.",
+        " The rock is sinking."
+      ],
+      [
+        "The rock is losing altitude.",
+        " The rock is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.11794090270996,
+          false
+        ]
+      ],
+      [
+        [
+          -20.391521453857422,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.11794090270996,
+        false
+      ],
+      [
+        -20.391521453857422,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 91,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is staying at the same altitude.",
+      "Context2": "The rock is losing altitude.",
+      "Target1": "The rock is floating.",
+      "Target2": "The rock is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is staying at the same altitude.",
+        " The rock is floating."
+      ],
+      [
+        "The rock is staying at the same altitude.",
+        " The rock is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.951942443847656,
+          false
+        ]
+      ],
+      [
+        [
+          -17.999710083007812,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.951942443847656,
+        false
+      ],
+      [
+        -17.999710083007812,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 92,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is going underwater.",
+      "Context2": "The volleyball is staying on the surface.",
+      "Target1": "The volleyball is sinking.",
+      "Target2": "The volleyball is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is going underwater.",
+        " The volleyball is sinking."
+      ],
+      [
+        "The volleyball is going underwater.",
+        " The volleyball is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.911062240600586,
+          false
+        ]
+      ],
+      [
+        [
+          -21.894580841064453,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.911062240600586,
+        false
+      ],
+      [
+        -21.894580841064453,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 93,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is staying on the surface.",
+      "Context2": "The volleyball is going underwater.",
+      "Target1": "The volleyball is floating.",
+      "Target2": "The volleyball is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is staying on the surface.",
+        " The volleyball is floating."
+      ],
+      [
+        "The volleyball is staying on the surface.",
+        " The volleyball is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.876708984375,
+          false
+        ]
+      ],
+      [
+        [
+          -22.00950813293457,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.876708984375,
+        false
+      ],
+      [
+        -22.00950813293457,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 94,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is losing altitude.",
+      "Context2": "The volleyball is staying at the same altitude.",
+      "Target1": "The volleyball is sinking.",
+      "Target2": "The volleyball is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is losing altitude.",
+        " The volleyball is sinking."
+      ],
+      [
+        "The volleyball is losing altitude.",
+        " The volleyball is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.239673614501953,
+          false
+        ]
+      ],
+      [
+        [
+          -22.152036666870117,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.239673614501953,
+        false
+      ],
+      [
+        -22.152036666870117,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 95,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is staying at the same altitude.",
+      "Context2": "The volleyball is losing altitude.",
+      "Target1": "The volleyball is floating.",
+      "Target2": "The volleyball is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is staying at the same altitude.",
+        " The volleyball is floating."
+      ],
+      [
+        "The volleyball is staying at the same altitude.",
+        " The volleyball is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.6944637298584,
+          false
+        ]
+      ],
+      [
+        [
+          -21.49369239807129,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.6944637298584,
+        false
+      ],
+      [
+        -21.49369239807129,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 96,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is going underwater.",
+      "Context2": "The wheel is staying on the surface.",
+      "Target1": "The wheel is sinking.",
+      "Target2": "The wheel is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is going underwater.",
+        " The wheel is sinking."
+      ],
+      [
+        "The wheel is going underwater.",
+        " The wheel is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.16585922241211,
+          false
+        ]
+      ],
+      [
+        [
+          -18.29869842529297,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.16585922241211,
+        false
+      ],
+      [
+        -18.29869842529297,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 97,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is staying on the surface.",
+      "Context2": "The wheel is going underwater.",
+      "Target1": "The wheel is floating.",
+      "Target2": "The wheel is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is staying on the surface.",
+        " The wheel is floating."
+      ],
+      [
+        "The wheel is staying on the surface.",
+        " The wheel is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.399694442749023,
+          false
+        ]
+      ],
+      [
+        [
+          -17.144245147705078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.399694442749023,
+        false
+      ],
+      [
+        -17.144245147705078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 98,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is losing altitude.",
+      "Context2": "The wheel is staying at the same altitude.",
+      "Target1": "The wheel is sinking.",
+      "Target2": "The wheel is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is losing altitude.",
+        " The wheel is sinking."
+      ],
+      [
+        "The wheel is losing altitude.",
+        " The wheel is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -14.992230415344238,
+          false
+        ]
+      ],
+      [
+        [
+          -17.76879119873047,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -14.992230415344238,
+        false
+      ],
+      [
+        -17.76879119873047,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 99,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is staying at the same altitude.",
+      "Context2": "The wheel is losing altitude.",
+      "Target1": "The wheel is floating.",
+      "Target2": "The wheel is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is staying at the same altitude.",
+        " The wheel is floating."
+      ],
+      [
+        "The wheel is staying at the same altitude.",
+        " The wheel is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -16.337051391601562,
+          false
+        ]
+      ],
+      [
+        [
+          -17.544586181640625,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -16.337051391601562,
+        false
+      ],
+      [
+        -17.544586181640625,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 100,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the balloon will disappear from view.",
+      "Context2": "In a minute, the balloon will remain visible.",
+      "Target1": "The balloon is sinking.",
+      "Target2": "The balloon is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the balloon will disappear from view.",
+        " The balloon is sinking."
+      ],
+      [
+        "In a minute, the balloon will disappear from view.",
+        " The balloon is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.729225158691406,
+          false
+        ]
+      ],
+      [
+        [
+          -16.024105072021484,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.729225158691406,
+        false
+      ],
+      [
+        -16.024105072021484,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 101,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the balloon will remain visible.",
+      "Context2": "In a minute, the balloon will disappear from view.",
+      "Target1": "The balloon is floating.",
+      "Target2": "The balloon is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the balloon will remain visible.",
+        " The balloon is floating."
+      ],
+      [
+        "In a minute, the balloon will remain visible.",
+        " The balloon is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.468311309814453,
+          false
+        ]
+      ],
+      [
+        [
+          -18.729618072509766,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.468311309814453,
+        false
+      ],
+      [
+        -18.729618072509766,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 102,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the football will disappear from view.",
+      "Context2": "In a minute, the football will remain visible.",
+      "Target1": "The football is sinking.",
+      "Target2": "The football is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the football will disappear from view.",
+        " The football is sinking."
+      ],
+      [
+        "In a minute, the football will disappear from view.",
+        " The football is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.850086212158203,
+          false
+        ]
+      ],
+      [
+        [
+          -22.1878662109375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.850086212158203,
+        false
+      ],
+      [
+        -22.1878662109375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 103,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the football will remain visible.",
+      "Context2": "In a minute, the football will disappear from view.",
+      "Target1": "The football is floating.",
+      "Target2": "The football is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the football will remain visible.",
+        " The football is floating."
+      ],
+      [
+        "In a minute, the football will remain visible.",
+        " The football is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.044574737548828,
+          false
+        ]
+      ],
+      [
+        [
+          -22.4895076751709,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.044574737548828,
+        false
+      ],
+      [
+        -22.4895076751709,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 104,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the rock will disappear from view.",
+      "Context2": "In a minute, the rock will remain visible.",
+      "Target1": "The rock is sinking.",
+      "Target2": "The rock is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the rock will disappear from view.",
+        " The rock is sinking."
+      ],
+      [
+        "In a minute, the rock will disappear from view.",
+        " The rock is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.23462677001953,
+          false
+        ]
+      ],
+      [
+        [
+          -20.392505645751953,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.23462677001953,
+        false
+      ],
+      [
+        -20.392505645751953,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 105,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the rock will remain visible.",
+      "Context2": "In a minute, the rock will disappear from view.",
+      "Target1": "The rock is floating.",
+      "Target2": "The rock is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the rock will remain visible.",
+        " The rock is floating."
+      ],
+      [
+        "In a minute, the rock will remain visible.",
+        " The rock is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.065155029296875,
+          false
+        ]
+      ],
+      [
+        [
+          -21.03131866455078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.065155029296875,
+        false
+      ],
+      [
+        -21.03131866455078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 106,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the volleyball will disappear from view.",
+      "Context2": "In a minute, the volleyball will remain visible.",
+      "Target1": "The volleyball is sinking.",
+      "Target2": "The volleyball is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the volleyball will disappear from view.",
+        " The volleyball is sinking."
+      ],
+      [
+        "In a minute, the volleyball will disappear from view.",
+        " The volleyball is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.02362823486328,
+          false
+        ]
+      ],
+      [
+        [
+          -22.777645111083984,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.02362823486328,
+        false
+      ],
+      [
+        -22.777645111083984,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 107,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the volleyball will remain visible.",
+      "Context2": "In a minute, the volleyball will disappear from view.",
+      "Target1": "The volleyball is floating.",
+      "Target2": "The volleyball is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the volleyball will remain visible.",
+        " The volleyball is floating."
+      ],
+      [
+        "In a minute, the volleyball will remain visible.",
+        " The volleyball is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.109134674072266,
+          false
+        ]
+      ],
+      [
+        [
+          -24.23632049560547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.109134674072266,
+        false
+      ],
+      [
+        -24.23632049560547,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 108,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the wheel will disappear from view.",
+      "Context2": "In a minute, the wheel will remain visible.",
+      "Target1": "The wheel is sinking.",
+      "Target2": "The wheel is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the wheel will disappear from view.",
+        " The wheel is sinking."
+      ],
+      [
+        "In a minute, the wheel will disappear from view.",
+        " The wheel is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.399599075317383,
+          false
+        ]
+      ],
+      [
+        [
+          -17.227741241455078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.399599075317383,
+        false
+      ],
+      [
+        -17.227741241455078,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 109,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "In a minute, the wheel will remain visible.",
+      "Context2": "In a minute, the wheel will disappear from view.",
+      "Target1": "The wheel is floating.",
+      "Target2": "The wheel is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "In a minute, the wheel will remain visible.",
+        " The wheel is floating."
+      ],
+      [
+        "In a minute, the wheel will remain visible.",
+        " The wheel is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.054475784301758,
+          false
+        ]
+      ],
+      [
+        [
+          -20.112762451171875,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.054475784301758,
+        false
+      ],
+      [
+        -20.112762451171875,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 110,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is heavy.",
+      "Context2": "The balloon is light.",
+      "Target1": "The balloon is sinking.",
+      "Target2": "The balloon is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is heavy.",
+        " The balloon is sinking."
+      ],
+      [
+        "The balloon is heavy.",
+        " The balloon is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.855073928833008,
+          false
+        ]
+      ],
+      [
+        [
+          -16.45602798461914,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.855073928833008,
+        false
+      ],
+      [
+        -16.45602798461914,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 111,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is light.",
+      "Context2": "The balloon is heavy.",
+      "Target1": "The balloon is floating.",
+      "Target2": "The balloon is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is light.",
+        " The balloon is floating."
+      ],
+      [
+        "The balloon is light.",
+        " The balloon is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -15.70762825012207,
+          false
+        ]
+      ],
+      [
+        [
+          -19.38434600830078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -15.70762825012207,
+        false
+      ],
+      [
+        -19.38434600830078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 112,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is heavy.",
+      "Context2": "The football is light.",
+      "Target1": "The football is sinking.",
+      "Target2": "The football is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is heavy.",
+        " The football is sinking."
+      ],
+      [
+        "The football is heavy.",
+        " The football is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.861928939819336,
+          false
+        ]
+      ],
+      [
+        [
+          -21.289146423339844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.861928939819336,
+        false
+      ],
+      [
+        -21.289146423339844,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 113,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is light.",
+      "Context2": "The football is heavy.",
+      "Target1": "The football is floating.",
+      "Target2": "The football is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is light.",
+        " The football is floating."
+      ],
+      [
+        "The football is light.",
+        " The football is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.47657012939453,
+          false
+        ]
+      ],
+      [
+        [
+          -20.892427444458008,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.47657012939453,
+        false
+      ],
+      [
+        -20.892427444458008,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 114,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is heavy.",
+      "Context2": "The rock is light.",
+      "Target1": "The rock is sinking.",
+      "Target2": "The rock is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is heavy.",
+        " The rock is sinking."
+      ],
+      [
+        "The rock is heavy.",
+        " The rock is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.80615997314453,
+          false
+        ]
+      ],
+      [
+        [
+          -21.384986877441406,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.80615997314453,
+        false
+      ],
+      [
+        -21.384986877441406,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 115,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The rock is light.",
+      "Context2": "The rock is heavy.",
+      "Target1": "The rock is floating.",
+      "Target2": "The rock is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The rock is light.",
+        " The rock is floating."
+      ],
+      [
+        "The rock is light.",
+        " The rock is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.95311737060547,
+          false
+        ]
+      ],
+      [
+        [
+          -21.989852905273438,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.95311737060547,
+        false
+      ],
+      [
+        -21.989852905273438,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 116,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is heavy.",
+      "Context2": "The volleyball is light.",
+      "Target1": "The volleyball is sinking.",
+      "Target2": "The volleyball is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is heavy.",
+        " The volleyball is sinking."
+      ],
+      [
+        "The volleyball is heavy.",
+        " The volleyball is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.279449462890625,
+          false
+        ]
+      ],
+      [
+        [
+          -22.343578338623047,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.279449462890625,
+        false
+      ],
+      [
+        -22.343578338623047,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 117,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is light.",
+      "Context2": "The volleyball is heavy.",
+      "Target1": "The volleyball is floating.",
+      "Target2": "The volleyball is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is light.",
+        " The volleyball is floating."
+      ],
+      [
+        "The volleyball is light.",
+        " The volleyball is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -20.623977661132812,
+          false
+        ]
+      ],
+      [
+        [
+          -24.50740623474121,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -20.623977661132812,
+        false
+      ],
+      [
+        -24.50740623474121,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 118,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is heavy.",
+      "Context2": "The wheel is light.",
+      "Target1": "The wheel is sinking.",
+      "Target2": "The wheel is floating."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is heavy.",
+        " The wheel is sinking."
+      ],
+      [
+        "The wheel is heavy.",
+        " The wheel is floating."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.29273796081543,
+          false
+        ]
+      ],
+      [
+        [
+          -17.963390350341797,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.29273796081543,
+        false
+      ],
+      [
+        -17.963390350341797,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 119,
+    "doc": {
+      "Domain": "physical-dynamics",
+      "ConceptA": "sink",
+      "ConceptB": "float",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is light.",
+      "Context2": "The wheel is heavy.",
+      "Target1": "The wheel is floating.",
+      "Target2": "The wheel is sinking."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is light.",
+        " The wheel is floating."
+      ],
+      [
+        "The wheel is light.",
+        " The wheel is sinking."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.243030548095703,
+          false
+        ]
+      ],
+      [
+        [
+          -20.59502410888672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.243030548095703,
+        false
+      ],
+      [
+        -20.59502410888672,
+        false
+      ]
+    ],
+    "acc": 1.0
+  }
+]

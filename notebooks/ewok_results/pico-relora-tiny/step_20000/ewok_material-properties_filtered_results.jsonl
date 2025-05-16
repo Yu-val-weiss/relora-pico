@@ -1,0 +1,8672 @@
+[
+  {
+    "doc_id": 0,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali dropped the volleyball, and saw it jumping off the floor.",
+      "Context2": "Ali dropped the volleyball, and saw it lying on the floor.",
+      "Target1": "The volleyball is bouncy.",
+      "Target2": "The volleyball is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali dropped the volleyball, and saw it jumping off the floor.",
+        " The volleyball is bouncy."
+      ],
+      [
+        "Ali dropped the volleyball, and saw it jumping off the floor.",
+        " The volleyball is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.58396911621094,
+          false
+        ]
+      ],
+      [
+        [
+          -36.27195739746094,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.58396911621094,
+        false
+      ],
+      [
+        -36.27195739746094,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 1,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali dropped the volleyball, and saw it lying on the floor.",
+      "Context2": "Ali dropped the volleyball, and saw it jumping off the floor.",
+      "Target1": "The volleyball is not bouncy.",
+      "Target2": "The volleyball is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali dropped the volleyball, and saw it lying on the floor.",
+        " The volleyball is not bouncy."
+      ],
+      [
+        "Ali dropped the volleyball, and saw it lying on the floor.",
+        " The volleyball is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -36.23270797729492,
+          false
+        ]
+      ],
+      [
+        [
+          -33.36952209472656,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -36.23270797729492,
+        false
+      ],
+      [
+        -33.36952209472656,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 2,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao dropped the wheel, and saw it jumping off the floor.",
+      "Context2": "Chao dropped the wheel, and saw it lying on the floor.",
+      "Target1": "The wheel is bouncy.",
+      "Target2": "The wheel is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao dropped the wheel, and saw it jumping off the floor.",
+        " The wheel is bouncy."
+      ],
+      [
+        "Chao dropped the wheel, and saw it jumping off the floor.",
+        " The wheel is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.871971130371094,
+          false
+        ]
+      ],
+      [
+        [
+          -32.20214080810547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.871971130371094,
+        false
+      ],
+      [
+        -32.20214080810547,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 3,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao dropped the wheel, and saw it lying on the floor.",
+      "Context2": "Chao dropped the wheel, and saw it jumping off the floor.",
+      "Target1": "The wheel is not bouncy.",
+      "Target2": "The wheel is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao dropped the wheel, and saw it lying on the floor.",
+        " The wheel is not bouncy."
+      ],
+      [
+        "Chao dropped the wheel, and saw it lying on the floor.",
+        " The wheel is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.05417251586914,
+          false
+        ]
+      ],
+      [
+        [
+          -29.59780502319336,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.05417251586914,
+        false
+      ],
+      [
+        -29.59780502319336,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 4,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse dropped the balloon, and saw it jumping off the floor.",
+      "Context2": "Jesse dropped the balloon, and saw it lying on the floor.",
+      "Target1": "The balloon is bouncy.",
+      "Target2": "The balloon is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse dropped the balloon, and saw it jumping off the floor.",
+        " The balloon is bouncy."
+      ],
+      [
+        "Jesse dropped the balloon, and saw it jumping off the floor.",
+        " The balloon is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.751060485839844,
+          false
+        ]
+      ],
+      [
+        [
+          -34.079368591308594,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.751060485839844,
+        false
+      ],
+      [
+        -34.079368591308594,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 5,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse dropped the balloon, and saw it lying on the floor.",
+      "Context2": "Jesse dropped the balloon, and saw it jumping off the floor.",
+      "Target1": "The balloon is not bouncy.",
+      "Target2": "The balloon is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse dropped the balloon, and saw it lying on the floor.",
+        " The balloon is not bouncy."
+      ],
+      [
+        "Jesse dropped the balloon, and saw it lying on the floor.",
+        " The balloon is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.87421417236328,
+          false
+        ]
+      ],
+      [
+        [
+          -31.27487564086914,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.87421417236328,
+        false
+      ],
+      [
+        -31.27487564086914,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 6,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li dropped the football, and saw it jumping off the floor.",
+      "Context2": "Li dropped the football, and saw it lying on the floor.",
+      "Target1": "The football is bouncy.",
+      "Target2": "The football is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li dropped the football, and saw it jumping off the floor.",
+        " The football is bouncy."
+      ],
+      [
+        "Li dropped the football, and saw it jumping off the floor.",
+        " The football is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.949440002441406,
+          false
+        ]
+      ],
+      [
+        [
+          -32.77904510498047,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.949440002441406,
+        false
+      ],
+      [
+        -32.77904510498047,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 7,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li dropped the football, and saw it lying on the floor.",
+      "Context2": "Li dropped the football, and saw it jumping off the floor.",
+      "Target1": "The football is not bouncy.",
+      "Target2": "The football is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li dropped the football, and saw it lying on the floor.",
+        " The football is not bouncy."
+      ],
+      [
+        "Li dropped the football, and saw it lying on the floor.",
+        " The football is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.71168518066406,
+          false
+        ]
+      ],
+      [
+        [
+          -30.75184440612793,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.71168518066406,
+        false
+      ],
+      [
+        -30.75184440612793,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 8,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed dropped the bin, and saw it jumping off the floor.",
+      "Context2": "Mohammed dropped the bin, and saw it lying on the floor.",
+      "Target1": "The bin is bouncy.",
+      "Target2": "The bin is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed dropped the bin, and saw it jumping off the floor.",
+        " The bin is bouncy."
+      ],
+      [
+        "Mohammed dropped the bin, and saw it jumping off the floor.",
+        " The bin is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.338245391845703,
+          false
+        ]
+      ],
+      [
+        [
+          -34.23724365234375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.338245391845703,
+        false
+      ],
+      [
+        -34.23724365234375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 9,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed dropped the bin, and saw it lying on the floor.",
+      "Context2": "Mohammed dropped the bin, and saw it jumping off the floor.",
+      "Target1": "The bin is not bouncy.",
+      "Target2": "The bin is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed dropped the bin, and saw it lying on the floor.",
+        " The bin is not bouncy."
+      ],
+      [
+        "Mohammed dropped the bin, and saw it lying on the floor.",
+        " The bin is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -34.520233154296875,
+          false
+        ]
+      ],
+      [
+        [
+          -31.355663299560547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -34.520233154296875,
+        false
+      ],
+      [
+        -31.355663299560547,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 10,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali threw the volleyball against the wall. The volleyball hit the wall and flew in the opposite direction.",
+      "Context2": "Ali threw the volleyball against the wall. The volleyball hit the wall and remained by the wall.",
+      "Target1": "The volleyball is bouncy.",
+      "Target2": "The volleyball is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali threw the volleyball against the wall. The volleyball hit the wall and flew in the opposite direction.",
+        " The volleyball is bouncy."
+      ],
+      [
+        "Ali threw the volleyball against the wall. The volleyball hit the wall and flew in the opposite direction.",
+        " The volleyball is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.98760223388672,
+          false
+        ]
+      ],
+      [
+        [
+          -34.88758087158203,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.98760223388672,
+        false
+      ],
+      [
+        -34.88758087158203,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 11,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali threw the volleyball against the wall. The volleyball hit the wall and remained by the wall.",
+      "Context2": "Ali threw the volleyball against the wall. The volleyball hit the wall and flew in the opposite direction.",
+      "Target1": "The volleyball is not bouncy.",
+      "Target2": "The volleyball is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali threw the volleyball against the wall. The volleyball hit the wall and remained by the wall.",
+        " The volleyball is not bouncy."
+      ],
+      [
+        "Ali threw the volleyball against the wall. The volleyball hit the wall and remained by the wall.",
+        " The volleyball is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -34.926177978515625,
+          false
+        ]
+      ],
+      [
+        [
+          -31.871910095214844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -34.926177978515625,
+        false
+      ],
+      [
+        -31.871910095214844,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 12,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao threw the wheel against the wall. The wheel hit the wall and flew in the opposite direction.",
+      "Context2": "Chao threw the wheel against the wall. The wheel hit the wall and remained by the wall.",
+      "Target1": "The wheel is bouncy.",
+      "Target2": "The wheel is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao threw the wheel against the wall. The wheel hit the wall and flew in the opposite direction.",
+        " The wheel is bouncy."
+      ],
+      [
+        "Chao threw the wheel against the wall. The wheel hit the wall and flew in the opposite direction.",
+        " The wheel is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.689603805541992,
+          false
+        ]
+      ],
+      [
+        [
+          -30.191417694091797,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.689603805541992,
+        false
+      ],
+      [
+        -30.191417694091797,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 13,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao threw the wheel against the wall. The wheel hit the wall and remained by the wall.",
+      "Context2": "Chao threw the wheel against the wall. The wheel hit the wall and flew in the opposite direction.",
+      "Target1": "The wheel is not bouncy.",
+      "Target2": "The wheel is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao threw the wheel against the wall. The wheel hit the wall and remained by the wall.",
+        " The wheel is not bouncy."
+      ],
+      [
+        "Chao threw the wheel against the wall. The wheel hit the wall and remained by the wall.",
+        " The wheel is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.984054565429688,
+          false
+        ]
+      ],
+      [
+        [
+          -27.56694793701172,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.984054565429688,
+        false
+      ],
+      [
+        -27.56694793701172,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 14,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse threw the balloon against the wall. The balloon hit the wall and flew in the opposite direction.",
+      "Context2": "Jesse threw the balloon against the wall. The balloon hit the wall and remained by the wall.",
+      "Target1": "The balloon is bouncy.",
+      "Target2": "The balloon is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse threw the balloon against the wall. The balloon hit the wall and flew in the opposite direction.",
+        " The balloon is bouncy."
+      ],
+      [
+        "Jesse threw the balloon against the wall. The balloon hit the wall and flew in the opposite direction.",
+        " The balloon is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.757598876953125,
+          false
+        ]
+      ],
+      [
+        [
+          -32.65654373168945,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.757598876953125,
+        false
+      ],
+      [
+        -32.65654373168945,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 15,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse threw the balloon against the wall. The balloon hit the wall and remained by the wall.",
+      "Context2": "Jesse threw the balloon against the wall. The balloon hit the wall and flew in the opposite direction.",
+      "Target1": "The balloon is not bouncy.",
+      "Target2": "The balloon is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse threw the balloon against the wall. The balloon hit the wall and remained by the wall.",
+        " The balloon is not bouncy."
+      ],
+      [
+        "Jesse threw the balloon against the wall. The balloon hit the wall and remained by the wall.",
+        " The balloon is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.62783432006836,
+          false
+        ]
+      ],
+      [
+        [
+          -29.864971160888672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.62783432006836,
+        false
+      ],
+      [
+        -29.864971160888672,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 16,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Li threw the football against the wall. The football hit the wall and flew in the opposite direction.",
+      "Context2": "Li threw the football against the wall. The football hit the wall and remained by the wall.",
+      "Target1": "The football is bouncy.",
+      "Target2": "The football is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li threw the football against the wall. The football hit the wall and flew in the opposite direction.",
+        " The football is bouncy."
+      ],
+      [
+        "Li threw the football against the wall. The football hit the wall and flew in the opposite direction.",
+        " The football is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.4615478515625,
+          false
+        ]
+      ],
+      [
+        [
+          -30.371532440185547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.4615478515625,
+        false
+      ],
+      [
+        -30.371532440185547,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 17,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Li threw the football against the wall. The football hit the wall and remained by the wall.",
+      "Context2": "Li threw the football against the wall. The football hit the wall and flew in the opposite direction.",
+      "Target1": "The football is not bouncy.",
+      "Target2": "The football is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li threw the football against the wall. The football hit the wall and remained by the wall.",
+        " The football is not bouncy."
+      ],
+      [
+        "Li threw the football against the wall. The football hit the wall and remained by the wall.",
+        " The football is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.023584365844727,
+          false
+        ]
+      ],
+      [
+        [
+          -28.033889770507812,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.023584365844727,
+        false
+      ],
+      [
+        -28.033889770507812,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 18,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed threw the bin against the wall. The bin hit the wall and flew in the opposite direction.",
+      "Context2": "Mohammed threw the bin against the wall. The bin hit the wall and remained by the wall.",
+      "Target1": "The bin is bouncy.",
+      "Target2": "The bin is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed threw the bin against the wall. The bin hit the wall and flew in the opposite direction.",
+        " The bin is bouncy."
+      ],
+      [
+        "Mohammed threw the bin against the wall. The bin hit the wall and flew in the opposite direction.",
+        " The bin is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.19086456298828,
+          false
+        ]
+      ],
+      [
+        [
+          -33.618003845214844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.19086456298828,
+        false
+      ],
+      [
+        -33.618003845214844,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 19,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed threw the bin against the wall. The bin hit the wall and remained by the wall.",
+      "Context2": "Mohammed threw the bin against the wall. The bin hit the wall and flew in the opposite direction.",
+      "Target1": "The bin is not bouncy.",
+      "Target2": "The bin is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed threw the bin against the wall. The bin hit the wall and remained by the wall.",
+        " The bin is not bouncy."
+      ],
+      [
+        "Mohammed threw the bin against the wall. The bin hit the wall and remained by the wall.",
+        " The bin is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.16693115234375,
+          false
+        ]
+      ],
+      [
+        [
+          -29.87029266357422,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.16693115234375,
+        false
+      ],
+      [
+        -29.87029266357422,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 20,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of acrylic.",
+      "Context2": "The balloon is made of wool.",
+      "Target1": "The balloon is bouncy.",
+      "Target2": "The balloon is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of acrylic.",
+        " The balloon is bouncy."
+      ],
+      [
+        "The balloon is made of acrylic.",
+        " The balloon is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.655929565429688,
+          false
+        ]
+      ],
+      [
+        [
+          -34.54082489013672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.655929565429688,
+        false
+      ],
+      [
+        -34.54082489013672,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 21,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of wool.",
+      "Context2": "The balloon is made of acrylic.",
+      "Target1": "The balloon is not bouncy.",
+      "Target2": "The balloon is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of wool.",
+        " The balloon is not bouncy."
+      ],
+      [
+        "The balloon is made of wool.",
+        " The balloon is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.83608627319336,
+          false
+        ]
+      ],
+      [
+        [
+          -30.230995178222656,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.83608627319336,
+        false
+      ],
+      [
+        -30.230995178222656,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 22,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of rubber.",
+      "Context2": "The football is made of granite.",
+      "Target1": "The football is bouncy.",
+      "Target2": "The football is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of rubber.",
+        " The football is bouncy."
+      ],
+      [
+        "The football is made of rubber.",
+        " The football is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.072338104248047,
+          false
+        ]
+      ],
+      [
+        [
+          -31.44034194946289,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.072338104248047,
+        false
+      ],
+      [
+        -31.44034194946289,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 23,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of granite.",
+      "Context2": "The football is made of rubber.",
+      "Target1": "The football is not bouncy.",
+      "Target2": "The football is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of granite.",
+        " The football is not bouncy."
+      ],
+      [
+        "The football is made of granite.",
+        " The football is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.17875671386719,
+          false
+        ]
+      ],
+      [
+        [
+          -29.802959442138672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.17875671386719,
+        false
+      ],
+      [
+        -29.802959442138672,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 24,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of acrylic.",
+      "Context2": "The volleyball is made of concrete.",
+      "Target1": "The volleyball is bouncy.",
+      "Target2": "The volleyball is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of acrylic.",
+        " The volleyball is bouncy."
+      ],
+      [
+        "The volleyball is made of acrylic.",
+        " The volleyball is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -34.46270751953125,
+          false
+        ]
+      ],
+      [
+        [
+          -37.95536422729492,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -34.46270751953125,
+        false
+      ],
+      [
+        -37.95536422729492,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 25,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of concrete.",
+      "Context2": "The volleyball is made of acrylic.",
+      "Target1": "The volleyball is not bouncy.",
+      "Target2": "The volleyball is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is not bouncy."
+      ],
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -35.74388122558594,
+          false
+        ]
+      ],
+      [
+        [
+          -32.17047119140625,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -35.74388122558594,
+        false
+      ],
+      [
+        -32.17047119140625,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 26,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of latex.",
+      "Context2": "The wheel is made of bronze.",
+      "Target1": "The wheel is bouncy.",
+      "Target2": "The wheel is not bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of latex.",
+        " The wheel is bouncy."
+      ],
+      [
+        "The wheel is made of latex.",
+        " The wheel is not bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.65184211730957,
+          false
+        ]
+      ],
+      [
+        [
+          -30.89407730102539,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.65184211730957,
+        false
+      ],
+      [
+        -30.89407730102539,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 27,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "bouncy",
+      "ConceptB": "not bouncy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of bronze.",
+      "Context2": "The wheel is made of latex.",
+      "Target1": "The wheel is not bouncy.",
+      "Target2": "The wheel is bouncy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of bronze.",
+        " The wheel is not bouncy."
+      ],
+      [
+        "The wheel is made of bronze.",
+        " The wheel is bouncy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.134708404541016,
+          false
+        ]
+      ],
+      [
+        [
+          -28.349430084228516,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.134708404541016,
+        false
+      ],
+      [
+        -28.349430084228516,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 28,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon's temperature is lower than Jesse's hand'.",
+      "Context2": "The balloon's temperature is the same than Jesse's hand'.",
+      "Target1": "The balloon is cold.",
+      "Target2": "The balloon is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon's temperature is lower than Jesse's hand'.",
+        " The balloon is cold."
+      ],
+      [
+        "The balloon's temperature is lower than Jesse's hand'.",
+        " The balloon is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.28728675842285,
+          false
+        ]
+      ],
+      [
+        [
+          -23.566608428955078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.28728675842285,
+        false
+      ],
+      [
+        -23.566608428955078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 29,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon's temperature is the same than Jesse's hand'.",
+      "Context2": "The balloon's temperature is lower than Jesse's hand'.",
+      "Target1": "The balloon is warm.",
+      "Target2": "The balloon is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon's temperature is the same than Jesse's hand'.",
+        " The balloon is warm."
+      ],
+      [
+        "The balloon's temperature is the same than Jesse's hand'.",
+        " The balloon is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.588581085205078,
+          false
+        ]
+      ],
+      [
+        [
+          -23.226633071899414,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.588581085205078,
+        false
+      ],
+      [
+        -23.226633071899414,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 30,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon's temperature is lower than Jesse's hand'.",
+      "Context2": "The balloon's temperature is the same than Jesse's hand'.",
+      "Target1": "The surface of the balloon is cold.",
+      "Target2": "The surface of the balloon is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon's temperature is lower than Jesse's hand'.",
+        " The surface of the balloon is cold."
+      ],
+      [
+        "The balloon's temperature is lower than Jesse's hand'.",
+        " The surface of the balloon is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.77409553527832,
+          false
+        ]
+      ],
+      [
+        [
+          -31.95747184753418,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.77409553527832,
+        false
+      ],
+      [
+        -31.95747184753418,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 31,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon's temperature is the same than Jesse's hand'.",
+      "Context2": "The balloon's temperature is lower than Jesse's hand'.",
+      "Target1": "The surface of the balloon is warm.",
+      "Target2": "The surface of the balloon is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon's temperature is the same than Jesse's hand'.",
+        " The surface of the balloon is warm."
+      ],
+      [
+        "The balloon's temperature is the same than Jesse's hand'.",
+        " The surface of the balloon is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.912342071533203,
+          false
+        ]
+      ],
+      [
+        [
+          -31.817276000976562,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.912342071533203,
+        false
+      ],
+      [
+        -31.817276000976562,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 32,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin's temperature is lower than Mohammed's hand'.",
+      "Context2": "The bin's temperature is the same than Mohammed's hand'.",
+      "Target1": "The bin is cold.",
+      "Target2": "The bin is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin's temperature is lower than Mohammed's hand'.",
+        " The bin is cold."
+      ],
+      [
+        "The bin's temperature is lower than Mohammed's hand'.",
+        " The bin is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.369709014892578,
+          false
+        ]
+      ],
+      [
+        [
+          -25.140727996826172,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.369709014892578,
+        false
+      ],
+      [
+        -25.140727996826172,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 33,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin's temperature is the same than Mohammed's hand'.",
+      "Context2": "The bin's temperature is lower than Mohammed's hand'.",
+      "Target1": "The bin is warm.",
+      "Target2": "The bin is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin's temperature is the same than Mohammed's hand'.",
+        " The bin is warm."
+      ],
+      [
+        "The bin's temperature is the same than Mohammed's hand'.",
+        " The bin is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.968429565429688,
+          false
+        ]
+      ],
+      [
+        [
+          -24.109140396118164,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.968429565429688,
+        false
+      ],
+      [
+        -24.109140396118164,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 34,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin's temperature is lower than Mohammed's hand'.",
+      "Context2": "The bin's temperature is the same than Mohammed's hand'.",
+      "Target1": "The surface of the bin is cold.",
+      "Target2": "The surface of the bin is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin's temperature is lower than Mohammed's hand'.",
+        " The surface of the bin is cold."
+      ],
+      [
+        "The bin's temperature is lower than Mohammed's hand'.",
+        " The surface of the bin is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.718624114990234,
+          false
+        ]
+      ],
+      [
+        [
+          -34.3831672668457,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.718624114990234,
+        false
+      ],
+      [
+        -34.3831672668457,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 35,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin's temperature is the same than Mohammed's hand'.",
+      "Context2": "The bin's temperature is lower than Mohammed's hand'.",
+      "Target1": "The surface of the bin is warm.",
+      "Target2": "The surface of the bin is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin's temperature is the same than Mohammed's hand'.",
+        " The surface of the bin is warm."
+      ],
+      [
+        "The bin's temperature is the same than Mohammed's hand'.",
+        " The surface of the bin is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -34.05194091796875,
+          false
+        ]
+      ],
+      [
+        [
+          -33.421730041503906,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -34.05194091796875,
+        false
+      ],
+      [
+        -33.421730041503906,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 36,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football's temperature is lower than Li's hand'.",
+      "Context2": "The football's temperature is the same than Li's hand'.",
+      "Target1": "The football is cold.",
+      "Target2": "The football is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football's temperature is lower than Li's hand'.",
+        " The football is cold."
+      ],
+      [
+        "The football's temperature is lower than Li's hand'.",
+        " The football is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.239456176757812,
+          false
+        ]
+      ],
+      [
+        [
+          -26.759357452392578,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.239456176757812,
+        false
+      ],
+      [
+        -26.759357452392578,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 37,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football's temperature is the same than Li's hand'.",
+      "Context2": "The football's temperature is lower than Li's hand'.",
+      "Target1": "The football is warm.",
+      "Target2": "The football is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football's temperature is the same than Li's hand'.",
+        " The football is warm."
+      ],
+      [
+        "The football's temperature is the same than Li's hand'.",
+        " The football is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.267826080322266,
+          false
+        ]
+      ],
+      [
+        [
+          -25.587020874023438,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.267826080322266,
+        false
+      ],
+      [
+        -25.587020874023438,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 38,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football's temperature is lower than Li's hand'.",
+      "Context2": "The football's temperature is the same than Li's hand'.",
+      "Target1": "The surface of the football is cold.",
+      "Target2": "The surface of the football is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football's temperature is lower than Li's hand'.",
+        " The surface of the football is cold."
+      ],
+      [
+        "The football's temperature is lower than Li's hand'.",
+        " The surface of the football is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -35.87611770629883,
+          false
+        ]
+      ],
+      [
+        [
+          -36.455814361572266,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -35.87611770629883,
+        false
+      ],
+      [
+        -36.455814361572266,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 39,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football's temperature is the same than Li's hand'.",
+      "Context2": "The football's temperature is lower than Li's hand'.",
+      "Target1": "The surface of the football is warm.",
+      "Target2": "The surface of the football is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football's temperature is the same than Li's hand'.",
+        " The surface of the football is warm."
+      ],
+      [
+        "The football's temperature is the same than Li's hand'.",
+        " The surface of the football is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -36.070247650146484,
+          false
+        ]
+      ],
+      [
+        [
+          -35.556602478027344,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -36.070247650146484,
+        false
+      ],
+      [
+        -35.556602478027344,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 40,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball's temperature is lower than Ali's hand'.",
+      "Context2": "The volleyball's temperature is the same than Ali's hand'.",
+      "Target1": "The surface of the volleyball is cold.",
+      "Target2": "The surface of the volleyball is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball's temperature is lower than Ali's hand'.",
+        " The surface of the volleyball is cold."
+      ],
+      [
+        "The volleyball's temperature is lower than Ali's hand'.",
+        " The surface of the volleyball is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -39.501277923583984,
+          false
+        ]
+      ],
+      [
+        [
+          -39.851165771484375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -39.501277923583984,
+        false
+      ],
+      [
+        -39.851165771484375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 41,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball's temperature is the same than Ali's hand'.",
+      "Context2": "The volleyball's temperature is lower than Ali's hand'.",
+      "Target1": "The surface of the volleyball is warm.",
+      "Target2": "The surface of the volleyball is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball's temperature is the same than Ali's hand'.",
+        " The surface of the volleyball is warm."
+      ],
+      [
+        "The volleyball's temperature is the same than Ali's hand'.",
+        " The surface of the volleyball is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -40.619590759277344,
+          false
+        ]
+      ],
+      [
+        [
+          -40.23439407348633,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -40.619590759277344,
+        false
+      ],
+      [
+        -40.23439407348633,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 42,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball's temperature is lower than Ali's hand'.",
+      "Context2": "The volleyball's temperature is the same than Ali's hand'.",
+      "Target1": "The volleyball is cold.",
+      "Target2": "The volleyball is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball's temperature is lower than Ali's hand'.",
+        " The volleyball is cold."
+      ],
+      [
+        "The volleyball's temperature is lower than Ali's hand'.",
+        " The volleyball is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.648653030395508,
+          false
+        ]
+      ],
+      [
+        [
+          -29.0527400970459,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.648653030395508,
+        false
+      ],
+      [
+        -29.0527400970459,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 43,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball's temperature is the same than Ali's hand'.",
+      "Context2": "The volleyball's temperature is lower than Ali's hand'.",
+      "Target1": "The volleyball is warm.",
+      "Target2": "The volleyball is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball's temperature is the same than Ali's hand'.",
+        " The volleyball is warm."
+      ],
+      [
+        "The volleyball's temperature is the same than Ali's hand'.",
+        " The volleyball is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.528717041015625,
+          false
+        ]
+      ],
+      [
+        [
+          -28.90655517578125,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.528717041015625,
+        false
+      ],
+      [
+        -28.90655517578125,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 44,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel's temperature is lower than Chao's hand'.",
+      "Context2": "The wheel's temperature is the same than Chao's hand'.",
+      "Target1": "The surface of the wheel is cold.",
+      "Target2": "The surface of the wheel is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel's temperature is lower than Chao's hand'.",
+        " The surface of the wheel is cold."
+      ],
+      [
+        "The wheel's temperature is lower than Chao's hand'.",
+        " The surface of the wheel is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.857704162597656,
+          false
+        ]
+      ],
+      [
+        [
+          -31.006305694580078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.857704162597656,
+        false
+      ],
+      [
+        -31.006305694580078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 45,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel's temperature is the same than Chao's hand'.",
+      "Context2": "The wheel's temperature is lower than Chao's hand'.",
+      "Target1": "The surface of the wheel is warm.",
+      "Target2": "The surface of the wheel is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel's temperature is the same than Chao's hand'.",
+        " The surface of the wheel is warm."
+      ],
+      [
+        "The wheel's temperature is the same than Chao's hand'.",
+        " The surface of the wheel is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.963783264160156,
+          false
+        ]
+      ],
+      [
+        [
+          -30.820119857788086,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.963783264160156,
+        false
+      ],
+      [
+        -30.820119857788086,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 46,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel's temperature is lower than Chao's hand'.",
+      "Context2": "The wheel's temperature is the same than Chao's hand'.",
+      "Target1": "The wheel is cold.",
+      "Target2": "The wheel is warm."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel's temperature is lower than Chao's hand'.",
+        " The wheel is cold."
+      ],
+      [
+        "The wheel's temperature is lower than Chao's hand'.",
+        " The wheel is warm."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.838796615600586,
+          false
+        ]
+      ],
+      [
+        [
+          -22.047561645507812,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.838796615600586,
+        false
+      ],
+      [
+        -22.047561645507812,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 47,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "cold",
+      "ConceptB": "warm",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel's temperature is the same than Chao's hand'.",
+      "Context2": "The wheel's temperature is lower than Chao's hand'.",
+      "Target1": "The wheel is warm.",
+      "Target2": "The wheel is cold."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel's temperature is the same than Chao's hand'.",
+        " The wheel is warm."
+      ],
+      [
+        "The wheel's temperature is the same than Chao's hand'.",
+        " The wheel is cold."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.084535598754883,
+          false
+        ]
+      ],
+      [
+        [
+          -21.686279296875,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.084535598754883,
+        false
+      ],
+      [
+        -21.686279296875,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 48,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali applied pressure to the volleyball. It broke.",
+      "Context2": "Ali applied pressure to the volleyball. It remained intact.",
+      "Target1": "The volleyball is fragile.",
+      "Target2": "The volleyball is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali applied pressure to the volleyball. It broke.",
+        " The volleyball is fragile."
+      ],
+      [
+        "Ali applied pressure to the volleyball. It broke.",
+        " The volleyball is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.912322998046875,
+          false
+        ]
+      ],
+      [
+        [
+          -27.422588348388672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.912322998046875,
+        false
+      ],
+      [
+        -27.422588348388672,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 49,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali applied pressure to the volleyball. It remained intact.",
+      "Context2": "Ali applied pressure to the volleyball. It broke.",
+      "Target1": "The volleyball is sturdy.",
+      "Target2": "The volleyball is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali applied pressure to the volleyball. It remained intact.",
+        " The volleyball is sturdy."
+      ],
+      [
+        "Ali applied pressure to the volleyball. It remained intact.",
+        " The volleyball is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.022476196289062,
+          false
+        ]
+      ],
+      [
+        [
+          -28.249584197998047,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.022476196289062,
+        false
+      ],
+      [
+        -28.249584197998047,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 50,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao applied pressure to the wheel. It broke.",
+      "Context2": "Chao applied pressure to the wheel. It remained intact.",
+      "Target1": "The wheel is fragile.",
+      "Target2": "The wheel is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao applied pressure to the wheel. It broke.",
+        " The wheel is fragile."
+      ],
+      [
+        "Chao applied pressure to the wheel. It broke.",
+        " The wheel is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.823413848876953,
+          false
+        ]
+      ],
+      [
+        [
+          -19.940410614013672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.823413848876953,
+        false
+      ],
+      [
+        -19.940410614013672,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 51,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao applied pressure to the wheel. It remained intact.",
+      "Context2": "Chao applied pressure to the wheel. It broke.",
+      "Target1": "The wheel is sturdy.",
+      "Target2": "The wheel is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao applied pressure to the wheel. It remained intact.",
+        " The wheel is sturdy."
+      ],
+      [
+        "Chao applied pressure to the wheel. It remained intact.",
+        " The wheel is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.398757934570312,
+          false
+        ]
+      ],
+      [
+        [
+          -22.28166961669922,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.398757934570312,
+        false
+      ],
+      [
+        -22.28166961669922,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 52,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse applied pressure to the balloon. It broke.",
+      "Context2": "Jesse applied pressure to the balloon. It remained intact.",
+      "Target1": "The balloon is fragile.",
+      "Target2": "The balloon is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse applied pressure to the balloon. It broke.",
+        " The balloon is fragile."
+      ],
+      [
+        "Jesse applied pressure to the balloon. It broke.",
+        " The balloon is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.217220306396484,
+          false
+        ]
+      ],
+      [
+        [
+          -23.230600357055664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.217220306396484,
+        false
+      ],
+      [
+        -23.230600357055664,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 53,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse applied pressure to the balloon. It remained intact.",
+      "Context2": "Jesse applied pressure to the balloon. It broke.",
+      "Target1": "The balloon is sturdy.",
+      "Target2": "The balloon is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse applied pressure to the balloon. It remained intact.",
+        " The balloon is sturdy."
+      ],
+      [
+        "Jesse applied pressure to the balloon. It remained intact.",
+        " The balloon is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.995737075805664,
+          false
+        ]
+      ],
+      [
+        [
+          -24.873552322387695,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.995737075805664,
+        false
+      ],
+      [
+        -24.873552322387695,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 54,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li applied pressure to the football. It broke.",
+      "Context2": "Li applied pressure to the football. It remained intact.",
+      "Target1": "The football is fragile.",
+      "Target2": "The football is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li applied pressure to the football. It broke.",
+        " The football is fragile."
+      ],
+      [
+        "Li applied pressure to the football. It broke.",
+        " The football is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.37081527709961,
+          false
+        ]
+      ],
+      [
+        [
+          -24.289569854736328,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.37081527709961,
+        false
+      ],
+      [
+        -24.289569854736328,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 55,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li applied pressure to the football. It remained intact.",
+      "Context2": "Li applied pressure to the football. It broke.",
+      "Target1": "The football is sturdy.",
+      "Target2": "The football is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li applied pressure to the football. It remained intact.",
+        " The football is sturdy."
+      ],
+      [
+        "Li applied pressure to the football. It remained intact.",
+        " The football is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.847219467163086,
+          false
+        ]
+      ],
+      [
+        [
+          -24.724811553955078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.847219467163086,
+        false
+      ],
+      [
+        -24.724811553955078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 56,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed applied pressure to the bin. It broke.",
+      "Context2": "Mohammed applied pressure to the bin. It remained intact.",
+      "Target1": "The bin is fragile.",
+      "Target2": "The bin is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed applied pressure to the bin. It broke.",
+        " The bin is fragile."
+      ],
+      [
+        "Mohammed applied pressure to the bin. It broke.",
+        " The bin is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.72514533996582,
+          false
+        ]
+      ],
+      [
+        [
+          -25.28246307373047,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.72514533996582,
+        false
+      ],
+      [
+        -25.28246307373047,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 57,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed applied pressure to the bin. It remained intact.",
+      "Context2": "Mohammed applied pressure to the bin. It broke.",
+      "Target1": "The bin is sturdy.",
+      "Target2": "The bin is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed applied pressure to the bin. It remained intact.",
+        " The bin is sturdy."
+      ],
+      [
+        "Mohammed applied pressure to the bin. It remained intact.",
+        " The bin is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.319766998291016,
+          false
+        ]
+      ],
+      [
+        [
+          -26.382762908935547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.319766998291016,
+        false
+      ],
+      [
+        -26.382762908935547,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 58,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is easy to break.",
+      "Context2": "The balloon is hard to break.",
+      "Target1": "The balloon is fragile.",
+      "Target2": "The balloon is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is easy to break.",
+        " The balloon is fragile."
+      ],
+      [
+        "The balloon is easy to break.",
+        " The balloon is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.413280487060547,
+          false
+        ]
+      ],
+      [
+        [
+          -22.446151733398438,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.413280487060547,
+        false
+      ],
+      [
+        -22.446151733398438,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 59,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is hard to break.",
+      "Context2": "The balloon is easy to break.",
+      "Target1": "The balloon is sturdy.",
+      "Target2": "The balloon is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is hard to break.",
+        " The balloon is sturdy."
+      ],
+      [
+        "The balloon is hard to break.",
+        " The balloon is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.715206146240234,
+          false
+        ]
+      ],
+      [
+        [
+          -25.627952575683594,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.715206146240234,
+        false
+      ],
+      [
+        -25.627952575683594,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 60,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is easy to break.",
+      "Context2": "The bin is hard to break.",
+      "Target1": "The bin is fragile.",
+      "Target2": "The bin is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is easy to break.",
+        " The bin is fragile."
+      ],
+      [
+        "The bin is easy to break.",
+        " The bin is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.332672119140625,
+          false
+        ]
+      ],
+      [
+        [
+          -24.05501937866211,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.332672119140625,
+        false
+      ],
+      [
+        -24.05501937866211,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 61,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is hard to break.",
+      "Context2": "The bin is easy to break.",
+      "Target1": "The bin is sturdy.",
+      "Target2": "The bin is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is hard to break.",
+        " The bin is sturdy."
+      ],
+      [
+        "The bin is hard to break.",
+        " The bin is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.72682762145996,
+          false
+        ]
+      ],
+      [
+        [
+          -27.051895141601562,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.72682762145996,
+        false
+      ],
+      [
+        -27.051895141601562,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 62,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is easy to break.",
+      "Context2": "The football is hard to break.",
+      "Target1": "The football is fragile.",
+      "Target2": "The football is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is easy to break.",
+        " The football is fragile."
+      ],
+      [
+        "The football is easy to break.",
+        " The football is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.708084106445312,
+          false
+        ]
+      ],
+      [
+        [
+          -23.034587860107422,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.708084106445312,
+        false
+      ],
+      [
+        -23.034587860107422,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 63,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is hard to break.",
+      "Context2": "The football is easy to break.",
+      "Target1": "The football is sturdy.",
+      "Target2": "The football is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is hard to break.",
+        " The football is sturdy."
+      ],
+      [
+        "The football is hard to break.",
+        " The football is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.165925979614258,
+          false
+        ]
+      ],
+      [
+        [
+          -25.277006149291992,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.165925979614258,
+        false
+      ],
+      [
+        -25.277006149291992,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 64,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is easy to break.",
+      "Context2": "The volleyball is hard to break.",
+      "Target1": "The volleyball is fragile.",
+      "Target2": "The volleyball is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is easy to break.",
+        " The volleyball is fragile."
+      ],
+      [
+        "The volleyball is easy to break.",
+        " The volleyball is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.866989135742188,
+          false
+        ]
+      ],
+      [
+        [
+          -25.593944549560547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.866989135742188,
+        false
+      ],
+      [
+        -25.593944549560547,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 65,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is hard to break.",
+      "Context2": "The volleyball is easy to break.",
+      "Target1": "The volleyball is sturdy.",
+      "Target2": "The volleyball is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is hard to break.",
+        " The volleyball is sturdy."
+      ],
+      [
+        "The volleyball is hard to break.",
+        " The volleyball is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.090816497802734,
+          false
+        ]
+      ],
+      [
+        [
+          -28.20441246032715,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.090816497802734,
+        false
+      ],
+      [
+        -28.20441246032715,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 66,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is easy to break.",
+      "Context2": "The wheel is hard to break.",
+      "Target1": "The wheel is fragile.",
+      "Target2": "The wheel is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is easy to break.",
+        " The wheel is fragile."
+      ],
+      [
+        "The wheel is easy to break.",
+        " The wheel is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.265583038330078,
+          false
+        ]
+      ],
+      [
+        [
+          -19.597347259521484,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.265583038330078,
+        false
+      ],
+      [
+        -19.597347259521484,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 67,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is hard to break.",
+      "Context2": "The wheel is easy to break.",
+      "Target1": "The wheel is sturdy.",
+      "Target2": "The wheel is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is hard to break.",
+        " The wheel is sturdy."
+      ],
+      [
+        "The wheel is hard to break.",
+        " The wheel is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.79096031188965,
+          false
+        ]
+      ],
+      [
+        [
+          -22.92452621459961,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.79096031188965,
+        false
+      ],
+      [
+        -22.92452621459961,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 68,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of charcoal.",
+      "Context2": "The balloon is made of wool.",
+      "Target1": "The balloon is fragile.",
+      "Target2": "The balloon is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of charcoal.",
+        " The balloon is fragile."
+      ],
+      [
+        "The balloon is made of charcoal.",
+        " The balloon is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.43270492553711,
+          false
+        ]
+      ],
+      [
+        [
+          -22.567310333251953,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.43270492553711,
+        false
+      ],
+      [
+        -22.567310333251953,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 69,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of wool.",
+      "Context2": "The balloon is made of charcoal.",
+      "Target1": "The balloon is sturdy.",
+      "Target2": "The balloon is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of wool.",
+        " The balloon is sturdy."
+      ],
+      [
+        "The balloon is made of wool.",
+        " The balloon is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.883346557617188,
+          false
+        ]
+      ],
+      [
+        [
+          -24.649608612060547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.883346557617188,
+        false
+      ],
+      [
+        -24.649608612060547,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 70,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of ice.",
+      "Context2": "The bin is made of beeswax.",
+      "Target1": "The bin is fragile.",
+      "Target2": "The bin is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of ice.",
+        " The bin is fragile."
+      ],
+      [
+        "The bin is made of ice.",
+        " The bin is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.70669937133789,
+          false
+        ]
+      ],
+      [
+        [
+          -24.73975372314453,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.70669937133789,
+        false
+      ],
+      [
+        -24.73975372314453,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 71,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of beeswax.",
+      "Context2": "The bin is made of ice.",
+      "Target1": "The bin is sturdy.",
+      "Target2": "The bin is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of beeswax.",
+        " The bin is sturdy."
+      ],
+      [
+        "The bin is made of beeswax.",
+        " The bin is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.904407501220703,
+          false
+        ]
+      ],
+      [
+        [
+          -27.41305160522461,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.904407501220703,
+        false
+      ],
+      [
+        -27.41305160522461,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 72,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of chalk.",
+      "Context2": "The football is made of granite.",
+      "Target1": "The football is fragile.",
+      "Target2": "The football is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of chalk.",
+        " The football is fragile."
+      ],
+      [
+        "The football is made of chalk.",
+        " The football is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.00244903564453,
+          false
+        ]
+      ],
+      [
+        [
+          -22.96289825439453,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.00244903564453,
+        false
+      ],
+      [
+        -22.96289825439453,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 73,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of granite.",
+      "Context2": "The football is made of chalk.",
+      "Target1": "The football is sturdy.",
+      "Target2": "The football is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of granite.",
+        " The football is sturdy."
+      ],
+      [
+        "The football is made of granite.",
+        " The football is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.97357940673828,
+          false
+        ]
+      ],
+      [
+        [
+          -25.21143913269043,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.97357940673828,
+        false
+      ],
+      [
+        -25.21143913269043,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 74,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of clay.",
+      "Context2": "The volleyball is made of concrete.",
+      "Target1": "The volleyball is fragile.",
+      "Target2": "The volleyball is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of clay.",
+        " The volleyball is fragile."
+      ],
+      [
+        "The volleyball is made of clay.",
+        " The volleyball is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.945653915405273,
+          false
+        ]
+      ],
+      [
+        [
+          -25.956100463867188,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.945653915405273,
+        false
+      ],
+      [
+        -25.956100463867188,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 75,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of concrete.",
+      "Context2": "The volleyball is made of clay.",
+      "Target1": "The volleyball is sturdy.",
+      "Target2": "The volleyball is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is sturdy."
+      ],
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.946584701538086,
+          false
+        ]
+      ],
+      [
+        [
+          -28.09513282775879,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.946584701538086,
+        false
+      ],
+      [
+        -28.09513282775879,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 76,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of ceramic.",
+      "Context2": "The wheel is made of bronze.",
+      "Target1": "The wheel is fragile.",
+      "Target2": "The wheel is sturdy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of ceramic.",
+        " The wheel is fragile."
+      ],
+      [
+        "The wheel is made of ceramic.",
+        " The wheel is sturdy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.4862060546875,
+          false
+        ]
+      ],
+      [
+        [
+          -18.805496215820312,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.4862060546875,
+        false
+      ],
+      [
+        -18.805496215820312,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 77,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "fragile",
+      "ConceptB": "sturdy",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of bronze.",
+      "Context2": "The wheel is made of ceramic.",
+      "Target1": "The wheel is sturdy.",
+      "Target2": "The wheel is fragile."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of bronze.",
+        " The wheel is sturdy."
+      ],
+      [
+        "The wheel is made of bronze.",
+        " The wheel is fragile."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.35540199279785,
+          false
+        ]
+      ],
+      [
+        [
+          -22.668302536010742,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.35540199279785,
+        false
+      ],
+      [
+        -22.668302536010742,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 78,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon weighs a lot.",
+      "Context2": "The balloon weighs little.",
+      "Target1": "The balloon is heavy.",
+      "Target2": "The balloon is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon weighs a lot.",
+        " The balloon is heavy."
+      ],
+      [
+        "The balloon weighs a lot.",
+        " The balloon is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.403915405273438,
+          false
+        ]
+      ],
+      [
+        [
+          -23.12453842163086,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.403915405273438,
+        false
+      ],
+      [
+        -23.12453842163086,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 79,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon weighs little.",
+      "Context2": "The balloon weighs a lot.",
+      "Target1": "The balloon is light.",
+      "Target2": "The balloon is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon weighs little.",
+        " The balloon is light."
+      ],
+      [
+        "The balloon weighs little.",
+        " The balloon is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.383241653442383,
+          false
+        ]
+      ],
+      [
+        [
+          -22.770370483398438,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.383241653442383,
+        false
+      ],
+      [
+        -22.770370483398438,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 80,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin weighs a lot.",
+      "Context2": "The bin weighs little.",
+      "Target1": "The bin is heavy.",
+      "Target2": "The bin is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin weighs a lot.",
+        " The bin is heavy."
+      ],
+      [
+        "The bin weighs a lot.",
+        " The bin is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.616182327270508,
+          false
+        ]
+      ],
+      [
+        [
+          -23.98564910888672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.616182327270508,
+        false
+      ],
+      [
+        -23.98564910888672,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 81,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin weighs little.",
+      "Context2": "The bin weighs a lot.",
+      "Target1": "The bin is light.",
+      "Target2": "The bin is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin weighs little.",
+        " The bin is light."
+      ],
+      [
+        "The bin weighs little.",
+        " The bin is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.300506591796875,
+          false
+        ]
+      ],
+      [
+        [
+          -24.024261474609375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.300506591796875,
+        false
+      ],
+      [
+        -24.024261474609375,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 82,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football weighs a lot.",
+      "Context2": "The football weighs little.",
+      "Target1": "The football is heavy.",
+      "Target2": "The football is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football weighs a lot.",
+        " The football is heavy."
+      ],
+      [
+        "The football weighs a lot.",
+        " The football is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.59475326538086,
+          false
+        ]
+      ],
+      [
+        [
+          -23.529254913330078,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.59475326538086,
+        false
+      ],
+      [
+        -23.529254913330078,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 83,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The football weighs little.",
+      "Context2": "The football weighs a lot.",
+      "Target1": "The football is light.",
+      "Target2": "The football is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football weighs little.",
+        " The football is light."
+      ],
+      [
+        "The football weighs little.",
+        " The football is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.306350708007812,
+          false
+        ]
+      ],
+      [
+        [
+          -22.38159942626953,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.306350708007812,
+        false
+      ],
+      [
+        -22.38159942626953,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 84,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball weighs a lot.",
+      "Context2": "The volleyball weighs little.",
+      "Target1": "The volleyball is heavy.",
+      "Target2": "The volleyball is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball weighs a lot.",
+        " The volleyball is heavy."
+      ],
+      [
+        "The volleyball weighs a lot.",
+        " The volleyball is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.42548370361328,
+          false
+        ]
+      ],
+      [
+        [
+          -25.69474983215332,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.42548370361328,
+        false
+      ],
+      [
+        -25.69474983215332,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 85,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball weighs little.",
+      "Context2": "The volleyball weighs a lot.",
+      "Target1": "The volleyball is light.",
+      "Target2": "The volleyball is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball weighs little.",
+        " The volleyball is light."
+      ],
+      [
+        "The volleyball weighs little.",
+        " The volleyball is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.549659729003906,
+          false
+        ]
+      ],
+      [
+        [
+          -25.319053649902344,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.549659729003906,
+        false
+      ],
+      [
+        -25.319053649902344,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 86,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel weighs a lot.",
+      "Context2": "The wheel weighs little.",
+      "Target1": "The wheel is heavy.",
+      "Target2": "The wheel is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel weighs a lot.",
+        " The wheel is heavy."
+      ],
+      [
+        "The wheel weighs a lot.",
+        " The wheel is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.824607849121094,
+          false
+        ]
+      ],
+      [
+        [
+          -19.716323852539062,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.824607849121094,
+        false
+      ],
+      [
+        -19.716323852539062,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 87,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel weighs little.",
+      "Context2": "The wheel weighs a lot.",
+      "Target1": "The wheel is light.",
+      "Target2": "The wheel is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel weighs little.",
+        " The wheel is light."
+      ],
+      [
+        "The wheel weighs little.",
+        " The wheel is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.62158203125,
+          false
+        ]
+      ],
+      [
+        [
+          -18.71537971496582,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.62158203125,
+        false
+      ],
+      [
+        -18.71537971496582,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 88,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of clay.",
+      "Context2": "The bin is made of beeswax.",
+      "Target1": "The bin is heavy.",
+      "Target2": "The bin is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of clay.",
+        " The bin is heavy."
+      ],
+      [
+        "The bin is made of clay.",
+        " The bin is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.61183738708496,
+          false
+        ]
+      ],
+      [
+        [
+          -22.197715759277344,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.61183738708496,
+        false
+      ],
+      [
+        -22.197715759277344,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 89,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of beeswax.",
+      "Context2": "The bin is made of clay.",
+      "Target1": "The bin is light.",
+      "Target2": "The bin is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of beeswax.",
+        " The bin is light."
+      ],
+      [
+        "The bin is made of beeswax.",
+        " The bin is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.712997436523438,
+          false
+        ]
+      ],
+      [
+        [
+          -24.696657180786133,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.712997436523438,
+        false
+      ],
+      [
+        -24.696657180786133,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 90,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of diamond.",
+      "Context2": "The volleyball is made of ceramic.",
+      "Target1": "The volleyball is heavy.",
+      "Target2": "The volleyball is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of diamond.",
+        " The volleyball is heavy."
+      ],
+      [
+        "The volleyball is made of diamond.",
+        " The volleyball is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.826175689697266,
+          false
+        ]
+      ],
+      [
+        [
+          -24.614206314086914,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.826175689697266,
+        false
+      ],
+      [
+        -24.614206314086914,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 91,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of ceramic.",
+      "Context2": "The volleyball is made of diamond.",
+      "Target1": "The volleyball is light.",
+      "Target2": "The volleyball is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of ceramic.",
+        " The volleyball is light."
+      ],
+      [
+        "The volleyball is made of ceramic.",
+        " The volleyball is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.183826446533203,
+          false
+        ]
+      ],
+      [
+        [
+          -25.630840301513672,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.183826446533203,
+        false
+      ],
+      [
+        -25.630840301513672,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 92,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of aluminum.",
+      "Context2": "The wheel is made of wool.",
+      "Target1": "The wheel is heavy.",
+      "Target2": "The wheel is light."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of aluminum.",
+        " The wheel is heavy."
+      ],
+      [
+        "The wheel is made of aluminum.",
+        " The wheel is light."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -17.81954574584961,
+          false
+        ]
+      ],
+      [
+        [
+          -18.362577438354492,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -17.81954574584961,
+        false
+      ],
+      [
+        -18.362577438354492,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 93,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "heavy",
+      "ConceptB": "light",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of wool.",
+      "Context2": "The wheel is made of aluminum.",
+      "Target1": "The wheel is light.",
+      "Target2": "The wheel is heavy."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of wool.",
+        " The wheel is light."
+      ],
+      [
+        "The wheel is made of wool.",
+        " The wheel is heavy."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.36771011352539,
+          false
+        ]
+      ],
+      [
+        [
+          -17.807519912719727,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.36771011352539,
+        false
+      ],
+      [
+        -17.807519912719727,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 94,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the balloon is completely flat.",
+      "Context2": "The surface of the balloon is somewhat bumpy.",
+      "Target1": "The surface of the balloon is smooth.",
+      "Target2": "The surface of the balloon is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the balloon is completely flat.",
+        " The surface of the balloon is smooth."
+      ],
+      [
+        "The surface of the balloon is completely flat.",
+        " The surface of the balloon is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.397933959960938,
+          false
+        ]
+      ],
+      [
+        [
+          -30.146759033203125,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.397933959960938,
+        false
+      ],
+      [
+        -30.146759033203125,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 95,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the balloon is somewhat bumpy.",
+      "Context2": "The surface of the balloon is completely flat.",
+      "Target1": "The surface of the balloon is rough.",
+      "Target2": "The surface of the balloon is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the balloon is somewhat bumpy.",
+        " The surface of the balloon is rough."
+      ],
+      [
+        "The surface of the balloon is somewhat bumpy.",
+        " The surface of the balloon is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.236568450927734,
+          false
+        ]
+      ],
+      [
+        [
+          -28.674453735351562,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.236568450927734,
+        false
+      ],
+      [
+        -28.674453735351562,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 96,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the bin is completely flat.",
+      "Context2": "The surface of the bin is somewhat bumpy.",
+      "Target1": "The surface of the bin is smooth.",
+      "Target2": "The surface of the bin is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the bin is completely flat.",
+        " The surface of the bin is smooth."
+      ],
+      [
+        "The surface of the bin is completely flat.",
+        " The surface of the bin is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.00327491760254,
+          false
+        ]
+      ],
+      [
+        [
+          -30.91337776184082,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.00327491760254,
+        false
+      ],
+      [
+        -30.91337776184082,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 97,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the bin is somewhat bumpy.",
+      "Context2": "The surface of the bin is completely flat.",
+      "Target1": "The surface of the bin is rough.",
+      "Target2": "The surface of the bin is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the bin is somewhat bumpy.",
+        " The surface of the bin is rough."
+      ],
+      [
+        "The surface of the bin is somewhat bumpy.",
+        " The surface of the bin is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.889320373535156,
+          false
+        ]
+      ],
+      [
+        [
+          -29.16948699951172,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.889320373535156,
+        false
+      ],
+      [
+        -29.16948699951172,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 98,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the football is completely flat.",
+      "Context2": "The surface of the football is somewhat bumpy.",
+      "Target1": "The surface of the football is smooth.",
+      "Target2": "The surface of the football is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the football is completely flat.",
+        " The surface of the football is smooth."
+      ],
+      [
+        "The surface of the football is completely flat.",
+        " The surface of the football is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.680761337280273,
+          false
+        ]
+      ],
+      [
+        [
+          -31.8662052154541,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.680761337280273,
+        false
+      ],
+      [
+        -31.8662052154541,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 99,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the football is somewhat bumpy.",
+      "Context2": "The surface of the football is completely flat.",
+      "Target1": "The surface of the football is rough.",
+      "Target2": "The surface of the football is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the football is somewhat bumpy.",
+        " The surface of the football is rough."
+      ],
+      [
+        "The surface of the football is somewhat bumpy.",
+        " The surface of the football is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.16117858886719,
+          false
+        ]
+      ],
+      [
+        [
+          -32.14661407470703,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.16117858886719,
+        false
+      ],
+      [
+        -32.14661407470703,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 100,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the volleyball is completely flat.",
+      "Context2": "The surface of the volleyball is somewhat bumpy.",
+      "Target1": "The surface of the volleyball is smooth.",
+      "Target2": "The surface of the volleyball is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the volleyball is completely flat.",
+        " The surface of the volleyball is smooth."
+      ],
+      [
+        "The surface of the volleyball is completely flat.",
+        " The surface of the volleyball is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -38.02506637573242,
+          false
+        ]
+      ],
+      [
+        [
+          -38.97599792480469,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -38.02506637573242,
+        false
+      ],
+      [
+        -38.97599792480469,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 101,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the volleyball is somewhat bumpy.",
+      "Context2": "The surface of the volleyball is completely flat.",
+      "Target1": "The surface of the volleyball is rough.",
+      "Target2": "The surface of the volleyball is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the volleyball is somewhat bumpy.",
+        " The surface of the volleyball is rough."
+      ],
+      [
+        "The surface of the volleyball is somewhat bumpy.",
+        " The surface of the volleyball is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -39.03121566772461,
+          false
+        ]
+      ],
+      [
+        [
+          -38.2450065612793,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -39.03121566772461,
+        false
+      ],
+      [
+        -38.2450065612793,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 102,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the wheel is completely flat.",
+      "Context2": "The surface of the wheel is somewhat bumpy.",
+      "Target1": "The surface of the wheel is smooth.",
+      "Target2": "The surface of the wheel is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the wheel is completely flat.",
+        " The surface of the wheel is smooth."
+      ],
+      [
+        "The surface of the wheel is completely flat.",
+        " The surface of the wheel is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.578657150268555,
+          false
+        ]
+      ],
+      [
+        [
+          -28.110130310058594,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.578657150268555,
+        false
+      ],
+      [
+        -28.110130310058594,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 103,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "direct",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "The surface of the wheel is somewhat bumpy.",
+      "Context2": "The surface of the wheel is completely flat.",
+      "Target1": "The surface of the wheel is rough.",
+      "Target2": "The surface of the wheel is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The surface of the wheel is somewhat bumpy.",
+        " The surface of the wheel is rough."
+      ],
+      [
+        "The surface of the wheel is somewhat bumpy.",
+        " The surface of the wheel is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.271831512451172,
+          false
+        ]
+      ],
+      [
+        [
+          -26.952529907226562,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.271831512451172,
+        false
+      ],
+      [
+        -26.952529907226562,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 104,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of acrylic.",
+      "Context2": "The balloon is made of wool.",
+      "Target1": "The surface of the balloon is smooth.",
+      "Target2": "The surface of the balloon is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of acrylic.",
+        " The surface of the balloon is smooth."
+      ],
+      [
+        "The balloon is made of acrylic.",
+        " The surface of the balloon is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.216785430908203,
+          false
+        ]
+      ],
+      [
+        [
+          -32.36921310424805,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.216785430908203,
+        false
+      ],
+      [
+        -32.36921310424805,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 105,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of wool.",
+      "Context2": "The balloon is made of acrylic.",
+      "Target1": "The surface of the balloon is rough.",
+      "Target2": "The surface of the balloon is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of wool.",
+        " The surface of the balloon is rough."
+      ],
+      [
+        "The balloon is made of wool.",
+        " The surface of the balloon is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.31858444213867,
+          false
+        ]
+      ],
+      [
+        [
+          -30.655147552490234,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.31858444213867,
+        false
+      ],
+      [
+        -30.655147552490234,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 106,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of clay.",
+      "Context2": "The bin is made of styrofoam.",
+      "Target1": "The surface of the bin is smooth.",
+      "Target2": "The surface of the bin is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of clay.",
+        " The surface of the bin is smooth."
+      ],
+      [
+        "The bin is made of clay.",
+        " The surface of the bin is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.412309646606445,
+          false
+        ]
+      ],
+      [
+        [
+          -32.107906341552734,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.412309646606445,
+        false
+      ],
+      [
+        -32.107906341552734,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 107,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of styrofoam.",
+      "Context2": "The bin is made of clay.",
+      "Target1": "The surface of the bin is rough.",
+      "Target2": "The surface of the bin is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of styrofoam.",
+        " The surface of the bin is rough."
+      ],
+      [
+        "The bin is made of styrofoam.",
+        " The surface of the bin is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.86321258544922,
+          false
+        ]
+      ],
+      [
+        [
+          -32.00353240966797,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.86321258544922,
+        false
+      ],
+      [
+        -32.00353240966797,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 108,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of sapphire.",
+      "Context2": "The football is made of granite.",
+      "Target1": "The surface of the football is smooth.",
+      "Target2": "The surface of the football is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of sapphire.",
+        " The surface of the football is smooth."
+      ],
+      [
+        "The football is made of sapphire.",
+        " The surface of the football is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -35.23625946044922,
+          false
+        ]
+      ],
+      [
+        [
+          -35.53248596191406,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -35.23625946044922,
+        false
+      ],
+      [
+        -35.53248596191406,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 109,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of granite.",
+      "Context2": "The football is made of sapphire.",
+      "Target1": "The surface of the football is rough.",
+      "Target2": "The surface of the football is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of granite.",
+        " The surface of the football is rough."
+      ],
+      [
+        "The football is made of granite.",
+        " The surface of the football is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -34.543243408203125,
+          false
+        ]
+      ],
+      [
+        [
+          -34.13594055175781,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -34.543243408203125,
+        false
+      ],
+      [
+        -34.13594055175781,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 110,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of diamond.",
+      "Context2": "The volleyball is made of concrete.",
+      "Target1": "The surface of the volleyball is smooth.",
+      "Target2": "The surface of the volleyball is rough."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of diamond.",
+        " The surface of the volleyball is smooth."
+      ],
+      [
+        "The volleyball is made of diamond.",
+        " The surface of the volleyball is rough."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -39.75311279296875,
+          false
+        ]
+      ],
+      [
+        [
+          -40.676734924316406,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -39.75311279296875,
+        false
+      ],
+      [
+        -40.676734924316406,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 111,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "smooth",
+      "ConceptB": "rough",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of concrete.",
+      "Context2": "The volleyball is made of diamond.",
+      "Target1": "The surface of the volleyball is rough.",
+      "Target2": "The surface of the volleyball is smooth."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of concrete.",
+        " The surface of the volleyball is rough."
+      ],
+      [
+        "The volleyball is made of concrete.",
+        " The surface of the volleyball is smooth."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -39.72674560546875,
+          false
+        ]
+      ],
+      [
+        [
+          -38.88386154174805,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -39.72674560546875,
+        false
+      ],
+      [
+        -38.88386154174805,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 112,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali squeezed the volleyball. It changed its shape.",
+      "Context2": "Ali squeezed the volleyball. It kept its shape.",
+      "Target1": "The surface of the volleyball is soft.",
+      "Target2": "The surface of the volleyball is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali squeezed the volleyball. It changed its shape.",
+        " The surface of the volleyball is soft."
+      ],
+      [
+        "Ali squeezed the volleyball. It changed its shape.",
+        " The surface of the volleyball is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -38.837432861328125,
+          false
+        ]
+      ],
+      [
+        [
+          -39.79731750488281,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -38.837432861328125,
+        false
+      ],
+      [
+        -39.79731750488281,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 113,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali squeezed the volleyball. It kept its shape.",
+      "Context2": "Ali squeezed the volleyball. It changed its shape.",
+      "Target1": "The surface of the volleyball is hard.",
+      "Target2": "The surface of the volleyball is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali squeezed the volleyball. It kept its shape.",
+        " The surface of the volleyball is hard."
+      ],
+      [
+        "Ali squeezed the volleyball. It kept its shape.",
+        " The surface of the volleyball is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -39.5611457824707,
+          false
+        ]
+      ],
+      [
+        [
+          -38.41773223876953,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -39.5611457824707,
+        false
+      ],
+      [
+        -38.41773223876953,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 114,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali squeezed the volleyball. It changed its shape.",
+      "Context2": "Ali squeezed the volleyball. It kept its shape.",
+      "Target1": "The volleyball is soft.",
+      "Target2": "The volleyball is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali squeezed the volleyball. It changed its shape.",
+        " The volleyball is soft."
+      ],
+      [
+        "Ali squeezed the volleyball. It changed its shape.",
+        " The volleyball is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.2609806060791,
+          false
+        ]
+      ],
+      [
+        [
+          -25.912511825561523,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.2609806060791,
+        false
+      ],
+      [
+        -25.912511825561523,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 115,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali squeezed the volleyball. It kept its shape.",
+      "Context2": "Ali squeezed the volleyball. It changed its shape.",
+      "Target1": "The volleyball is hard.",
+      "Target2": "The volleyball is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali squeezed the volleyball. It kept its shape.",
+        " The volleyball is hard."
+      ],
+      [
+        "Ali squeezed the volleyball. It kept its shape.",
+        " The volleyball is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.17559242248535,
+          false
+        ]
+      ],
+      [
+        [
+          -24.339794158935547,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.17559242248535,
+        false
+      ],
+      [
+        -24.339794158935547,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 116,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao squeezed the wheel. It changed its shape.",
+      "Context2": "Chao squeezed the wheel. It kept its shape.",
+      "Target1": "The surface of the wheel is soft.",
+      "Target2": "The surface of the wheel is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao squeezed the wheel. It changed its shape.",
+        " The surface of the wheel is soft."
+      ],
+      [
+        "Chao squeezed the wheel. It changed its shape.",
+        " The surface of the wheel is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.841205596923828,
+          false
+        ]
+      ],
+      [
+        [
+          -29.003332138061523,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.841205596923828,
+        false
+      ],
+      [
+        -29.003332138061523,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 117,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao squeezed the wheel. It kept its shape.",
+      "Context2": "Chao squeezed the wheel. It changed its shape.",
+      "Target1": "The surface of the wheel is hard.",
+      "Target2": "The surface of the wheel is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao squeezed the wheel. It kept its shape.",
+        " The surface of the wheel is hard."
+      ],
+      [
+        "Chao squeezed the wheel. It kept its shape.",
+        " The surface of the wheel is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.139862060546875,
+          false
+        ]
+      ],
+      [
+        [
+          -27.709867477416992,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.139862060546875,
+        false
+      ],
+      [
+        -27.709867477416992,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 118,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao squeezed the wheel. It changed its shape.",
+      "Context2": "Chao squeezed the wheel. It kept its shape.",
+      "Target1": "The wheel is soft.",
+      "Target2": "The wheel is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao squeezed the wheel. It changed its shape.",
+        " The wheel is soft."
+      ],
+      [
+        "Chao squeezed the wheel. It changed its shape.",
+        " The wheel is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.21851348876953,
+          false
+        ]
+      ],
+      [
+        [
+          -19.770578384399414,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.21851348876953,
+        false
+      ],
+      [
+        -19.770578384399414,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 119,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao squeezed the wheel. It kept its shape.",
+      "Context2": "Chao squeezed the wheel. It changed its shape.",
+      "Target1": "The wheel is hard.",
+      "Target2": "The wheel is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao squeezed the wheel. It kept its shape.",
+        " The wheel is hard."
+      ],
+      [
+        "Chao squeezed the wheel. It kept its shape.",
+        " The wheel is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.29842185974121,
+          false
+        ]
+      ],
+      [
+        [
+          -18.407011032104492,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.29842185974121,
+        false
+      ],
+      [
+        -18.407011032104492,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 120,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse squeezed the balloon. It changed its shape.",
+      "Context2": "Jesse squeezed the balloon. It kept its shape.",
+      "Target1": "The balloon is soft.",
+      "Target2": "The balloon is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse squeezed the balloon. It changed its shape.",
+        " The balloon is soft."
+      ],
+      [
+        "Jesse squeezed the balloon. It changed its shape.",
+        " The balloon is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.807979583740234,
+          false
+        ]
+      ],
+      [
+        [
+          -22.78881072998047,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.807979583740234,
+        false
+      ],
+      [
+        -22.78881072998047,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 121,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse squeezed the balloon. It kept its shape.",
+      "Context2": "Jesse squeezed the balloon. It changed its shape.",
+      "Target1": "The balloon is hard.",
+      "Target2": "The balloon is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse squeezed the balloon. It kept its shape.",
+        " The balloon is hard."
+      ],
+      [
+        "Jesse squeezed the balloon. It kept its shape.",
+        " The balloon is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.376602172851562,
+          false
+        ]
+      ],
+      [
+        [
+          -21.114990234375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.376602172851562,
+        false
+      ],
+      [
+        -21.114990234375,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 122,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse squeezed the balloon. It changed its shape.",
+      "Context2": "Jesse squeezed the balloon. It kept its shape.",
+      "Target1": "The surface of the balloon is soft.",
+      "Target2": "The surface of the balloon is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse squeezed the balloon. It changed its shape.",
+        " The surface of the balloon is soft."
+      ],
+      [
+        "Jesse squeezed the balloon. It changed its shape.",
+        " The surface of the balloon is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.506092071533203,
+          false
+        ]
+      ],
+      [
+        [
+          -31.740856170654297,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.506092071533203,
+        false
+      ],
+      [
+        -31.740856170654297,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 123,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse squeezed the balloon. It kept its shape.",
+      "Context2": "Jesse squeezed the balloon. It changed its shape.",
+      "Target1": "The surface of the balloon is hard.",
+      "Target2": "The surface of the balloon is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse squeezed the balloon. It kept its shape.",
+        " The surface of the balloon is hard."
+      ],
+      [
+        "Jesse squeezed the balloon. It kept its shape.",
+        " The surface of the balloon is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.773090362548828,
+          false
+        ]
+      ],
+      [
+        [
+          -30.361162185668945,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.773090362548828,
+        false
+      ],
+      [
+        -30.361162185668945,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 124,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li squeezed the football. It changed its shape.",
+      "Context2": "Li squeezed the football. It kept its shape.",
+      "Target1": "The football is soft.",
+      "Target2": "The football is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li squeezed the football. It changed its shape.",
+        " The football is soft."
+      ],
+      [
+        "Li squeezed the football. It changed its shape.",
+        " The football is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.488426208496094,
+          false
+        ]
+      ],
+      [
+        [
+          -21.319786071777344,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.488426208496094,
+        false
+      ],
+      [
+        -21.319786071777344,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 125,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li squeezed the football. It kept its shape.",
+      "Context2": "Li squeezed the football. It changed its shape.",
+      "Target1": "The football is hard.",
+      "Target2": "The football is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li squeezed the football. It kept its shape.",
+        " The football is hard."
+      ],
+      [
+        "Li squeezed the football. It kept its shape.",
+        " The football is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.092060089111328,
+          false
+        ]
+      ],
+      [
+        [
+          -22.04868507385254,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.092060089111328,
+        false
+      ],
+      [
+        -22.04868507385254,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 126,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li squeezed the football. It changed its shape.",
+      "Context2": "Li squeezed the football. It kept its shape.",
+      "Target1": "The surface of the football is soft.",
+      "Target2": "The surface of the football is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li squeezed the football. It changed its shape.",
+        " The surface of the football is soft."
+      ],
+      [
+        "Li squeezed the football. It changed its shape.",
+        " The surface of the football is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.08191680908203,
+          false
+        ]
+      ],
+      [
+        [
+          -33.134727478027344,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.08191680908203,
+        false
+      ],
+      [
+        -33.134727478027344,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 127,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Li squeezed the football. It kept its shape.",
+      "Context2": "Li squeezed the football. It changed its shape.",
+      "Target1": "The surface of the football is hard.",
+      "Target2": "The surface of the football is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li squeezed the football. It kept its shape.",
+        " The surface of the football is hard."
+      ],
+      [
+        "Li squeezed the football. It kept its shape.",
+        " The surface of the football is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.21192932128906,
+          false
+        ]
+      ],
+      [
+        [
+          -32.99419403076172,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.21192932128906,
+        false
+      ],
+      [
+        -32.99419403076172,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 128,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed squeezed the bin. It changed its shape.",
+      "Context2": "Mohammed squeezed the bin. It kept its shape.",
+      "Target1": "The bin is soft.",
+      "Target2": "The bin is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed squeezed the bin. It changed its shape.",
+        " The bin is soft."
+      ],
+      [
+        "Mohammed squeezed the bin. It changed its shape.",
+        " The bin is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.72412872314453,
+          false
+        ]
+      ],
+      [
+        [
+          -23.595104217529297,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.72412872314453,
+        false
+      ],
+      [
+        -23.595104217529297,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 129,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed squeezed the bin. It kept its shape.",
+      "Context2": "Mohammed squeezed the bin. It changed its shape.",
+      "Target1": "The bin is hard.",
+      "Target2": "The bin is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed squeezed the bin. It kept its shape.",
+        " The bin is hard."
+      ],
+      [
+        "Mohammed squeezed the bin. It kept its shape.",
+        " The bin is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.464458465576172,
+          false
+        ]
+      ],
+      [
+        [
+          -22.207210540771484,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.464458465576172,
+        false
+      ],
+      [
+        -22.207210540771484,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 130,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed squeezed the bin. It changed its shape.",
+      "Context2": "Mohammed squeezed the bin. It kept its shape.",
+      "Target1": "The surface of the bin is soft.",
+      "Target2": "The surface of the bin is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed squeezed the bin. It changed its shape.",
+        " The surface of the bin is soft."
+      ],
+      [
+        "Mohammed squeezed the bin. It changed its shape.",
+        " The surface of the bin is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.93999671936035,
+          false
+        ]
+      ],
+      [
+        [
+          -32.218563079833984,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.93999671936035,
+        false
+      ],
+      [
+        -32.218563079833984,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 131,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "antonym",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed squeezed the bin. It kept its shape.",
+      "Context2": "Mohammed squeezed the bin. It changed its shape.",
+      "Target1": "The surface of the bin is hard.",
+      "Target2": "The surface of the bin is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed squeezed the bin. It kept its shape.",
+        " The surface of the bin is hard."
+      ],
+      [
+        "Mohammed squeezed the bin. It kept its shape.",
+        " The surface of the bin is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.37080383300781,
+          false
+        ]
+      ],
+      [
+        [
+          -30.849258422851562,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.37080383300781,
+        false
+      ],
+      [
+        -30.849258422851562,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 132,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of fabric.",
+      "Context2": "The balloon is made of terracotta.",
+      "Target1": "The balloon is soft.",
+      "Target2": "The balloon is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of fabric.",
+        " The balloon is soft."
+      ],
+      [
+        "The balloon is made of fabric.",
+        " The balloon is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.319793701171875,
+          false
+        ]
+      ],
+      [
+        [
+          -23.4632568359375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.319793701171875,
+        false
+      ],
+      [
+        -23.4632568359375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 133,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of terracotta.",
+      "Context2": "The balloon is made of fabric.",
+      "Target1": "The balloon is hard.",
+      "Target2": "The balloon is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of terracotta.",
+        " The balloon is hard."
+      ],
+      [
+        "The balloon is made of terracotta.",
+        " The balloon is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.202970504760742,
+          false
+        ]
+      ],
+      [
+        [
+          -21.204853057861328,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.202970504760742,
+        false
+      ],
+      [
+        -21.204853057861328,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 134,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of fabric.",
+      "Context2": "The balloon is made of terracotta.",
+      "Target1": "The surface of the balloon is soft.",
+      "Target2": "The surface of the balloon is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of fabric.",
+        " The surface of the balloon is soft."
+      ],
+      [
+        "The balloon is made of fabric.",
+        " The surface of the balloon is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.033489227294922,
+          false
+        ]
+      ],
+      [
+        [
+          -32.3267936706543,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.033489227294922,
+        false
+      ],
+      [
+        -32.3267936706543,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 135,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of terracotta.",
+      "Context2": "The balloon is made of fabric.",
+      "Target1": "The surface of the balloon is hard.",
+      "Target2": "The surface of the balloon is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of terracotta.",
+        " The surface of the balloon is hard."
+      ],
+      [
+        "The balloon is made of terracotta.",
+        " The surface of the balloon is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.38713455200195,
+          false
+        ]
+      ],
+      [
+        [
+          -30.06500244140625,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.38713455200195,
+        false
+      ],
+      [
+        -30.06500244140625,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 136,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of jelly.",
+      "Context2": "The bin is made of glass.",
+      "Target1": "The bin is soft.",
+      "Target2": "The bin is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of jelly.",
+        " The bin is soft."
+      ],
+      [
+        "The bin is made of jelly.",
+        " The bin is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.569608688354492,
+          false
+        ]
+      ],
+      [
+        [
+          -24.519344329833984,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.569608688354492,
+        false
+      ],
+      [
+        -24.519344329833984,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 137,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of glass.",
+      "Context2": "The bin is made of jelly.",
+      "Target1": "The bin is hard.",
+      "Target2": "The bin is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of glass.",
+        " The bin is hard."
+      ],
+      [
+        "The bin is made of glass.",
+        " The bin is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -23.68634033203125,
+          false
+        ]
+      ],
+      [
+        [
+          -21.429363250732422,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -23.68634033203125,
+        false
+      ],
+      [
+        -21.429363250732422,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 138,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of jelly.",
+      "Context2": "The bin is made of glass.",
+      "Target1": "The surface of the bin is soft.",
+      "Target2": "The surface of the bin is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of jelly.",
+        " The surface of the bin is soft."
+      ],
+      [
+        "The bin is made of jelly.",
+        " The surface of the bin is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -31.61920166015625,
+          false
+        ]
+      ],
+      [
+        [
+          -33.95447540283203,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -31.61920166015625,
+        false
+      ],
+      [
+        -33.95447540283203,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 139,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of glass.",
+      "Context2": "The bin is made of jelly.",
+      "Target1": "The surface of the bin is hard.",
+      "Target2": "The surface of the bin is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of glass.",
+        " The surface of the bin is hard."
+      ],
+      [
+        "The bin is made of glass.",
+        " The surface of the bin is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -32.50459289550781,
+          false
+        ]
+      ],
+      [
+        [
+          -30.24229621887207,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -32.50459289550781,
+        false
+      ],
+      [
+        -30.24229621887207,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 140,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of satin.",
+      "Context2": "The football is made of granite.",
+      "Target1": "The football is soft.",
+      "Target2": "The football is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of satin.",
+        " The football is soft."
+      ],
+      [
+        "The football is made of satin.",
+        " The football is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.364351272583008,
+          false
+        ]
+      ],
+      [
+        [
+          -22.175277709960938,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.364351272583008,
+        false
+      ],
+      [
+        -22.175277709960938,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 141,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of granite.",
+      "Context2": "The football is made of satin.",
+      "Target1": "The football is hard.",
+      "Target2": "The football is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of granite.",
+        " The football is hard."
+      ],
+      [
+        "The football is made of granite.",
+        " The football is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.37115478515625,
+          false
+        ]
+      ],
+      [
+        [
+          -21.962337493896484,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.37115478515625,
+        false
+      ],
+      [
+        -21.962337493896484,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 142,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of satin.",
+      "Context2": "The football is made of granite.",
+      "Target1": "The surface of the football is soft.",
+      "Target2": "The surface of the football is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of satin.",
+        " The surface of the football is soft."
+      ],
+      [
+        "The football is made of satin.",
+        " The surface of the football is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -33.917396545410156,
+          false
+        ]
+      ],
+      [
+        [
+          -34.82154083251953,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -33.917396545410156,
+        false
+      ],
+      [
+        -34.82154083251953,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 143,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of granite.",
+      "Context2": "The football is made of satin.",
+      "Target1": "The surface of the football is hard.",
+      "Target2": "The surface of the football is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of granite.",
+        " The surface of the football is hard."
+      ],
+      [
+        "The football is made of granite.",
+        " The surface of the football is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -34.473297119140625,
+          false
+        ]
+      ],
+      [
+        [
+          -33.27409362792969,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -34.473297119140625,
+        false
+      ],
+      [
+        -33.27409362792969,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 144,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of beeswax.",
+      "Context2": "The volleyball is made of concrete.",
+      "Target1": "The surface of the volleyball is soft.",
+      "Target2": "The surface of the volleyball is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of beeswax.",
+        " The surface of the volleyball is soft."
+      ],
+      [
+        "The volleyball is made of beeswax.",
+        " The surface of the volleyball is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -39.27669906616211,
+          false
+        ]
+      ],
+      [
+        [
+          -40.85622787475586,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -39.27669906616211,
+        false
+      ],
+      [
+        -40.85622787475586,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 145,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of concrete.",
+      "Context2": "The volleyball is made of beeswax.",
+      "Target1": "The surface of the volleyball is hard.",
+      "Target2": "The surface of the volleyball is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of concrete.",
+        " The surface of the volleyball is hard."
+      ],
+      [
+        "The volleyball is made of concrete.",
+        " The surface of the volleyball is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -40.13724899291992,
+          false
+        ]
+      ],
+      [
+        [
+          -38.53859329223633,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -40.13724899291992,
+        false
+      ],
+      [
+        -38.53859329223633,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 146,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of beeswax.",
+      "Context2": "The volleyball is made of concrete.",
+      "Target1": "The volleyball is soft.",
+      "Target2": "The volleyball is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of beeswax.",
+        " The volleyball is soft."
+      ],
+      [
+        "The volleyball is made of beeswax.",
+        " The volleyball is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.240324020385742,
+          false
+        ]
+      ],
+      [
+        [
+          -27.499603271484375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.240324020385742,
+        false
+      ],
+      [
+        -27.499603271484375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 147,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of concrete.",
+      "Context2": "The volleyball is made of beeswax.",
+      "Target1": "The volleyball is hard.",
+      "Target2": "The volleyball is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is hard."
+      ],
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.208940505981445,
+          false
+        ]
+      ],
+      [
+        [
+          -24.20467185974121,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.208940505981445,
+        false
+      ],
+      [
+        -24.20467185974121,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 148,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of flannel.",
+      "Context2": "The wheel is made of bronze.",
+      "Target1": "The surface of the wheel is soft.",
+      "Target2": "The surface of the wheel is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of flannel.",
+        " The surface of the wheel is soft."
+      ],
+      [
+        "The wheel is made of flannel.",
+        " The surface of the wheel is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.758907318115234,
+          false
+        ]
+      ],
+      [
+        [
+          -29.532318115234375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.758907318115234,
+        false
+      ],
+      [
+        -29.532318115234375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 149,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of bronze.",
+      "Context2": "The wheel is made of flannel.",
+      "Target1": "The surface of the wheel is hard.",
+      "Target2": "The surface of the wheel is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of bronze.",
+        " The surface of the wheel is hard."
+      ],
+      [
+        "The wheel is made of bronze.",
+        " The surface of the wheel is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.68490219116211,
+          false
+        ]
+      ],
+      [
+        [
+          -27.965856552124023,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.68490219116211,
+        false
+      ],
+      [
+        -27.965856552124023,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 150,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of flannel.",
+      "Context2": "The wheel is made of bronze.",
+      "Target1": "The wheel is soft.",
+      "Target2": "The wheel is hard."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of flannel.",
+        " The wheel is soft."
+      ],
+      [
+        "The wheel is made of flannel.",
+        " The wheel is hard."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -18.24875831604004,
+          false
+        ]
+      ],
+      [
+        [
+          -19.25369644165039,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -18.24875831604004,
+        false
+      ],
+      [
+        -19.25369644165039,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 151,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "soft",
+      "ConceptB": "hard",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The wheel is made of bronze.",
+      "Context2": "The wheel is made of flannel.",
+      "Target1": "The wheel is hard.",
+      "Target2": "The wheel is soft."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The wheel is made of bronze.",
+        " The wheel is hard."
+      ],
+      [
+        "The wheel is made of bronze.",
+        " The wheel is soft."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -19.46210479736328,
+          false
+        ]
+      ],
+      [
+        [
+          -18.343273162841797,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -19.46210479736328,
+        false
+      ],
+      [
+        -18.343273162841797,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 152,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali can see through the volleyball.",
+      "Context2": "Ali cannot see through the volleyball.",
+      "Target1": "The volleyball is transparent.",
+      "Target2": "The volleyball is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali can see through the volleyball.",
+        " The volleyball is transparent."
+      ],
+      [
+        "Ali can see through the volleyball.",
+        " The volleyball is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -29.937824249267578,
+          false
+        ]
+      ],
+      [
+        [
+          -31.02581787109375,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -29.937824249267578,
+        false
+      ],
+      [
+        -31.02581787109375,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 153,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Ali cannot see through the volleyball.",
+      "Context2": "Ali can see through the volleyball.",
+      "Target1": "The volleyball is opaque.",
+      "Target2": "The volleyball is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Ali cannot see through the volleyball.",
+        " The volleyball is opaque."
+      ],
+      [
+        "Ali cannot see through the volleyball.",
+        " The volleyball is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -30.888498306274414,
+          false
+        ]
+      ],
+      [
+        [
+          -29.740447998046875,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -30.888498306274414,
+        false
+      ],
+      [
+        -29.740447998046875,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 154,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao can see through the wheel.",
+      "Context2": "Chao cannot see through the wheel.",
+      "Target1": "The wheel is transparent.",
+      "Target2": "The wheel is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao can see through the wheel.",
+        " The wheel is transparent."
+      ],
+      [
+        "Chao can see through the wheel.",
+        " The wheel is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -21.048511505126953,
+          false
+        ]
+      ],
+      [
+        [
+          -22.72356414794922,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -21.048511505126953,
+        false
+      ],
+      [
+        -22.72356414794922,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 155,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Chao cannot see through the wheel.",
+      "Context2": "Chao can see through the wheel.",
+      "Target1": "The wheel is opaque.",
+      "Target2": "The wheel is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Chao cannot see through the wheel.",
+        " The wheel is opaque."
+      ],
+      [
+        "Chao cannot see through the wheel.",
+        " The wheel is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -22.674541473388672,
+          false
+        ]
+      ],
+      [
+        [
+          -20.941360473632812,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -22.674541473388672,
+        false
+      ],
+      [
+        -20.941360473632812,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 156,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse can see through the balloon.",
+      "Context2": "Jesse cannot see through the balloon.",
+      "Target1": "The balloon is transparent.",
+      "Target2": "The balloon is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse can see through the balloon.",
+        " The balloon is transparent."
+      ],
+      [
+        "Jesse can see through the balloon.",
+        " The balloon is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.722490310668945,
+          false
+        ]
+      ],
+      [
+        [
+          -26.871980667114258,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.722490310668945,
+        false
+      ],
+      [
+        -26.871980667114258,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 157,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Jesse cannot see through the balloon.",
+      "Context2": "Jesse can see through the balloon.",
+      "Target1": "The balloon is opaque.",
+      "Target2": "The balloon is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Jesse cannot see through the balloon.",
+        " The balloon is opaque."
+      ],
+      [
+        "Jesse cannot see through the balloon.",
+        " The balloon is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.754112243652344,
+          false
+        ]
+      ],
+      [
+        [
+          -25.482681274414062,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.754112243652344,
+        false
+      ],
+      [
+        -25.482681274414062,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 158,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Li can see through the football.",
+      "Context2": "Li cannot see through the football.",
+      "Target1": "The football is transparent.",
+      "Target2": "The football is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li can see through the football.",
+        " The football is transparent."
+      ],
+      [
+        "Li can see through the football.",
+        " The football is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.07958984375,
+          false
+        ]
+      ],
+      [
+        [
+          -27.930992126464844,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.07958984375,
+        false
+      ],
+      [
+        -27.930992126464844,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 159,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Li cannot see through the football.",
+      "Context2": "Li can see through the football.",
+      "Target1": "The football is opaque.",
+      "Target2": "The football is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Li cannot see through the football.",
+        " The football is opaque."
+      ],
+      [
+        "Li cannot see through the football.",
+        " The football is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.882535934448242,
+          false
+        ]
+      ],
+      [
+        [
+          -24.01573371887207,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.882535934448242,
+        false
+      ],
+      [
+        -24.01573371887207,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 160,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed can see through the bin.",
+      "Context2": "Mohammed cannot see through the bin.",
+      "Target1": "The bin is transparent.",
+      "Target2": "The bin is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed can see through the bin.",
+        " The bin is transparent."
+      ],
+      [
+        "Mohammed can see through the bin.",
+        " The bin is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.305408477783203,
+          false
+        ]
+      ],
+      [
+        [
+          -27.374652862548828,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.305408477783203,
+        false
+      ],
+      [
+        -27.374652862548828,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 161,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "direct",
+      "ContextDiff": "negation",
+      "TargetDiff": "concept swap",
+      "Context1": "Mohammed cannot see through the bin.",
+      "Context2": "Mohammed can see through the bin.",
+      "Target1": "The bin is opaque.",
+      "Target2": "The bin is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "Mohammed cannot see through the bin.",
+        " The bin is opaque."
+      ],
+      [
+        "Mohammed cannot see through the bin.",
+        " The bin is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.35125732421875,
+          false
+        ]
+      ],
+      [
+        [
+          -26.141752243041992,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.35125732421875,
+        false
+      ],
+      [
+        -26.141752243041992,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 162,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of acrylic.",
+      "Context2": "The balloon is made of wool.",
+      "Target1": "The balloon is transparent.",
+      "Target2": "The balloon is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of acrylic.",
+        " The balloon is transparent."
+      ],
+      [
+        "The balloon is made of acrylic.",
+        " The balloon is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.37366485595703,
+          false
+        ]
+      ],
+      [
+        [
+          -24.85434341430664,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.37366485595703,
+        false
+      ],
+      [
+        -24.85434341430664,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 163,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The balloon is made of wool.",
+      "Context2": "The balloon is made of acrylic.",
+      "Target1": "The balloon is opaque.",
+      "Target2": "The balloon is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The balloon is made of wool.",
+        " The balloon is opaque."
+      ],
+      [
+        "The balloon is made of wool.",
+        " The balloon is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -24.144445419311523,
+          false
+        ]
+      ],
+      [
+        [
+          -23.776838302612305,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -24.144445419311523,
+        false
+      ],
+      [
+        -23.776838302612305,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 164,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of ice.",
+      "Context2": "The bin is made of beeswax.",
+      "Target1": "The bin is transparent.",
+      "Target2": "The bin is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of ice.",
+        " The bin is transparent."
+      ],
+      [
+        "The bin is made of ice.",
+        " The bin is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.14980697631836,
+          false
+        ]
+      ],
+      [
+        [
+          -25.532873153686523,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.14980697631836,
+        false
+      ],
+      [
+        -25.532873153686523,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 165,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The bin is made of beeswax.",
+      "Context2": "The bin is made of ice.",
+      "Target1": "The bin is opaque.",
+      "Target2": "The bin is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The bin is made of beeswax.",
+        " The bin is opaque."
+      ],
+      [
+        "The bin is made of beeswax.",
+        " The bin is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.131080627441406,
+          false
+        ]
+      ],
+      [
+        [
+          -26.92681121826172,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.131080627441406,
+        false
+      ],
+      [
+        -26.92681121826172,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 166,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of sapphire.",
+      "Context2": "The football is made of granite.",
+      "Target1": "The football is transparent.",
+      "Target2": "The football is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of sapphire.",
+        " The football is transparent."
+      ],
+      [
+        "The football is made of sapphire.",
+        " The football is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -25.192920684814453,
+          false
+        ]
+      ],
+      [
+        [
+          -27.21045684814453,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -25.192920684814453,
+        false
+      ],
+      [
+        -27.21045684814453,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 167,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The football is made of granite.",
+      "Context2": "The football is made of sapphire.",
+      "Target1": "The football is opaque.",
+      "Target2": "The football is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The football is made of granite.",
+        " The football is opaque."
+      ],
+      [
+        "The football is made of granite.",
+        " The football is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -26.642921447753906,
+          false
+        ]
+      ],
+      [
+        [
+          -24.455381393432617,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -26.642921447753906,
+        false
+      ],
+      [
+        -24.455381393432617,
+        false
+      ]
+    ],
+    "acc": 0.0
+  },
+  {
+    "doc_id": 168,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of diamond.",
+      "Context2": "The volleyball is made of concrete.",
+      "Target1": "The volleyball is transparent.",
+      "Target2": "The volleyball is opaque."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of diamond.",
+        " The volleyball is transparent."
+      ],
+      [
+        "The volleyball is made of diamond.",
+        " The volleyball is opaque."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -27.84193229675293,
+          false
+        ]
+      ],
+      [
+        [
+          -28.739622116088867,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -27.84193229675293,
+        false
+      ],
+      [
+        -28.739622116088867,
+        false
+      ]
+    ],
+    "acc": 1.0
+  },
+  {
+    "doc_id": 169,
+    "doc": {
+      "Domain": "material-properties",
+      "ConceptA": "transparent",
+      "ConceptB": "opaque",
+      "ContextType": "indirect",
+      "ContextDiff": "material",
+      "TargetDiff": "concept swap",
+      "Context1": "The volleyball is made of concrete.",
+      "Context2": "The volleyball is made of diamond.",
+      "Target1": "The volleyball is opaque.",
+      "Target2": "The volleyball is transparent."
+    },
+    "target": 0,
+    "arguments": [
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is opaque."
+      ],
+      [
+        "The volleyball is made of concrete.",
+        " The volleyball is transparent."
+      ]
+    ],
+    "resps": [
+      [
+        [
+          -28.909427642822266,
+          false
+        ]
+      ],
+      [
+        [
+          -28.06590461730957,
+          false
+        ]
+      ]
+    ],
+    "filtered_resps": [
+      [
+        -28.909427642822266,
+        false
+      ],
+      [
+        -28.06590461730957,
+        false
+      ]
+    ],
+    "acc": 0.0
+  }
+]
