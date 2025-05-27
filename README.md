@@ -13,6 +13,7 @@ Our **suite of pre-trained models** is already publicly available on our [Huggin
 1. **Pico Decoder: LLAMA-style Transformer Architecture**  
    - RMSNorm, RoPE, multi-head self-attention with KV-cache, and SwiGLU activations  
    - Currently supports the **pico-decoder** model, with future expansions planned (pico-diffusion, pico-statespace, etc.)
+   - Integrated and configurable ReLoRA integration (see point 5)
 
 2. **Comprehensive Checkpoints**  
    - Saves model states, optimizer states, and training metadata  
@@ -25,12 +26,44 @@ Our **suite of pre-trained models** is already publicly available on our [Huggin
    - Uses a pre-tokenized, pre-shuffled version of [Dolma](https://allenai.org/dolma) that we make available on [Hugging Face](https://huggingface.co/datasets/pico-lm/pretokenized-dolma)  
    - Facilitates training models using identical data for **consistency** and **comparability**
 
+5. **ReLoRA Integration**
+   - Efficient parameter-efficient training with periodic merging
+   - Configurable target modules for selective ReLoRA application
+   - Trainable scaling factors for adaptation flexibility
+   - Compatible with distributed training and optimizers
+
 6. **Research Ready**  
    - Minimal, well-documented code suitable for **forking and tailoring**  
    - Logs essential metrics (e.g. perplexity) throughout training  
    - Works seamlessly with [pico-analyze](https://github.com/pico-lm/pico-analyze) for advanced post-training interpretation
 
 ---
+
+## **ReLoRA Features**
+
+The ReLoRA implementation provides several key capabilities:
+
+- **Selective Adaptation**: Target specific layers for ReLoRA training
+- **Configurable Reset Frequency**: Control when weights are merged and reinitialized
+- **Flexible Architecture**:
+  - Low-rank adaptation matrices (A and B)
+  - Optional trainable scaling factors
+
+### **ReLoRA Configuration**
+
+Configure ReLoRA through the model config:
+
+```yaml
+model:
+  relora:
+    target_modules: ["swiglu", "attention"]     # Layers to apply ReLoRA
+    reset_frequency: 1000                       # Steps between merges
+    r: 128                                      # Low-rank adaptation dimension
+    lora_alpha: 32                              # LoRA scaling factor
+    lora_dropout: 0.1                           # Dropout probability
+    keep_original_weights: true                 # Keep base model weights
+    trainable_scaling: false                    # Fixed vs learned scaling
+```
 
 ## **Training Philosophy**
 
@@ -168,11 +201,11 @@ Pico is open-source under the [Apache License 2.0](LICENSE).
 If you use **Pico** in your research, please cite:
 
 ```bibtex
-@software{pico2025,
-    author = {Diehl Martinez, Richard},
-    title = {Pico: A Lightweight Framework for Studying Language Model Learning Dynamics},
+@software{pico-relora-2025,
+    author = {Diehl Martinez, Richard and Weiss, Yuval},
+    title = {Pico ReLoRA: A Lightweight Framework for Studying Language Model Learning Dynamics, with integrated ReLoRA training support},
     year = {2025},
-    url = {https://github.com/pico-lm}
+    url = {https://github.com/Yu-val-weiss/relora-pico}
 }
 ```
 
